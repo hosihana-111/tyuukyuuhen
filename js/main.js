@@ -1,8 +1,3 @@
-$(function() {
-    $("#slider").slick();
-  });
-
-
   $(document).ready(function () {
     let current = 0;
     const slides = $('.slide');
@@ -21,3 +16,17 @@ $(function() {
     // 自動再生
     setInterval(showNextSlide, interval);
   });
+ 
+ 
+ // ハンバーガー   
+ $("#hamburger-block").click( 
+  function() {
+    $(".nav-sp").toggle(300)
+  }
+);
+$("#hamburger-block").click(
+  function() {
+  $(".nav-sp").toggle(300)
+  $(".hamburger").toggleClass("active")
+  }
+  );
