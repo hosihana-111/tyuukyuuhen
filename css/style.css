@@ -144,8 +144,8 @@ body {
   color: #000;
   font-family: YuMincho, "Hiragino Mincho ProN", serif;
   font-weight: 400;
-  line-height: 1.8;
-  letter-spacing: 4.375;
+  line-height: 1.5;
+  letter-spacing: 1.5625;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -170,9 +170,6 @@ a:hover {
 .wrapper-920 {
   max-width: 920px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -211,6 +208,11 @@ header
   z-index: 10;
   /* 三本線 */
   /* ナビゲーション（中身） */
+}
+#header .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 #header .h1 a {
   color: white;
@@ -426,17 +428,97 @@ service
 -------------------*/
 .service {
   background-color: rgba(77, 150, 0, 0.1);
+  padding-top: 80px;
+  padding-bottom: 175px;
 }
 
 .section-title {
   text-align: center;
   font-size: 3rem;
   color: #4D9600;
-  margin-top: 80px;
 }
 
 .sub-title {
   text-align: center;
   font-size: 2rem;
   color: #000;
+  padding-bottom: 60px;
+}
+
+.service-text {
+  background-color: #4D9600;
+}
+
+.service-block-left {
+  position: relative;
+  padding: 40px auto;
+}
+.service-block-left .service-img {
+  width: 60%;
+}
+.service-block-left .service-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.service-block-left .service-img p {
+  font-size: 1.6rem;
+  padding-top: 19px;
+}
+.service-block-left .service-text {
+  position: absolute;
+  top: 145px;
+  right: 0;
+  color: white;
+  padding: 0.5em;
+  z-index: -1;
+  width: 500px;
+  height: 250px;
+}
+.service-block-left .service-text h4 {
+  padding-top: 35px;
+  margin-left: 215px;
+  font-size: 2.5rem;
+}
+.service-block-left .service-text p {
+  margin-left: 215px;
+  font-size: 1.6rem;
+}
+
+.service-block-right {
+  position: relative;
+  padding-top: 175px;
+  padding-bottom: 175px;
+}
+.service-block-right .service-img {
+  width: 60%;
+  margin: 0 0 0 auto;
+}
+.service-block-right .service-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.service-block-right .service-img p {
+  text-align: right;
+  font-size: 1.6rem;
+  padding-top: 19px;
+}
+.service-block-right .service-text {
+  position: absolute;
+  top: 320px;
+  color: white;
+  padding: 0.5em;
+  z-index: -1;
+  width: 500px;
+  height: 250px;
+}
+.service-block-right .service-text h4 {
+  padding-top: 35px;
+  margin-left: 35px;
+  font-size: 2.5rem;
+}
+.service-block-right .service-text p {
+  margin-left: 35px;
+  font-size: 1.6rem;
 }/*# sourceMappingURL=style.css.map */
