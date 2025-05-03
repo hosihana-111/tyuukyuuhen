@@ -71,10 +71,11 @@ header
      
      .h1 {
         a{
-        color: white;
-        font-size: 2.0rem ;
-      }
-      
+          color: white;
+          font-size: 2.0rem !important;
+        }
+         
+        
       }
     .nav-pc{
       display: flex;
@@ -198,13 +199,8 @@ header
         }
         
         
-      }
-    
-    
+      }    
   
-  
-
-
 /*------------------
 main
 -------------------*/
@@ -221,10 +217,8 @@ main
   @media (max-width: 768px) {
     display: none;
     }
-  }
+  } 
   
-  
-
 .slides {
     position: relative;
   width: 100%;
@@ -250,15 +244,48 @@ main
     }
   }
   .main-content{
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  font-size: 2.2rem;
- 
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  z-index: 2;
+    p{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      font-size: 4rem !important; 
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      z-index: 2;    
+    }
     
   }  
+
+/*------------------
+about
+-------------------*/
+.about{
+  position: relative;
+}
+.about-box{
+  height: 500px;
+  background-image: url(/images/About.jpg);
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+}
+.vertical-rl{
+  position:absolute;
+      top: 20%;
+      right: 30%;
+  writing-mode: vertical-rl;
+  column-count: 1;
+  display: inline-block;
+  text-align: left;
+  h2{
+    font-size: 3rem;
+    margin-left: 60px;
+  }
+  p{
+    font-size:1.8rem ;
+    margin-left: 30px;
+  }
+}
+
