@@ -7,8 +7,7 @@
        <title>株式会社北村建設興業</title>
     <meta name="description" content="伝統とイマを繋ぎ、心地よさに取り入れ新たな技術革新を起こし続ける不動産会社です">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">   
     <link href="css/slick-theme.css" rel="stylesheet" type="text/css">
     <link href="css/slick.css" rel="stylesheet" type="text/css">
 </head>
@@ -51,7 +50,7 @@
     </header>
     <main>        
          
-        <section class="slide-area">
+        <section id="slide-area">
           <div id="main" class="inner">
             <div class="slides">
              <div class="slide active"><img src="images/FirstView_01.jpg" alt="Slide 1"></div>
@@ -65,29 +64,31 @@
                <div class="slide"><img src="images/SP_FirstView-3.jpg" alt="Slide-sp 3"></div>
               </div>
             <div class="main-content">
-              <p class="page-title">永遠も。瞬間も。<br>あなたと共に。</p>
+              <p class="page-title">永遠も。<br class="pc-none">瞬間も。<br>あなたと共に。</p>
             </div>
           </div>
         </section>
 
-        <section class="about">
+        <section id="about">
           <div class="about-box">
           <div class="vertical-rl">
           <h2 class="about-title">伝統とイマを繋ぐ</h2>
-          <p>古来から伝わる伝統文化</p>
-          <p>昔からそこにある材料</p>
-          <p>その土地に長い間かけて</p>
-          <p>最適化してきた</p>
-          <p>たくさんのヒントを</p>
-          <p>イマを生きる私たちの</p>
-          <p>心地よさに取り入れ</p>
-          <p>新たな技術革新を</p>
-          <p>起こし続ける会社です</p>
+          
+          <p>古来から伝わる伝統文化<br>
+          昔からそこにある材料<br>
+          その土地に長い間かけて<br>
+          最適化してきた<br>
+          たくさんのヒントを<br>
+          イマを生きる私たちの<br>
+          心地よさに取り入れ<br>
+          新たな技術革新を<br>
+          起こし続ける会社です</p>
+          
           </div>          
-          </div>         
-
+          </div>       
         </section>
-        <section class="service">
+
+        <section id="service">
           <h2 class="section-title">SERVICE</h2>
           <h3 class="sub-title">サービス</h3>
           <div class="wrapper-920">
@@ -124,7 +125,156 @@
           </div>
         </section>
 
+        <section id="works">
+          <h2 class="section-title">WORKS</h2>
+          <h3 class="sub-title">施工事例</h3>
+          <div class="service-block wrapper-920">
+            <div class="works-item" >
+              <img class="modal-toggle" data-modal="modalOne" src="images/PC_WORKS_01.jpg" alt="長崎県T.O様自宅">
+              <p class="works-sub-title">【新築】</p>
+              <p>長崎県T.O様自宅</p>
+            </div>
+            <div class="works-item">
+              <img class="modal-toggle"  data-modal="modalTwo"src="images/PC_WORKS_02.jpg" alt="京都府カトリック丹波教会">
+              <p class="works-sub-title">【リノベーション】</p>
+              <p>京都府カトリック丹波教会</p>
+            </div>
+            <div class="works-item">
+              <img class="modal-toggle" data-modal="modalThree"src="images/PC_WORKS_03.jpg" alt="東京都A.F様自宅件事務所">
+              <p class="works-sub-title">【新築】</p>
+              <p>東京都A.F様自宅件事務所</p>
+            </div>
+            <div class="works-item">
+              <img class="modal-toggle" data-modal="modalFour"src="images/PC_WORKS_04.jpg" alt="山形県銀山温泉協同組合">
+              <p class="works-sub-title">【都市開発】</p>
+              <p>山形県銀山温泉協同組合</p>
+            </div>
+           
+            <!--モーダル１-->
+            <div id="modalOne" class="modal">
+              <div class="modal-content">
+                <div class="modal-top">
+                  <span class="modal-close">×</span>
+                </div>
+                <div class="modal-container">
+                  <img src="images/PC_WORKS_modal_01.jpg" alt="長崎県T.O様自宅">
+                  <p class="works-sub-title">【新築】</p>
+                  <p>長崎県T.O様自宅</p>
+                </div>                
+              </div>
+            </div>
+          
+            <!--モーダル２-->
+            <div id="modalTwo" class="modal">
+              <div class="modal-content">
+                <div class="modal-top">
+                  <span class="modal-close">×</span>
+                </div>
+                <div class="modal-container">
+                  <img src="images/PC_WORKS_modal_02.jpg" alt="京都府カトリック丹波教会">
+                  <p class="works-sub-title">【リノベーション】</p>
+                  <p>京都府カトリック丹波教会</p>
+                </div>                
+              </div>
+            </div>            
+
+            <!--モーダル３-->
+            <div id="modalThree" class="modal">
+              <div class="modal-content">
+                <div class="modal-top">
+                  <span class="modal-close">×</span>
+                </div>
+                <div class="modal-container">
+                  <img src="images/PC_WORKS_modal_03.jpg" alt="東京都A.F様自宅件事務所">
+                  <p class="works-sub-title">【新築】</p>
+                  <p>東京都A.F様自宅件事務所</p>
+                </div>                
+              </div>
+            </div>           
+                       
+            <!--モーダル４-->
+            <div id="modalFour" class="modal">
+              <div class="modal-content">
+                <div class="modal-top">
+                  <span class="modal-close">×</span>
+                </div>
+                <div class="modal-container">
+                  <img src="images/PC_WORKS_modal_04.jpg" alt="山形県銀山温泉協同組合">
+                  <p class="works-sub-title">【都市開発】</p>
+                  <p>山形県銀山温泉協同組合</p>
+                </div>                
+              </div>
+            </div> 
+          </div>
+        </section>
+
+        <section id="news">
+          <h2 class="section-title">NEWS</h2>
+          <h3 class="sub-title">お知らせ</h3>
+          <div class="news-inner wrapper-920">
+            <div class="news">              
+                <h2 class="news-title">お知らせ</h2>   
+                <div class="news-list">             
+                <div class="news-item">
+                  <span class="news-date">0000.00</span>
+                  <p class="news-text">公式Instagram、youtubeはじめました。</p>
+                </div>
+                <div class="news-item">
+                  <span class="news-date">0000.00</span>
+                  <p class="news-text">非住宅 木造建築フェアに出展します。</p>
+                </div>
+                <div class="news-item">
+                  <span class="news-date">0000.00</span>
+                  <p class="news-text">公式ホームページがリニューアルしました。</p>
+                </div>  
+                <a href="#" class="more">more</a>    
+              </div>         
+                            
+            </div>
+            
+            <div class="blog">
+              <h2 class="blog-title">ブログ</h2>  
+              <div class="blog-list">         
+               <div class="blog-item">
+                <span class="blog-date">0000.00</span>
+                <p class="blog-text">あけましておめでとうございます。〜会長から社員まで〜</p>
+               </div>
+               <div class="blog-item">
+                <span class="blog-date">0000.00</span>
+                <p class="blog-text">【検証】土地と人に相性はあるのか？</p>
+               </div>
+               <div class="blog-item">
+                <span class="blog-date">0000.00</span>
+                <p class="blog-text">弊社創業初の入社式が行われました。</p>
+               </div> 
+               <a href="#" class="more">more</a>
+              </div>                
+            </div>
+          </div>
+        </section>
         
+        <section id="company">
+          <h2 class="section-title">COMPANY</h2>
+          <h3 class="sub-title">会社概要</h3>
+          <div class="company-inner wrapper-920">
+            <div class="company-block">
+              <div class="company-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3355.5059453305576!2d129.86637357512063!3d32.75230718524926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3515533a501ddec9%3A0x2ef714b6cdabdf83!2z6ZW35bSO6aeF!5e0!3m2!1sja!2sjp!4v1746669617932!5m2!1sja!2sjp" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div class="company-text">
+                <p class="company-title">株式会社 北村建設興業</p>
+                <p class="company-address">
+                  〒852-8065<br>
+                  長崎県長崎市横尾
+                </p>
+                <p class="company-tel">TEL <span>000-000-0000</span></p>
+                <p class="company-email">Mail　info@example.com</p>
+              </div>
+            </div>
+            
+          </div>
+          
+        </section>
            
       
 
@@ -139,9 +289,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+   
+    
 </body>
 </html>
