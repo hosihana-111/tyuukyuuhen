@@ -270,12 +270,91 @@
                 <p class="company-tel">TEL <span>000-000-0000</span></p>
                 <p class="company-email">Mail　info@example.com</p>
               </div>
-            </div>
-            
-          </div>
-          
+            </div>            
+          </div>          
         </section>
-           
+
+        <section id="contact">
+          <h2 class="section-title">CONTACT</h2>
+          <h3 class="sub-title">お問い合わせ</h3>
+          <p>３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。</p>
+          <div class="contact-inner">
+            <div class="contact-form">
+              <form action="送信先のURL">
+              <div class="contact-block">
+                <div class="contact-heading"><label for="name">お名前<span class="contact-span">*</span></label></div>
+                <div><input type="text" id="name" name="name" placeholder="例：北村太郎" class="contact-textbox"></div>
+                  
+              </div>
+              <div class="contact-block">
+                 <div class="contact-heading"><label for="gender">性別</label></div>
+                 <div>
+                  <input type="checkbox" value="male">男性
+                  <input type="checkbox" value="female">女性
+                 </div>                 
+              </div>
+              <div class="contact-block">
+                <div class="contact-heading"><label for="email">メールアドレス<span class="contact-span">*</span></label></div>
+                <div><input type="mail" id="email" name="email" placeholder="例：aaaaaaaa@gmail.com" class="contact-textbox"></div>                  
+              </div>
+              <div class="contact-block">
+                <div class="contact-heading"><label for="inquiry-type">問い合わせ種別</label></div>
+                <div class="inquiry-type">
+                  <select name="inquiry-type" >
+                    <option value="" hidden>選択してください</option>
+                    <option value="house">家づくりについて</option>
+                    <option value="reform">リフォームについて</option>
+                    <option value="urban-development">都市開発について</option>
+                  </select>  
+                </div>                                  
+              </div>
+              <div>
+                <div class="contact-heading">
+                  <label for="message">内容<span class="contact-span">*</span></label>             
+                </div>
+                <div><textarea id="message" name="message" class="contact-textarea"></textarea></div>
+              </div>
+              
+              <div class="contact-quetion">
+                <div>
+                  <label class="contact-label">何を見て当社HPを知りましたか？ (複数回答可)<span class="contact-span">*</span></label>
+                </div>
+                <div class="checkbox-group">
+                  <label><input class="checkbox" type="checkbox" name="contact">インターネット</label>
+                  <label><input class="checkbox" type="checkbox" name="contact">チラシ</label>
+                  <label><input class="checkbox" type="checkbox" name="contact">住宅展示場</label>
+                  <label><input class="checkbox" type="checkbox" name="contact">看板</label>
+                  <label><input class="checkbox" type="checkbox" name="contact">各種SNS</label>
+                  <label><input class="checkbox" type="checkbox" name="contact">紹介</label>
+                  <label><input class="checkbox" type="checkbox" name="contact">通りがかり</label>
+                  <label><input class="checkbox" type="checkbox" name="contact">その他</label>
+                </div>                  
+              </div> 
+              <div class="privacy-policy">
+                <div class="contact-heading">
+                <label class="contact-label">個人情報保護方針</label>
+                </div>
+                <div class="privacy-policy-box">
+                  <p class="privacy-policy-box-title">個人情報取扱事業者の氏名又は名称(法24条1項1号)<br>
+                    株式会社北村建設興業</p>
+                  <p>
+                    個人情報の取り扱い<br>
+                    弊社は、個人情報保護に関連する法令を遵守し、お客様からご提供いただく個人情報を、細心の注意を払って取り扱っております。
+                    このプライバシーポリシーでは、当社におけるお客様の個人情報の取扱いについてご説明しております。
+                    個人情報の利用目的(法18条、15条)弊社は建築物の設計、施工を主とした当社業務ならびにアフターサービスをさせていただく上で、
+                    お客様の個人情報を原則として次の利用目的の範囲内で利用させていただき
+                  </p>              
+                                         
+               </div>
+              <div class="button-block">               
+                  <input type="submit" value="内容に同意して送信" class="submit-button">                
+              </div>      
+              
+              </form>  
+            </div>
+          </div>          
+        </section>
+        
       
 
         

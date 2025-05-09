@@ -11,8 +11,13 @@
     box-sizing: border-box;
     
   }
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
 html{
-    font-size: 62.5%;
+     font-size: 62.5%;
     /*16px * 62.5% = 10px*/
 }
 body{
@@ -242,8 +247,7 @@ slide-area
 .slide {
     position: absolute;
     width: 100%;
-    height: 100%;
-    
+    height: 100%;    
     transition: opacity 1s ease;
     z-index: 0;
     img{
@@ -588,7 +592,7 @@ Works
 News
 -------------------*/
 #news{
-  background-color: #f1f7e9;
+  background-color:rgba(77,150,0,0.1);
   padding-top: 80px;
   padding-bottom: 95px;
   position: relative;
@@ -687,9 +691,9 @@ News
 
 /*------------------
 Company
-
 -------------------*/
 #company{ 
+  
   padding-top: 80px;
   padding-bottom: 95px;
   position: relative;
@@ -753,3 +757,175 @@ Company
         font-size: 2rem;
       }
     }
+
+/*------------------
+Contact
+-------------------*/
+#contact{
+  background-color:rgba(77,150,0,0.1);
+  padding-top: 80px;
+  padding-bottom: 95px;
+  position: relative;
+  p{
+    text-align: center;
+    font-size: 2rem;
+  }
+  @media (max-width: 768px){
+      padding: 30px;      
+  }
+}
+.contact-inner{
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+  width: 100%;
+}
+.contact-form{
+  padding-top: 70px;
+  padding-bottom: 88px;
+  font-size: 2rem;
+  .contact-block{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+  }
+}
+.contact-heading {
+  width: 170px;
+  align-self: center;
+    label{
+     span{
+      margin: 0 0 0 5px;
+      font-weight: bold;
+    }
+  }
+}
+.contact-textbox {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom-width: 1px;
+  border-bottom-color: #707070;
+  border-style: solid;
+  background-color: #fafafa;
+  max-width: 630px;
+  height: 50px;
+  padding: 20px;
+  &::placeholder {
+    color: A0A0A0;
+    font-size: 1.6rem;
+  }
+
+}
+select{
+  background-color: #fff;
+  max-width: 630px;
+  height: 50px;
+  padding: 20px 12px auto 12px;
+   
+  }
+:option{
+  font-size: 1.8rem;
+  ;
+}
+
+.contact-textarea {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom-width: 1px;
+  border-bottom-color: #707070;
+  background-color: #fafafa;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  max-width: 800px;
+  height: 200px;
+}
+input[type="checkbox"] {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  display: inline-block; 
+  margin-right: 20px; 
+  cursor: pointer;
+  border-radius: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+          &:checked:before {
+            position: absolute;
+            top: 7px;
+            left: 5px;
+            transform: rotate(50deg);
+            width: 5px;
+            height: 8px;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            content: '';
+          }        
+}
+.checkbox-group{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem 1.5rem;
+  margin-top: 0.5rem;
+  
+}
+.privacy-policy{
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.privacy-policy-box {
+  background-color: #fff;
+  max-width: 800px;                
+  height: 300px;
+  padding:40px;              
+  overflow-y: scroll;
+  margin-top:10px ;
+  p{
+    letter-spacing: calc(18/31) !important;
+    text-align: left !important;
+  }        
+}
+.privacy-policy-box-title{
+  margin-bottom: 40px;
+}
+/* ボタン */
+.button-block{
+  margin: 80px auto;
+  text-align: center;
+  
+}
+.submit-button {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+  width: 300px;
+  height: 50px;
+  color: #fff;
+  background-color: #4D9600;
+  font-weight: 700;
+  transition: 0.3s;  
+  &::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    transform: rotate(45deg);
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: rgba(59, 161, 56, 0.3);
+  }
+}
+
+
+
+
+
