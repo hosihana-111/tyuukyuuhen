@@ -7,9 +7,14 @@
        <title>株式会社北村建設興業</title>
     <meta name="description" content="伝統とイマを繋ぎ、心地よさに取り入れ新たな技術革新を起こし続ける不動産会社です">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="css/style.css">   
+    <link rel="stylesheet" href="css/style.css">      
     <link href="css/slick-theme.css" rel="stylesheet" type="text/css">
     <link href="css/slick.css" rel="stylesheet" type="text/css">
+    <!-- Add the slick-theme.css if you want default styling -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+   <!-- Add the slick-theme.css if you want default styling -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
 </head>
 <body>
     <header id="header" >
@@ -51,14 +56,14 @@
     <main>        
          
         <section id="slide-area">
-          <div id="main" class="inner">
+          <div id="fv" class="inner">
             <div class="slides">
-             <div class="slide active"><img src="images/FirstView_01.jpg" alt="Slide 1"></div>
+             <div class="slide"><img src="images/FirstView_01.jpg" alt="Slide 1"></div>
              <div class="slide"><img src="images/FirstView02.jpg" alt="Slide 2"></div>
              <div class="slide"><img src="images/FirstView03.jpg" alt="Slide 3"></div>
             </div>
             <div id="main-sp" class="inner">
-              <div class="slides">
+              <div class="slides-sp">
                <div class="slide active"><img src="images/SP_FirstView-1.jpg" alt="Slide-sp 1"></div>
                <div class="slide"><img src="images/SP_FirstView-2.jpg" alt="Slide-sp 2"></div>
                <div class="slide"><img src="images/SP_FirstView-3.jpg" alt="Slide-sp 3"></div>
@@ -288,9 +293,11 @@
               </div>
               <div class="contact-block">
                  <div class="contact-heading"><label for="gender">性別</label></div>
-                 <div>
-                  <input type="checkbox" value="male">男性
-                  <input type="checkbox" value="female">女性
+                 <div class="contact-radio">
+                  <label ><input type="radio" value="male"><span>男性</span></label>
+                  <label ><input type="radio" value="female"><span>女性</span></label>
+                  
+                  
                  </div>                 
               </div>
               <div class="contact-block">
@@ -354,17 +361,35 @@
             </div>
           </div>          
         </section>
-        
-      
-
-        
+        <footer>
+          <div class="footer-logo">
+            <p>株式会社 北村建設興業</p>
+          </div>
+          <hr />          
+            <nav class="footer-nav">              
+              <a href="#about">ABOUT</a>
+              <a href="#service">SERVICE</a>
+              <a href="#works">WORKS</a>
+              <a href="#news">NEWS</a>
+              <a href="#company">COMPANY</a>
+              <a href="#contact">CONTACT</a>                
+            </nav>
+          
+          <div class="sns-btns">            
+            <a href="#"><img src="images/icon/icon-twitter.svg" alt="Twitterのリンク"></a>
+            <a href="#"><img src="images/icon/icon-facebook.svg" alt="Facebookのリンク"></a>
+            <a href="#"><img src="images/icon/icon-youtube.svg" alt="YouTubeのリンク"></a>
+            <a href="#"><img src="images/icon/icon-instagram.svg" alt="Instagramのリンク"></a>
+          </div>
+          <div class="copyright">
+            <p id="copyright">&copy;Copyright2022　kitamurakensetukogyo</p>
+          </div>
+          
+        </footer>       
+       
     </main>
-
-    
-    
-    
-    
-
+             
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>

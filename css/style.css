@@ -352,10 +352,10 @@ header
 /*------------------
 slide-area
 -------------------*/
-#main {
+#fv {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 800px;
   overflow: hidden;
   display: block !important;
   background: rgba(255, 255, 255, 0.8);
@@ -363,7 +363,7 @@ slide-area
   -webkit-backdrop-filter: blur(10px);
 }
 @media (max-width: 768px) {
-  #main {
+  #fv {
     display: none;
   }
 }
@@ -389,6 +389,7 @@ slide-area
      object-fit: cover;
 }
 .slide .active {
+  display: block;
   opacity: 1;
   z-index: 1;
 }
@@ -501,7 +502,7 @@ service
 #service {
   background-color: rgba(77, 150, 0, 0.1);
   padding-top: 80px;
-  padding-bottom: 175px;
+  padding-bottom: 135px;
 }
 @media (max-width: 768px) {
   #service {
@@ -524,7 +525,7 @@ service
   }
 }
 .service-block-left .service-img {
-  width: 60%;
+  max-width: 600px;
 }
 @media (max-width: 768px) {
   .service-block-left .service-img {
@@ -584,7 +585,7 @@ service
 
 .service-block-right {
   position: relative;
-  padding-top: 175px;
+  padding-top: 135px;
   padding-bottom: 175px;
 }
 @media (max-width: 768px) {
@@ -594,7 +595,7 @@ service
   }
 }
 .service-block-right .service-img {
-  width: 60%;
+  max-width: 600px;
   margin: 0 0 0 auto;
 }
 @media (max-width: 768px) {
@@ -910,7 +911,6 @@ Company
 -------------------*/
 #company {
   padding-top: 80px;
-  padding-bottom: 95px;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -921,7 +921,7 @@ Company
 
 .company-block {
   position: relative;
-  padding: 40px auto;
+  padding: 40px auto 0 auto;
 }
 @media (max-width: 768px) {
   .company-block {
@@ -931,8 +931,8 @@ Company
 }
 .company-block .company-map {
   position: relative;
-  width: 60%;
-  padding-top: 66.6%; /* = height ÷ width × 100 */
+  max-width: 60%;
+  padding-top: 60%; /* = height ÷ width × 100 */
 }
 .company-block .company-map iframe {
   position: absolute;
@@ -990,7 +990,6 @@ Contact
 #contact {
   background-color: rgba(77, 150, 0, 0.1);
   padding-top: 80px;
-  padding-bottom: 95px;
   position: relative;
 }
 #contact p {
@@ -1014,7 +1013,7 @@ Contact
 
 .contact-form {
   padding-top: 70px;
-  padding-bottom: 88px;
+  padding-bottom: 20px;
   font-size: 2rem;
 }
 .contact-form .contact-block {
@@ -1084,6 +1083,37 @@ select {
   font-size: 1.8rem;
 }
 
+.contact-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 74px;
+}
+
+input[type=radio] {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: -2px;
+  background-color: #fff;
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+}
+input[type=radio]:checked:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #000;
+  content: "";
+}
+
 .contact-textarea {
   border-top: 0px;
   border-left: 0px;
@@ -1093,7 +1123,7 @@ select {
   background-color: #fafafa;
   margin-top: 10px;
   margin-bottom: 50px;
-  max-width: 800px;
+  width: 800px;
   height: 200px;
 }
 
@@ -1190,4 +1220,59 @@ input[type=checkbox]:checked:before {
 .submit-button:hover {
   text-decoration: none;
   background-color: rgba(59, 161, 56, 0.3);
+}
+
+/*------------------
+Footer
+-------------------*/
+footer {
+  background-color: #fff;
+  text-align: center;
+  padding-top: 80px;
+}
+footer hr {
+  border: none;
+  text-align: center;
+  border-top: 1px solid #000;
+  margin-left: 180px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  padding-bottom: 28px;
+}
+
+.footer-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.footer-nav a {
+  margin: 25px;
+  font-size: 1.8rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.sns-btns {
+  margin-bottom: 80px;
+}
+.sns-btns a {
+  padding: 0 15px;
+}
+
+.copyright {
+  background-color: #4D9600;
+  color: #fff;
+  max-width: 100%;
+  height: 92px;
+  font-size: 2rem;
+}
+.copyright p {
+  padding-top: 30px;
 }/*# sourceMappingURL=style.css.map */

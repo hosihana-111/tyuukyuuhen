@@ -225,10 +225,10 @@ header
 slide-area
 -------------------*/
 
-#main{
+#fv{
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 800px;
   overflow: hidden;
   display: block !important; 
   background: rgba(255, 255, 255, 0.8);
@@ -256,7 +256,7 @@ slide-area
         object-fit: cover;
     }
     .active {
-        
+      display: block;
         opacity: 1;
         z-index: 1;
         
@@ -348,7 +348,7 @@ service
 #service{
   background-color:rgba(77,150,0,0.1);
   padding-top: 80px;
-  padding-bottom: 175px;
+  padding-bottom: 135px;
   
   @media (max-width: 768px){
     padding: 30px;
@@ -369,7 +369,7 @@ service
   padding-bottom: 40px;
   }
   .service-img{
-    width: 60%;
+    max-width: 600px;
     @media (max-width: 768px){
       width: 100%;
     }
@@ -422,7 +422,7 @@ service
 }
 .service-block-right{
   position: relative;
-  padding-top: 175px;
+  padding-top: 135px;
   padding-bottom: 175px;
   @media (max-width: 768px){
     padding-top: 10px;
@@ -430,7 +430,7 @@ service
   }
   
   .service-img{    
-    width: 60%;
+    max-width: 600px;
     margin: 0 0 0 auto;
     @media (max-width: 768px){
     width: 100%;
@@ -693,9 +693,7 @@ News
 Company
 -------------------*/
 #company{ 
-  
-  padding-top: 80px;
-  padding-bottom: 95px;
+  padding-top: 80px;  
   position: relative;
   @media (max-width: 768px){
       padding: 30px;
@@ -703,24 +701,23 @@ Company
 }
 .company-block{
   position: relative;
-  padding: 40px auto;
+  padding: 40px auto 0 auto;
   @media (max-width: 768px){
     padding-top: 10px;
   padding-bottom: 40px;
   }
   .company-map{
       position: relative;
-      width: 60%;
-      padding-top: 66.6%; /* = height ÷ width × 100 */
+      max-width: 60%;
+      padding-top: 60%; /* = height ÷ width × 100 */
     
     iframe {
       position: absolute;
       top: 0;
       left: 0;      
     }
-    }
-    
-    
+    }   
+  
   }
   .company-text{
     position: absolute;
@@ -763,8 +760,7 @@ Contact
 -------------------*/
 #contact{
   background-color:rgba(77,150,0,0.1);
-  padding-top: 80px;
-  padding-bottom: 95px;
+  padding-top: 80px; 
   position: relative;
   p{
     text-align: center;
@@ -782,7 +778,7 @@ Contact
 }
 .contact-form{
   padding-top: 70px;
-  padding-bottom: 88px;
+  padding-bottom: 20px;
   font-size: 2rem;
   .contact-block{
     display: flex;
@@ -827,9 +823,35 @@ select{
   }
 :option{
   font-size: 1.8rem;
-  ;
+  
 }
-
+.contact-radio{
+  display: flex; 
+  gap: 74px;
+}
+input[type="radio"] {
+  position: relative;
+  width: 20px;
+  height: 20px;  
+  border-radius: 50%;
+  vertical-align: -2px;
+  background-color: #fff;
+  display: inline-block; 
+  margin-right: 20px;
+  
+  cursor: pointer; 
+  &:checked:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #000;
+    content: '';
+  }
+}
 .contact-textarea {
   border-top: 0px;
   border-left: 0px;
@@ -839,7 +861,7 @@ select{
   background-color: #fafafa;
   margin-top: 10px;
   margin-bottom: 50px;
-  max-width: 800px;
+  width: 800px;
   height: 200px;
 }
 input[type="checkbox"] {
@@ -924,8 +946,59 @@ input[type="checkbox"] {
     background-color: rgba(59, 161, 56, 0.3);
   }
 }
+/*------------------
+Footer
+-------------------*/
+footer{
+  background-color: #fff;
+  text-align: center;
+  padding-top: 80px;
 
+  hr {
+    border: none;
+    text-align: center;
+    border-top: 1px solid #000;
+    margin-left: 180px;
+    margin-bottom: 20px;
+    width: 70%;
+  }
+}
+.footer-logo{
 
+  font-size: 2rem;
+  padding-bottom: 28px;  
+}
 
+.footer-nav{
+  display: flex;
+  justify-content: center; 
+  
+  a{
+   margin: 25px;
+   font-size: 1.8rem;
+   display: inline-block;
+   text-decoration: none;
+  
+}}
+
+.sns-btns{
+  margin-bottom:80px ;
+  a{
+    padding: 0 15px;
+  }
+}
+.copyright{
+  background-color: #4D9600;
+  color: #fff;
+  max-width: 100%;
+  height: 92px;
+  font-size: 2rem;
+  
+  p{
+    padding-top: 30px;
+  }
+ 
+ 
+}
 
 
