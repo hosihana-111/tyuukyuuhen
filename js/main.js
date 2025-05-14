@@ -24,9 +24,7 @@ $(document).ready(function () {
 
 //ヘッダー追従
 window.addEventListener("scroll", function () {
-  // ヘッダーを変数の中に格納する
   const header = document.querySelector(".header");
-  // 100px以上スクロールしたらヘッダーに「scroll-nav」クラスをつける
   header.classList.toggle("scroll-nav", window.scrollY > 100);
 });
  
@@ -67,7 +65,7 @@ $("#hamburger-block").click(function() {
   $(this).css('color','red');
 });
 
-//TOPに戻る
+//TOPに戻るボタン
 const scrollTopBtn = document.querySelector('.page-top');
 
   window.addEventListener('scroll', () => {

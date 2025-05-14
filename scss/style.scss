@@ -107,36 +107,42 @@ a{
 /*------------------
 header
 -------------------*/
-#header {
-  position: absolute; /* 背景画像の上に重ねる */
+.header {
+    position: fixed; 
+    top: 0;
+    left: 0;
     width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
     margin: 0 0 0 auto;
-     z-index: 10;
+     z-index: 100;
+     justify-content: space-between;
+    padding: 0 2rem;
+    background: transparent; 
+    transition: all 0.3s ease;
+    &.scroll-nav {
+       padding: 1rem 1.5rem;
+        background-color:#4D9600;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      }}
     
-    
-     .header{
+     .header-inner{
       display: flex;
+      width: 100%;
       justify-content: space-between;
       position: fixed;
       
       h1{
           color: white;
           font-size: 2.0rem;
-          line-height: 1.65;
-        
-@include media(pc) {  
+          line-height: 1.65;        
+          @include media(pc) {  
           font-size: 1.8rem;         
-        }    
-                 
+         }                    
       }
-    .scroll-nav {
-       padding: 10px 15px;
-        background-color:#4D9600;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-      }}
+    }
+
 /*----- nav -------*/
 .nav-pc{
     display: flex;
@@ -299,7 +305,7 @@ header
         }
         
         
-      }    
+         
   
 /*------------------
 slide-area
