@@ -35,7 +35,7 @@ $("#hamburger-block").click(function() {
 
 
     // モーダルを開く
-  document.querySelectorAll(".hoge-item .img-box > img").forEach((img) => {
+  document.querySelectorAll(".bg-item .img-box > img").forEach((img) => {
     img.addEventListener("click", () => {
       const modalImgSrc = img.getAttribute("data-modal-img"); // 別画像
       const caption = img.getAttribute("alt");

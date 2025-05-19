@@ -882,7 +882,7 @@ Works
   }
 }
 
-.hoge-list {
+.bg-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -897,35 +897,35 @@ Works
   margin: 0 auto;
   max-width: 1080px;
 }
-.hoge-list img {
+.bg-list img {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
   padding-bottom: 0.9rem;
 }
-.hoge-list .works-pc {
+.bg-list .works-pc {
   display: block;
 }
 @media (max-width: 767px) {
-  .hoge-list .works-pc {
+  .bg-list .works-pc {
     display: none;
   }
 }
-.hoge-list .works-sp {
+.bg-list .works-sp {
   display: none;
 }
 @media (max-width: 767px) {
-  .hoge-list .works-sp {
+  .bg-list .works-sp {
     display: block;
   }
 }
 
-.hoge-item {
+.bg-item {
   width: 22%;
 }
 @media (max-width: 767px) {
-  .hoge-item {
+  .bg-item {
     width: 100%;
     text-align: left;
     padding-bottom: 2.2rem;

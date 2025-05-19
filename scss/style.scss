@@ -89,13 +89,14 @@ a{
   text-align: center;
   font-size: 3rem;
   color: #4D9600;  
-  letter-spacing: 9px;
+  letter-spacing: 0.9rem;
   line-height: 1.33;
  
 }
 .sub-title{
   text-align: center;
   font-size: 2rem;
+  letter-spacing: calc(20/30);
   color: #000;
   padding-bottom: 68px;
   @include media(md){
@@ -503,6 +504,7 @@ service
   background-color:rgba(77,150,0,0.1);
   padding-top: 8rem;
   padding-bottom: 13.5rem;
+  
   @include media(pm){
     padding-bottom: 10rem;
     padding-left: 3rem;
@@ -515,10 +517,6 @@ service
   }
   
   }
-
-.service-text{
-  background-color: #4D9600;
- }
 .service-block-left{
   position: relative;
   padding: 4rem auto;
@@ -550,10 +548,12 @@ service
     top: 145px;
     right: 0;  
     color: white;
+     background-color: #4D9600;
     padding: 0.5em;
     z-index: -1;
     width: 500px;
     height: 250px;
+   letter-spacing: 0.03em !important;
     @include media(pm){
       width: 400px;
       height: 200px;
@@ -566,7 +566,7 @@ service
     }
   
   h4{
-    padding-top: 5rem;
+    padding-top: 4.5rem;
     margin-left: 21.5rem;
     font-size: 2.5rem;
       @include media(pm){
@@ -584,6 +584,7 @@ service
     margin-left: 21.5rem;
     font-size: 1.6rem;
     margin-top: 1.7rem;
+    letter-spacing: 0.04rem;
       @include media(pm){
       font-size: 1.4rem;
       margin-top: 1.5rem;
@@ -647,7 +648,7 @@ service
     }
   
   h4{
-    padding-top: 5rem;
+    padding-top: 4.5rem;
     margin-left: 3.5rem;
     font-size: 2.5rem;
     @include media(pm){
@@ -686,7 +687,7 @@ Works
     }    
   }
 
-  .hoge-list {
+  .bg-list {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between; 
@@ -717,7 +718,7 @@ Works
 
 }
 
-.hoge-item {
+.bg-item {
   width: 22%;   
   
   @include media(md){
@@ -772,12 +773,12 @@ Works
     }
   }
 
-/* 画像下の説明文のスタイル（フォントサイズやカラーなど、適宜変更ください）*/
+
   .caption {
-    font-size: 20px;
-    letter-spacing: .09em;
+    font-size: 1.6rem;
     color: #000;
-    margin-top: 10px;
+    margin-top: 0.9rem;
+    margin-bottom: 0.9rem;
     text-align: left;
   }
 }
@@ -790,8 +791,8 @@ News
 #news{
  
   background-color:rgba(77,150,0,0.1);
-  padding-top: 80px;
-  padding-bottom: 95px;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
   position: relative;
   @include media(md){
     margin-top: 4.2rem;
@@ -849,6 +850,7 @@ News
   border-bottom: 1px solid #60a000;
   padding-bottom: 0.5rem;
   height:83px ;
+  display: flex;
 }
 
 .news-date,.blog-date {
