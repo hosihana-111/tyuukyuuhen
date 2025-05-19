@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>株式会社北村建設興業</title>
     <meta name="description" content="伝統とイマを繋ぎ、心地よさに取り入れ新たな技術革新を起こし続ける不動産会社です">
-    <link rel="stylesheet" href="css/style.css">      
+    <link rel="stylesheet" href="css/style.css"> 
+
     
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
 </head>
 <body>
-   <a id="top"></a>
+  <div id="container">
+    <a id="top"></a>
     <header id="header" class="header">
       <div class="header-inner wrapper">
         <h1 class="logo"><a href="index.html">株式会社北村建設工業</a></h1>
         
+
         <!-- PCナビ -->
         <nav class="nav-pc" id="nav-pc">
           <ul class="header-nav-list">
@@ -31,8 +34,9 @@
           <!-- ハンバーガーアイコン -->       
             <button id="hamburger-block" class="hamburger">
               <span class="hamburger-line">
-            </button>          
+            </button>                    
         </nav>
+        
         
          <!-- SPメニュー -->
         <nav id="nav-sp" class="nav-sp" >
@@ -55,18 +59,18 @@
         <section id="slide-area">
          
           <div id="fv" class="inner">
-            <div class="slider slider-pc">
+            <div class="slider slider-pc sp-none">
              <div class="slide"><img src="images/FirstView_01.jpg" alt="Slide 1"></div>
              <div class="slide"><img src="images/FirstView02.jpg" alt="Slide 2"></div>
              <div class="slide"><img src="images/FirstView03.jpg" alt="Slide 3"></div>
             </div>
             
-              <div class="slider slider-sp">
+              <div class="slider slider-sp pc-none">
                <div class="slide"><img src="images/SP_FirstView-1.jpg" alt="Slide-sp 1"></div>
                <div class="slide"><img src="images/SP_FirstView-2.jpg" alt="Slide-sp 2"></div>
                <div class="slide"><img src="images/SP_FirstView-3.jpg" alt="Slide-sp 3"></div>
               </div>
-            <div class="main-content">
+            <div class="fv-content">
               <p class="page-title">永遠も。<br class="pc-none">瞬間も。<br>あなたと共に。</p>
             </div>
           </div>
@@ -140,88 +144,60 @@
           <h2 class="section-title">WORKS</h2>
           <h3 class="sub-title">施工事例</h3>
           <div class="works-inner wrapper">
-            <div class="works-item" >
-              <img class="modal-toggle works-img-pc" data-modal="modalOne" src="images/PC_WORKS_01.jpg" alt="長崎県T.O様自宅">
-              <img class="modal-toggle works-img-sp" data-modal="modalOne" src="images/SP_WORKS_01.jpg" alt="長崎県T.O様自宅">
-              <p class="works-sub-title">【新築】</p>
-              <p>長崎県T.O様自宅</p>
-            </div>
-            <div class="works-item">
-              <img class="modal-toggle works-img-pc"  data-modal="modalTwo"src="images/PC_WORKS_02.jpg" alt="京都府カトリック丹波教会">
-              <img class="modal-toggle works-img-sp"  data-modal="modalTwo"src="images/SP_WORKS_02.jpg" alt="京都府カトリック丹波教会">
-              <p class="works-sub-title">【リノベーション】</p>
-              <p>京都府カトリック丹波教会</p>
-            </div>
-            <div class="works-item">
-              <img class="modal-toggle works-img-pc" data-modal="modalThree"src="images/PC_WORKS_03.jpg" alt="東京都A.F様自宅件事務所">
-              <img class="modal-toggle works-img-sp" data-modal="modalThree"src="images/SP_WORKS_03.jpg" alt="東京都A.F様自宅件事務所">
-              <p class="works-sub-title">【新築】</p>
-              <p>東京都A.F様自宅件事務所</p>
-            </div>
-            <div class="works-item">
-              <img class="modal-toggle works-img-pc" data-modal="modalFour"src="images/PC_WORKS_04.jpg" alt="山形県銀山温泉協同組合">
-              <img class="modal-toggle works-img-sp" data-modal="modalFour"src="images/SP_WORKS_04.jpg" alt="山形県銀山温泉協同組合">
-              <p class="works-sub-title">【都市開発】</p>
-              <p>山形県銀山温泉協同組合</p>
-            </div>
-                       
-        </section>
-        <!--モーダル１-->
-            <div id="modalOne" class="modal">
-              <div class="modal-content">
-                <div class="modal-top">
-                  <span class="modal-close">×</span>
-                </div>
-                <div class="modal-container">
-                  <img src="images/PC_WORKS_modal_01.jpg" alt="長崎県T.O様自宅">
-                  <p class="works-sub-title">【新築】</p>
-                  <p>長崎県T.O様自宅</p>
-                </div>                
-              </div>
-            </div>
-          
-            <!--モーダル２-->
-            <div id="modalTwo" class="modal">
-              <div class="modal-content">
-                <div class="modal-top">
-                  <span class="modal-close">×</span>
-                </div>
-                <div class="modal-container">
-                  <img src="images/PC_WORKS_modal_02.jpg" alt="京都府カトリック丹波教会">
-                  <p class="works-sub-title">【リノベーション】</p>
-                  <p>京都府カトリック丹波教会</p>
-                </div>                
-              </div>
-            </div>            
-
-            <!--モーダル３-->
-            <div id="modalThree" class="modal">
-              <div class="modal-content">
-                <div class="modal-top">
-                  <span class="modal-close">×</span>
-                </div>
-                <div class="modal-container">
-                  <img src="images/PC_WORKS_modal_03.jpg" alt="東京都A.F様自宅件事務所">
-                  <p class="works-sub-title">【新築】</p>
-                  <p>東京都A.F様自宅件事務所</p>
-                </div>                
-              </div>
-            </div>           
-                       
-            <!--モーダル４-->
-            <div id="modalFour" class="modal">
-              <div class="modal-content">
-                <div class="modal-top">
-                  <span class="modal-close">×</span>
-                </div>
-                <div class="modal-container">
-                  <img src="images/PC_WORKS_modal_04.jpg" alt="山形県銀山温泉協同組合">
-                  <p class="works-sub-title">【都市開発】</p>
-                  <p>山形県銀山温泉協同組合</p>
-                </div>                
-              </div>
-            </div> 
+            <ul class="hoge-list">
+             <li class="hoge-item">
+              <div class="img-box">
+               <img src="images/PC_WORKS_01.jpg" alt="【新築】長崎県T.O様自宅"
+                data-modal-img="images/PC_WORKS_modal_01.jpg"  class="works-pc>   
+                <img src="images/SP_WORKS_01.jpg" alt="【新築】長崎県T.O様自宅"
+                data-modal-img="images/PC_WORKS_modal_01.jpg"  class="works-sp">                          
+              </div> 
+              <p class="ttl">【新築】</p>
+              <p class="txt">長崎県T.O様自宅</p>             
+              
+             </li>
+             <li class="hoge-item">
+              <div class="img-box">
+               <img srcset="images/PC_WORKS_02.jpg" alt="【リノベーション】京都府カトリック丹波教会"
+               data-modal-img="images/PC_WORKS_modal_02.jpg" class="works-pc sizes="100vw" >
+               <img src="images/SP_WORKS_02.jpg" alt="【リノベーション】京都府カトリック丹波教会"
+               data-modal-img="images/PC_WORKS_modal_02.jpg" class="works-sp">
+               </div>
+              <p class="ttl">【リノベーション】</p>
+              <p class="txt">京都府カトリック丹波教会</p>
+             </li>
+             <li class="hoge-item">
+              <div class="img-box">
+               <img srcset="images/PC_WORKS_03.jpg 1080w,images/SP_WORKS_03.jpg 700w" alt="【新築】東京都A.F様自宅兼事務所"
+               data-modal-img="images/PC_WORKS_modal_03.jpg" class="works-pc sizes="100vw" >
+               </div>
+              <p class="ttl">【新築】</p>
+              <p class="txt">東京都A.F様自宅兼事務所</p>
+            </li>
+            <li class="hoge-item">
+             <div class="img-box">
+              <img srcset="images/PC_WORKS_04.jpg 1080w,images/SP_WORKS_04.jpg 700w" alt="【都市開発】山形県銀山温泉協同組合"
+              data-modal-img="images/PC_WORKS_modal_04.jpg" class="works-pc sizes="100vw" >
+             </div>
+              <p class="ttl">【都市開発】</p>
+              <p class="txt">山形県銀山温泉協同組合</p>
+             </li>
+            </ul>
           </div>
+        <!-- モーダルウィンドウ -->
+         <div class="modal-block">
+          <div class="img-section">
+           <span>
+            <!-- close btn -->
+            </span>
+           <img id="popup" src="クリックした画像のパスが入ります">
+         <div class="caption"><!--  altの内容が入ります --></div>
+        </div>
+        </div>
+       </div>
+                       
+     </section>
+       
 
           <!--News-->
         <section id="news">
@@ -296,7 +272,7 @@
           <h2 class="section-title">CONTACT</h2>
           <h3 class="sub-title">お問い合わせ</h3>          
           <div class="contact-inner wrapper">
-            <p>３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。</p>
+            <p class="contact-p">３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。</p>
             <div class="contact-form">
               <form action="送信先のURL">
               <div class="contact-block">
@@ -337,7 +313,7 @@
               
               <div class="contact-quetion">
                 <div>
-                  <label class="contact-label">何を見て当社HPを知りましたか？ (複数回答可)<span class="contact-span">*</span></label>
+                  <label class="contact-checkbox-label">何を見て当社HPを知りましたか？ (複数回答可) <span class="contact-span">*</span></label>
                 </div>
                 <div class="checkbox-group">
                   <label><input class="checkbox" type="checkbox" name="contact">インターネット</label>
@@ -419,7 +395,7 @@
             </div>
           </div>          
         </section>
-
+        </main>
         <footer>
           <div class="footer-inner wrapper">
             <div class="footer-logo">
@@ -445,16 +421,14 @@
           </div>
           <div class="copyright">
             <p id="copyright">&copy;Copyright2022<br class="pc-none">　kitamurakensetukogyo</p>
-          </div>
-          
-        </footer>       
+          </div>          
+        </footer>      
        
-    </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>         
-   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="js/main.js"></script>
-    
+  </div>
    
-    
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>         
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/main.js"></script>  
+       
 </body>
 </html>

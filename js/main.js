@@ -1,26 +1,24 @@
   // カルーセル
-$(document).ready(function () {
-  if (window.innerWidth <= 767) {
-    // SP用スライダーを初期化
-    $('.slider-sp').slick({
-      autoplay: true,
-      dots: true,
-      infinite: true,
-      autoplaySpeed: 5000,
-      arrows: false,
-      cssEase: 'linear'
-    });
-  } else {
-    // PC用スライダーを初期化
-    $('.slider-pc').slick({
-      autoplay: true,
-      infinite: true,
-      autoplaySpeed: 5000,
-      arrows: false,
-      cssEase: 'linear'
-    });
-  }
-});
+$(document).ready(function() {
+    if (window.innerWidth <= 767) {
+      $('.slider-sp').css('display', 'block');
+      $('.slider-sp').slick({
+        autoplay: true,       
+        infinite: true,
+        autoplaySpeed: 5000,
+        arrows: false,
+        cssEase: 'linear'
+      });
+    } else {
+      $('.slider-pc').slick({
+        autoplay: true,
+        infinite: true,
+        autoplaySpeed: 5000,
+        arrows: false,
+        cssEase: 'linear'
+      });
+    }
+  });
 
 //ヘッダー追従
 window.addEventListener("scroll", function () {
@@ -36,40 +34,39 @@ $("#hamburger-block").click(function() {
 });
 
 
-  // モーダル
+    // モーダルを開く
+  document.querySelectorAll(".hoge-item .img-box > img").forEach((img) => {
+    img.addEventListener("click", () => {
+      const modalImgSrc = img.getAttribute("data-modal-img"); // 別画像
+      const caption = img.getAttribute("alt");
 
-    const modalImg = document.querySelectorAll(".modal-toggle");
-  modalImg.forEach(function (img) {
-    img.onclick = function () {
-      var modal = img.getAttribute('data-modal'); 
-      document.getElementById(modalId).style.display = "block";
-    };
+      // モーダル表示
+      const modal = document.querySelector(".modal-block");
+      modal.style.display = "flex";
+      modal.querySelector("#popup").setAttribute("src", modalImgSrc);
+      modal.querySelector(".caption").textContent = caption;
+    });
   });
-  
-  const closeBtns = document.querySelectorAll(".modal-close");
-  closeBtns.forEach(function (btn) {
-    btn.onclick = function () {
-      var modal = btn.closest('.modal');
-      modal.style.display = "none";
-    };
-  });
-  
-  // モーダル背景クリックで閉じる
-  window.onclick = function (event) {
-    if (event.target.className === "modal") {
-      event.target.style.display = "none";
+
+  // モーダルの背景クリックで閉じる
+  document.querySelector(".modal-block").addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+      e.currentTarget.style.display = "none";
     }
-  };
+  });
 
-  $(".target").click(function() {
-  $(this).css('color','red');
-});
+  // 閉じるボタンがある場合（例：spanタグ）に閉じる
+  document.querySelector(".img-section > span").addEventListener("click", () => {
+    document.querySelector(".modal-block").style.display = "none";
+  });
+
+
 
 //TOPに戻るボタン
 const scrollTopBtn = document.querySelector('.page-top');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 900) {
+    if (window.scrollY > 500) {
       scrollTopBtn.classList.add('visible');
     } else {
       scrollTopBtn.classList.remove('visible');

@@ -11,12 +11,15 @@
     box-sizing: border-box;
     
   }
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+
 
 html{
+    -webkit-appearrance:none;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    word-break: break-all;
+    max-width: 100%;
+    overflow-x: hidden;
      font-size: 62.5%;
     /*16px * 62.5% = 10px*/
     
@@ -25,12 +28,17 @@ body{
     color: #000;
     font-family: YuMincho,"Hiragino Mincho ProN",serif;
     font-weight: 500;
-    line-height: 1.15;
+    /*line-height: 1.5;:*/
     letter-spacing:0.05em;
     margin: 0;
     box-sizing: border-box;
+    font-size: 1.6rem;
+    @include media(md){
+    font-size: 1.4rem;
+  }
 
 }
+
 img{
     max-width: 100%;
     vertical-align: bottom;
@@ -43,6 +51,10 @@ a{
     &:hover{
         opacity: 0.7;
     }
+}
+#container{
+  width: 100%;
+  overflow: hidden;
 }
 .wrapper{
   max-width: 980px;
@@ -58,17 +70,21 @@ a{
   }
   
 }
+/*---------レスポンシブル---------*/ 
 .pc-none{
   display:none;
    @include media(md){
-    display:block ;
+    display:block !important ;
+  }
+}
+.sp-none{
+  display:block;
+   @include media(md){
+    display:none !important;
   }
 }
 
-  
-
-
-
+/*---------サブタイトル---------*/  
 .section-title{
   text-align: center;
   font-size: 3rem;
@@ -86,6 +102,8 @@ a{
     padding-bottom: 3.8rem;
   }
 }
+
+/*---------戻るボタン-------*/
 .page-top {
   position: fixed;
     height: 50px;
@@ -93,15 +111,21 @@ a{
     z-index: 999;
     right: 60px;
     bottom: 60px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
     img {
     width: 100%;
-    height: auto;
-    transition: opacity 0.3s ease;
+    height: auto;  
   }
 
   &:hover img {
     opacity: 0.7;
   }
+}
+.page-top.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*------------------
@@ -113,11 +137,12 @@ header
     left: 0;
     width: 100%;
     height: 80px;
-    display: flex;
+    display: fixed;
+    justify-content: space-between;
     align-items: center;
     margin: 0 0 0 auto;
      z-index: 100;
-     justify-content: space-between;
+     
     padding: 0 2rem;
     background: transparent; 
     transition: all 0.3s ease;
@@ -129,16 +154,17 @@ header
     
      .header-inner{
       display: flex;
-      width: 100%;
       justify-content: space-between;
-      position: fixed;
+      padding-top: 1.2rem;
+      
       
       h1{
           color: white;
           font-size: 2.0rem;
           line-height: 1.65;        
           @include media(pc) {  
-          font-size: 1.8rem;         
+          font-size: 1.8rem; 
+                
          }                    
       }
     }
@@ -167,9 +193,9 @@ header
           a {          
             color: white;
             text-decoration: none;
-            margin-left: 30px;
+            padding: 1.5rem;
             @include media(pc) {
-              margin-left: 20px;
+            padding: 1rem;
             }
             position: relative;
             &::after {
@@ -205,11 +231,9 @@ header
         background-color:#fff ;
         margin: 0 0 0 30px;
         cursor: pointer;        
-        } 
-       
+        }        
       }
-        
-        
+                
       }
       /* 三本線 */
       .hamburger-line {
@@ -271,21 +295,25 @@ header
         position: fixed;
         width: 300px;
         top: 50px;
-        right: 0;
-        bottom: 0;
+        right: 0;        
         overflow: hidden;
         display: none;
+        color: #fff;
         background-color: #4D9600;
         z-index: 1;
         ul{
           margin: 0;
-          padding: 1.2rem;
-          text-align: center;
+          text-align: left;
           list-style: none;
           font-size: 1.8rem;
-          li:not(:last-of-type){
-            margin-bottom: 36px;
+          li{
+            padding: 2rem;            
+            &:hover{
+            background-color: #000;
           }
+          }
+          
+          
           }
         }
         .hamburger.active .hamburger-line {
@@ -312,70 +340,74 @@ slide-area
 -------------------*/
 
 #fv{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
+  position: relative;   
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); // Safari対応
-    &::after {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.15);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-  
-  } 
-  
-.slider {
-  width: 100%;
-  height: 100%;
+    @include media(md)
 
-     }
-.slide {
-    width: 100% ;
-  min-width: 0;
-  box-sizing: border-box;
+    }
   
+.slider {  
+  width: 100%; 
+  height: auto; 
+  margin: 0 auto;
+  
+     }
+.slide { 
+  width: 100%;    
+   height: auto;
+    box-sizing: border-box;
+
     img{
         width: 100%;
-        height: 100vh;
-        object-fit: cover;
+        height: auto;             
+        display: block;
+        
     }
         
   }
-/* スライダー表示 */
+スライダー表示
 .slider-pc {
   display: block;
-   @include media(sm) {
-    display: none ;
+   @include media(md) {
+    display: none !important ;
     }
 }
 .slider-sp {
   display: none;
-   @include media(sm) {
-    display: block;
+   @include media(md) {
+    display: block !important;
     }
 }
 
-  .main-content{
+  .fv-content{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.15);
+    top: 0;
+    left: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top:8rem ;
+}
     @include media(md){
       padding: 0 5.5rem;
       
     }
     p{
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 51%;
+      left: 50.5%;
       width: 100%;
       transform: translate(-50%, -50%);
       color: white;
       text-align: center;
       font-size: 4rem !important; 
-      letter-spacing: calc(70/40);
+      font-variant-ligatures:none;
+      line-height: 1.75;
+      
       text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
       z-index: 2;    
       @include media(md){
@@ -384,7 +416,7 @@ slide-area
       }
     }
     
-  }  
+ 
 
 /*------------------
 about
@@ -566,7 +598,7 @@ service
 .service-block-right{
   position: relative;
   padding-top: 13.5rem;
-  padding-bottom: 17.5rem;
+  padding-bottom: 13.5rem;
   @include media(md){
     padding-top: 1rem;
   padding-bottom: 4rem;
@@ -596,7 +628,7 @@ service
   }
   .service-text{
     position: absolute;
-    top: 320px;       
+    top: 280px;       
     color: white;
     padding: 0.5em;
     z-index: -1;
@@ -651,122 +683,107 @@ Works
     
     @include media(md){
       padding: 5rem 1.5rem 1rem 1.5rem;    
-    }
-    
+    }    
   }
-.works-inner{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4.5%;
- 
-  @include media(md){
-    grid-template-columns:1fr;
-    gap:2.2%;
-    margin-bottom: 22px;
-        
-  }
-  .works-item {
-    .works-img-pc{
-    margin-bottom: 20px;
-    width:100%;
-   @include media(md){
-    display: none;    
-  }  
-}
-.works-img-sp{
-  display: none;
-   width: 100%;
-  height: auto;
-  @include media(md){
-    margin-bottom: 9px;
-    display: block;  
-  }
-  }
-    p{
-    font-size: 16px;
-    
-    }
-  }
-  
-}
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-}
 
-/* モーダルを開くボタン */
-.modal-open {
-  cursor: pointer;
-}
-
-
-/*モーダル本体の指定 + モーダル外側の背景の指定*/
-.modal-content{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background: rgba(0,0,0,50%);
-  padding: 40px 20px;
-  overflow: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: .3s;
-  box-sizing: border-box;
-  cursor: pointer;
-  /*モーダル本体の擬似要素の指定*/
-&:before{
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-}
-}
-
-/*モーダル本体に「active」クラス付与した時のスタイル*/
-.modal-content.active{
-  opacity: 1;
-  visibility: visible;
-}
-/*モーダル枠の指定*/
-.modal-body{
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 500px;
-  width: 90%;
-}
-/*モーダルを閉じるボタンの指定*/
-.modal-close{
-  position: absolute;
+  .hoge-list {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  top: -40px;
-  right: -40px;
-  width: 40px;
-  height: 40px;
-  font-size: 40px;
-  color: #fff;
-  cursor: pointer;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 2rem; /* アイテムの間隔 */
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1080px;
+  img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 0.9rem;  
 }
-/*モーダル内のコンテンツの指定*/
-.modal-container{
-  background: #fff;
-  text-align: left;
-  padding: 30px;
-  img{
-    margin-bottom: 20px;
+.works-pc{
+  display: block;
+  @include media(md){
+    display: none;
   }
 }
+.works-sp{
+  display: none;
+  @include media(md){
+    display: block;
+  }
+}
+
+}
+
+.hoge-item {
+  width: 22%;   
+  
+  @include media(md){
+    width: 100%;
+    text-align: left;    
+    padding-bottom: 2.2rem;
+  }
+}
+
+
+  .modal-block {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .img-section {
+    width: 450px;
+    height: 275px;
+    background-color: #fff;
+    padding: 1.5rem 1.5rem 4rem;
+    position: relative;
+    margin: 0 auto;
+
+
+    span {
+      position: absolute;
+      transform: translate(50%, -50%);
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      &::before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: block;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+/* 画像下の説明文のスタイル（フォントサイズやカラーなど、適宜変更ください）*/
+  .caption {
+    font-size: 20px;
+    letter-spacing: .09em;
+    color: #000;
+    margin-top: 10px;
+    text-align: left;
+  }
+}
+  
+
+
 /*------------------
 News
 -------------------*/
@@ -1035,7 +1052,7 @@ Contact
 -------------------*/
 #contact{
   background-color:rgba(77,150,0,0.1);
-  padding-top: 80px; 
+  padding-top: 8rem; 
   position: relative;
   p{
     justify-content: center;
@@ -1048,10 +1065,13 @@ Contact
 }
 .contact-inner{  
   width: 100%;
+  .contact-p{
+    padding-left: 6rem;
+  }
 }
 .contact-form{ 
-  padding-top: 70px;
-  padding-bottom: 20px;
+  padding: 7rem 6rem 2rem 6rem;
+  
   font-size: 2rem;
   .contact-block{
     display: flex;
@@ -1073,6 +1093,9 @@ Contact
     padding-bottom: 0.8rem;
   }
 }
+.contact-checkbox-label{
+  letter-spacing: 0.1em; 
+}
 .contact-textbox {
   border-top: 0px;
   border-left: 0px;
@@ -1084,16 +1107,17 @@ Contact
   width: 630px;
   height: 50px;
   padding: 20px;
+  cursor: pointer;
   &::placeholder {
-    color: A0A0A0;
+    color:#A0A0A0;
     font-size: 1.6rem;
   }
   @include media(pm){
-    width: 500px;
+    width: 315px;
   }
   @include media(md){
     width: 100%;
-    max-width:315px;
+    
   }
    
 }
@@ -1114,8 +1138,7 @@ input[type="radio"] {
   vertical-align: -2px;
   background-color: #fff;
   display: inline-block; 
-  margin-right: 20px;
-  
+  margin-right: 20px;  
   cursor: pointer; 
   &:checked:before {
     position: absolute;
@@ -1130,16 +1153,34 @@ input[type="radio"] {
   }
 }
 .select{
-  background-color: #fff;  
+  background-color: #fff; 
+   position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1.7rem;
+    width: 0;
+    height: 0;   
+    border-left: 0.8rem solid transparent;
+    border-right: 0.8rem solid transparent;
+    border-top: 1.2rem solid #4D9600;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 2;
+} 
   }
-.form-select {   
-    width: 630px;
-    height: 50px;
-    padding: 5px;
+.form-select {  
+    appearance: none;  
+    width: 63rem;
+    height: 5rem;
+    padding: 1rem 1rem 1rem 2rem;
     border: 1px solid #ccc;
     border-radius: 5px;
      border-bottom-width: 1px;
    border-bottom-color: #707070;
+   cursor: pointer;
    @include media(pm){
     width: 500px;
   }
@@ -1147,6 +1188,7 @@ input[type="radio"] {
     width: 100%;
     max-width:315px;
   }
+  
 }
 
 
@@ -1162,6 +1204,7 @@ input[type="radio"] {
   margin-bottom: 50px;
   width:  800px;
   height: 200px;
+  cursor: pointer;
   @include media(pm){
     width: 700px;
   }
@@ -1203,7 +1246,7 @@ input[type="checkbox"] {
 }
 .privacy-policy{
   margin-top: 50px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   line-height: calc(31/18);
 }
 
@@ -1283,7 +1326,7 @@ footer{
   justify-content: center; 
   border: 1px solid;
   border-color: #000 transparent transparent transparent;
-  padding: 2.8rem 0;
+  padding: 2.8rem 0 2.6rem 0;
   
   
   a{

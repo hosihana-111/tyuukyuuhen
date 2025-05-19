@@ -135,12 +135,13 @@ meter {
           box-sizing: border-box;
 }
 
-html, body {
+html {
+  -webkit-appearrance: none;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  word-break: break-all;
   max-width: 100%;
   overflow-x: hidden;
-}
-
-html {
   font-size: 62.5%;
   /*16px * 62.5% = 10px*/
 }
@@ -149,11 +150,17 @@ body {
   color: #000;
   font-family: YuMincho, "Hiragino Mincho ProN", serif;
   font-weight: 500;
-  line-height: 1.15;
+  /*line-height: 1.5;:*/
   letter-spacing: 0.05em;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 1.6rem;
+}
+@media (max-width: 767px) {
+  body {
+    font-size: 1.4rem;
+  }
 }
 
 img {
@@ -170,6 +177,11 @@ a {
 }
 a:hover {
   opacity: 0.7;
+}
+
+#container {
+  width: 100%;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -192,15 +204,26 @@ a:hover {
   }
 }
 
+/*---------レスポンシブル---------*/
 .pc-none {
   display: none;
 }
 @media (max-width: 767px) {
   .pc-none {
-    display: block;
+    display: block !important;
   }
 }
 
+.sp-none {
+  display: block;
+}
+@media (max-width: 767px) {
+  .sp-none {
+    display: none !important;
+  }
+}
+
+/*---------サブタイトル---------*/
 .section-title {
   text-align: center;
   font-size: 3rem;
@@ -221,6 +244,7 @@ a:hover {
   }
 }
 
+/*---------戻るボタン-------*/
 .page-top {
   position: fixed;
   height: 50px;
@@ -228,15 +252,22 @@ a:hover {
   z-index: 999;
   right: 60px;
   bottom: 60px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .page-top img {
   width: 100%;
   height: auto;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
 }
 .page-top:hover img {
   opacity: 0.7;
+}
+
+.page-top.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*------------------
@@ -248,17 +279,15 @@ header
   left: 0;
   width: 100%;
   height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: fixed;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 0 0 0 auto;
   z-index: 100;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding: 0 2rem;
   background: transparent;
   -webkit-transition: all 0.3s ease;
@@ -275,11 +304,10 @@ header
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: fixed;
+  padding-top: 1.2rem;
 }
 .header-inner h1 {
   color: white;
@@ -330,12 +358,12 @@ header
 .nav-pc .header-nav-list a {
   color: white;
   text-decoration: none;
-  margin-left: 30px;
+  padding: 1.5rem;
   position: relative;
 }
 @media (max-width: 1024px) {
   .nav-pc .header-nav-list a {
-    margin-left: 20px;
+    padding: 1rem;
   }
 }
 .nav-pc .header-nav-list a::after {
@@ -418,21 +446,23 @@ header
   width: 300px;
   top: 50px;
   right: 0;
-  bottom: 0;
   overflow: hidden;
   display: none;
+  color: #fff;
   background-color: #4D9600;
   z-index: 1;
 }
 .nav-sp ul {
   margin: 0;
-  padding: 1.2rem;
-  text-align: center;
+  text-align: left;
   list-style: none;
   font-size: 1.8rem;
 }
-.nav-sp ul li:not(:last-of-type) {
-  margin-bottom: 36px;
+.nav-sp ul li {
+  padding: 2rem;
+}
+.nav-sp ul li:hover {
+  background-color: #000;
 }
 
 .hamburger.active .hamburger-line {
@@ -454,80 +484,80 @@ slide-area
 -------------------*/
 #fv {
   position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-#fv::after {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.15);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.slider {
+#fv .slider {
   width: 100%;
-  height: 100%;
+  height: auto;
+  margin: 0 auto;
 }
-
-.slide {
+#fv .slide {
   width: 100%;
-  min-width: 0;
+  height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.slide img {
+#fv .slide img {
   width: 100%;
-  height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-/* スライダー表示 */
-.slider-pc {
+  height: auto;
   display: block;
 }
-@media (max-width: 375px) {
-  .slider-pc {
-    display: none;
+#fv スライダー表示 .slider-pc {
+  display: block;
+}
+@media (max-width: 767px) {
+  #fv スライダー表示 .slider-pc {
+    display: none !important;
   }
 }
-
-.slider-sp {
+#fv .slider-sp {
   display: none;
 }
-@media (max-width: 375px) {
-  .slider-sp {
-    display: block;
+@media (max-width: 767px) {
+  #fv .slider-sp {
+    display: block !important;
   }
 }
-
+#fv .fv-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.15);
+  top: 0;
+  left: 0;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 8rem;
+}
 @media (max-width: 767px) {
-  .main-content {
+  #fv {
     padding: 0 5.5rem;
   }
 }
-.main-content p {
+#fv p {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 51%;
+  left: 50.5%;
   width: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   color: white;
   text-align: center;
   font-size: 4rem !important;
-  letter-spacing: 1.75;
+  -webkit-font-variant-ligatures: none;
+          font-variant-ligatures: none;
+  line-height: 1.75;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   z-index: 2;
 }
 @media (max-width: 767px) {
-  .main-content p {
+  #fv p {
     font-size: 3rem !important;
     letter-spacing: 2;
   }
@@ -748,7 +778,7 @@ service
 .service-block-right {
   position: relative;
   padding-top: 13.5rem;
-  padding-bottom: 17.5rem;
+  padding-bottom: 13.5rem;
 }
 @media (max-width: 767px) {
   .service-block-right {
@@ -783,7 +813,7 @@ service
 }
 .service-block-right .service-text {
   position: absolute;
-  top: 320px;
+  top: 280px;
   color: white;
   padding: 0.5em;
   z-index: -1;
@@ -852,129 +882,110 @@ Works
   }
 }
 
-.works-inner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4.5%;
-}
-@media (max-width: 767px) {
-  .works-inner {
-    grid-template-columns: 1fr;
-    gap: 2.2%;
-    margin-bottom: 22px;
-  }
-}
-.works-inner .works-item .works-img-pc {
-  margin-bottom: 20px;
-  width: 100%;
-}
-@media (max-width: 767px) {
-  .works-inner .works-item .works-img-pc {
-    display: none;
-  }
-}
-.works-inner .works-item .works-img-sp {
-  display: none;
-  width: 100%;
-  height: auto;
-}
-@media (max-width: 767px) {
-  .works-inner .works-item .works-img-sp {
-    margin-bottom: 9px;
-    display: block;
-  }
-}
-.works-inner .works-item p {
-  font-size: 16px;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-}
-
-/* モーダルを開くボタン */
-.modal-open {
-  cursor: pointer;
-}
-
-/*モーダル本体の指定 + モーダル外側の背景の指定*/
-.modal-content {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 40px 20px;
-  overflow: auto;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-  /*モーダル本体の擬似要素の指定*/
-}
-.modal-content:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-}
-
-/*モーダル本体に「active」クラス付与した時のスタイル*/
-.modal-content.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/*モーダル枠の指定*/
-.modal-body {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 500px;
-  width: 90%;
-}
-
-/*モーダルを閉じるボタンの指定*/
-.modal-close {
-  position: absolute;
+.hoge-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem; /* アイテムの間隔 */
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+.hoge-list img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 0.9rem;
+}
+.hoge-list .works-pc {
+  display: block;
+}
+@media (max-width: 767px) {
+  .hoge-list .works-pc {
+    display: none;
+  }
+}
+.hoge-list .works-sp {
+  display: none;
+}
+@media (max-width: 767px) {
+  .hoge-list .works-sp {
+    display: block;
+  }
+}
+
+.hoge-item {
+  width: 22%;
+}
+@media (max-width: 767px) {
+  .hoge-item {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 2.2rem;
+  }
+}
+
+.modal-block {
+  display: none;
+  position: fixed;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  top: -40px;
-  right: -40px;
-  width: 40px;
-  height: 40px;
-  font-size: 40px;
-  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 画像下の説明文のスタイル（フォントサイズやカラーなど、適宜変更ください）*/
+}
+.modal-block .img-section {
+  width: 450px;
+  height: 275px;
+  background-color: #fff;
+  padding: 1.5rem 1.5rem 4rem;
+  position: relative;
+  margin: 0 auto;
+}
+.modal-block .img-section span {
+  position: absolute;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  top: 0;
+  right: 0;
   cursor: pointer;
 }
-
-/*モーダル内のコンテンツの指定*/
-.modal-container {
-  background: #fff;
-  text-align: left;
-  padding: 30px;
+.modal-block .img-section span::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: block;
 }
-.modal-container img {
-  margin-bottom: 20px;
+.modal-block .img-section img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.modal-block .caption {
+  font-size: 20px;
+  letter-spacing: 0.09em;
+  color: #000;
+  margin-top: 10px;
+  text-align: left;
 }
 
 /*------------------
@@ -1302,7 +1313,7 @@ Contact
 -------------------*/
 #contact {
   background-color: rgba(77, 150, 0, 0.1);
-  padding-top: 80px;
+  padding-top: 8rem;
   position: relative;
 }
 #contact p {
@@ -1321,10 +1332,12 @@ Contact
 .contact-inner {
   width: 100%;
 }
+.contact-inner .contact-p {
+  padding-left: 6rem;
+}
 
 .contact-form {
-  padding-top: 70px;
-  padding-bottom: 20px;
+  padding: 7rem 6rem 2rem 6rem;
   font-size: 2rem;
 }
 .contact-form .contact-block {
@@ -1355,6 +1368,10 @@ Contact
   }
 }
 
+.contact-checkbox-label {
+  letter-spacing: 0.1em;
+}
+
 .contact-textbox {
   border-top: 0px;
   border-left: 0px;
@@ -1366,36 +1383,36 @@ Contact
   width: 630px;
   height: 50px;
   padding: 20px;
+  cursor: pointer;
 }
 .contact-textbox::-webkit-input-placeholder {
-  color: A0A0A0;
+  color: #A0A0A0;
   font-size: 1.6rem;
 }
 .contact-textbox::-moz-placeholder {
-  color: A0A0A0;
+  color: #A0A0A0;
   font-size: 1.6rem;
 }
 .contact-textbox:-ms-input-placeholder {
-  color: A0A0A0;
+  color: #A0A0A0;
   font-size: 1.6rem;
 }
 .contact-textbox::-ms-input-placeholder {
-  color: A0A0A0;
+  color: #A0A0A0;
   font-size: 1.6rem;
 }
 .contact-textbox::placeholder {
-  color: A0A0A0;
+  color: #A0A0A0;
   font-size: 1.6rem;
 }
 @media (max-width: 959px) {
   .contact-textbox {
-    width: 500px;
+    width: 315px;
   }
 }
 @media (max-width: 767px) {
   .contact-textbox {
     width: 100%;
-    max-width: 315px;
   }
 }
 
@@ -1436,16 +1453,36 @@ input[type=radio]:checked:before {
 
 .select {
   background-color: #fff;
+  position: relative;
+}
+.select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1.7rem;
+  width: 0;
+  height: 0;
+  border-left: 0.8rem solid transparent;
+  border-right: 0.8rem solid transparent;
+  border-top: 1.2rem solid #4D9600;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .form-select {
-  width: 630px;
-  height: 50px;
-  padding: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 63rem;
+  height: 5rem;
+  padding: 1rem 1rem 1rem 2rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   border-bottom-width: 1px;
   border-bottom-color: #707070;
+  cursor: pointer;
 }
 @media (max-width: 959px) {
   .form-select {
@@ -1470,6 +1507,7 @@ input[type=radio]:checked:before {
   margin-bottom: 50px;
   width: 800px;
   height: 200px;
+  cursor: pointer;
 }
 @media (max-width: 959px) {
   .contact-textarea {
@@ -1518,7 +1556,7 @@ input[type=checkbox]:checked:before {
 
 .privacy-policy {
   margin-top: 50px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   line-height: 1.7222222222;
 }
 
@@ -1601,7 +1639,7 @@ footer {
           justify-content: center;
   border: 1px solid;
   border-color: #000 transparent transparent transparent;
-  padding: 2.8rem 0;
+  padding: 2.8rem 0 2.6rem 0;
 }
 .footer-nav a {
   margin: 0 25px;
