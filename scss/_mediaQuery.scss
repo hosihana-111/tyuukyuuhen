@@ -1,11 +1,31 @@
-$breakpoints:(
-    'sm': '375px',
-    'md': '767px',
-    'pm': '959px',
-    'pc': '1024px',
-);
-@mixin media($breakpoint) {
-  @media (max-width: map-get($breakpoints, $breakpoint)) {
+// $breakpoints:(
+//     'sm': '375px',
+//     'md': '767px',
+//     'pm': '959px',
+//     'pc': '1024px',
+// );
+// @mixin media($breakpoint) {
+//   @media (max-width: map-get($breakpoints, $breakpoint)) {
+//     @content;
+//   }
+// }
+
+// @media (max-width:375px) {
+  
+// }
+// @media (min-width:768px) and (max-width:900px) {
+  
+// }
+// @media (max-width:1024px){}
+
+@mixin pc {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media only screen and (max-width: 767px) {
     @content;
   }
 }

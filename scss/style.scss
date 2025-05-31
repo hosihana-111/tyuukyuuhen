@@ -14,34 +14,32 @@
 
 
 html{
-    -webkit-appearrance:none;
+    -webkit-appearance:none;
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
     word-break: break-all;
-    max-width: 100%;
-    overflow-x: hidden;
-     font-size: 62.5%;
-    /*16px * 62.5% = 10px*/
+    font-size: 62.5%;   
     
 }
+
+
 body{
     color: #000;
     font-family: YuMincho,"Hiragino Mincho ProN",serif;
-    font-weight: 500;
-    /*line-height: 1.5;:*/
-    letter-spacing:0.05em;
+    font-optical-sizing: auto;
+    font-weight: 500;  
+    font-style: normal;     
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     font-size: 1.6rem;
-    @include media(md){
-    font-size: 1.4rem;
-  }
+  
 
 }
 
 img{
-    max-width: 100%;
-    vertical-align: bottom;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 li{
     list-style: none;
@@ -58,29 +56,22 @@ a{
 }
 .wrapper{
   max-width: 980px;
-  margin: 0 auto;
-  align-items: center;
-  width: 100%;
-  padding: 0 3rem;
-  @include media(pc){
-    padding: 0 2.5rem;
-  }
-  @include media(md){
-    padding: 0 1.5rem;
-  }
+  margin-inline: auto;
+  padding: 0 30px;
+
   
 }
 /*---------レスポンシブル---------*/ 
-.pc-none{
-  display:none;
-   @include media(md){
-    display:block !important ;
+// 画面幅が 767px以下（PC） のときだけ非表示
+.pc {
+  @include sp{
+    display: none !important;
   }
 }
-.sp-none{
-  display:block;
-   @include media(md){
-    display:none !important;
+// 画面幅が 768px以上（PC） のときだけ非表示
+.sp {
+   @include pc{
+    display: none !important;
   }
 }
 
@@ -89,17 +80,17 @@ a{
   text-align: center;
   font-size: 3rem;
   color: #4D9600;  
-  letter-spacing: 0.9rem;
+  letter-spacing: 0.9em;
   line-height: 1.33;
  
 }
 .sub-title{
   text-align: center;
   font-size: 2rem;
-  letter-spacing: calc(20/30);
+  letter-spacing: calc(20/30)em;
   color: #000;
   padding-bottom: 68px;
-  @include media(md){
+  @include sp{
     padding-bottom: 3.8rem;
   }
 }
@@ -163,7 +154,7 @@ header
           color: white;
           font-size: 2.0rem;
           line-height: 1.65;        
-          @include media(pc) {  
+          @media (max-width:1024px) {  
           font-size: 1.8rem; 
                 
          }                    
@@ -182,21 +173,19 @@ header
       margin: 0;             
       padding: 0;
       cursor: pointer;
-       @include media(md){
+      @include sp{
     display:none ;
   }
          li{
             font-size: 1.8rem;
-            @include media(pc) {             
-             font-size: 1.4rem;
+            
             }
           }
           a {          
             color: white;
             text-decoration: none;
             padding: 1.5rem;
-            @include media(pc) {
-            padding: 1rem;
+            
             }
             position: relative;
             &::after {
@@ -218,12 +207,12 @@ header
           gap: 1.5rem; 
         }
       }
-      }
+      
     
       /* ハンバーガーメニュー */      
        
       .hamburger{
-       @include media(md){
+       @include sp{
         position: fixed;
         top: 0;
         right: 0;
@@ -235,10 +224,10 @@ header
         }        
       }
                 
-      }
+      
       /* 三本線 */
       .hamburger-line {
-        @include media(md){
+        @include sp{
           position: absolute;
         left: 16px;
         width: 32px;
@@ -271,7 +260,7 @@ header
       }
       .hamburger.active{
         .hamburger-line{
-          @include media(md){
+          @include sp{
             background-color: transparent;
           &::before {
             -webkit-transform: rotate(45deg);
@@ -344,7 +333,7 @@ slide-area
   position: relative;   
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); // Safari対応
-    @include media(md)
+    @include sp
 
     }
   
@@ -357,26 +346,24 @@ slide-area
 .slide { 
   width: 100%;    
    height: auto;
-    box-sizing: border-box;
-
-    img{
-        width: 100%;
-        height: auto;             
-        display: block;
-        
-    }
+    box-sizing: border-box;  
         
   }
+.slide-img{
+        width: 100%;
+        height: auto;             
+        display: block;        
+    }
 スライダー表示
 .slider-pc {
   display: block;
-   @include media(md) {
+   @include sp {
     display: none !important ;
     }
 }
 .slider-sp {
   display: none;
-   @include media(md) {
+   @include sp {
     display: block !important;
     }
 }
@@ -393,11 +380,8 @@ slide-area
     align-items: center;
     padding-top:8rem ;
 }
-    @include media(md){
-      padding: 0 5.5rem;
-      
-    }
-    p{
+   
+.page-title{
       position: absolute;
       top: 51%;
       left: 50.5%;
@@ -405,15 +389,15 @@ slide-area
       transform: translate(-50%, -50%);
       color: white;
       text-align: center;
-      font-size: 4rem !important; 
+      font-size: 4rem; 
       font-variant-ligatures:none;
       line-height: 1.75;
       
       text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
       z-index: 2;    
-      @include media(md){
+      @include sp{
       font-size: 3rem !important; 
-      letter-spacing: calc(60/30);
+      letter-spacing: calc(60/30)em;
       }
     }
     
@@ -429,13 +413,13 @@ about
 .about-inner{
     
 .about-img-pc{
-   @include media(md){
+   @include sp{
     display: none;    
   }  
 }
 .about-img-sp{
   display: none;
-  @include media(md){
+  @include sp{
     display: block;
   }
 }
@@ -454,7 +438,7 @@ about
    
   
   
-  @include media(md){    
+  @include sp{    
     column-count: 2;
     column-gap: 2.2rem;
     align-items: center;
@@ -465,10 +449,10 @@ about
   h2{
     font-size: 3rem;
     margin-left: 4.2rem;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.5em;
     line-height: 1.66;    
         
-    @include media(md){
+    @include sp{
       font-size: 2.5rem;
       display: flex;   
        margin-left:0;
@@ -482,10 +466,10 @@ about
    align-items: center;
    
  
-    @include media(pc){
+    @media (max-width:1024px){
     line-height:2;
   }
-   @include media(md) {
+   @include sp {
     font-size:1.6rem ;
     line-height:1.5;
     
@@ -505,12 +489,12 @@ service
   padding-top: 8rem;
   padding-bottom: 13.5rem;
   
-  @include media(pm){
+  @media (max-width:768px) and (min-width:900px) {
     padding-bottom: 10rem;
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  @include media(md){
+  @include sp{
     padding-bottom: 1rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -520,13 +504,13 @@ service
 .service-block-left{
   position: relative;
   padding: 4rem auto;
-  @include media(md){
+  @include sp{
     padding-top: 1rem;
   padding-bottom: 4rem;
   }
   .service-img{
     width: 65%;
-    @include media(md){
+    @include sp{
       width: 100%;
     }
     img{
@@ -537,7 +521,7 @@ service
     p{
       font-size: 1.6rem;
       padding-top: 1.9rem;
-      @include media(md){
+      @include sp{
         padding: 0.5rem;
       }
     }
@@ -554,11 +538,11 @@ service
     width: 500px;
     height: 250px;
    letter-spacing: 0.03em !important;
-    @include media(pm){
+    @media (max-width:768px) and (min-width:900px) {
       width: 400px;
       height: 200px;
     }
-    @include media(md){
+    @include sp{
       position: relative;
       top: 0;
       width: 100%;
@@ -569,12 +553,12 @@ service
     padding-top: 4.5rem;
     margin-left: 21.5rem;
     font-size: 2.5rem;
-      @include media(pm){
+      @media (max-width:768px) and (min-width:900px) {
       font-size:2rem; 
        padding-top: 2rem;
       margin-left: 16rem;
     }  
-    @include media(md){
+    @include sp{
       margin-left: 2rem;
       padding-top: 1.5rem;
     }
@@ -584,13 +568,13 @@ service
     margin-left: 21.5rem;
     font-size: 1.6rem;
     margin-top: 1.7rem;
-    letter-spacing: 0.04rem;
-      @include media(pm){
+    letter-spacing: 0.04em;
+      @media (max-width:768px) and (min-width:900px) {
       font-size: 1.4rem;
       margin-top: 1.5rem;
       margin-left: 16rem;
     }  
-    @include media(md){
+    @include sp{
       margin-left: 2rem;
     }
   }
@@ -600,7 +584,7 @@ service
   position: relative;
   padding-top: 13.5rem;
   padding-bottom: 13.5rem;
-  @include media(md){
+  @include sp{
     padding-top: 1rem;
   padding-bottom: 4rem;
   }
@@ -608,7 +592,7 @@ service
   .service-img{    
     width: 65%;
     margin: 0 0 0 auto;
-    @include media(md){
+    @include sp{
     width: 100%;
     }
     
@@ -621,7 +605,7 @@ service
       text-align: right;
       font-size: 1.6rem;
       padding-top: 1.9rem;
-      @include media(md){
+      @include sp{
         text-align: left;
         padding: .5rem;
       }
@@ -635,12 +619,12 @@ service
     z-index: -1;
     width: 500px;
     height: 250px; 
-    @include media(pm){
+    @media (max-width:768px) and (min-width:900px) {
       width: 400px;
       height: 200px;
     }
                                            
-   @include media(md){
+   @include sp{
     position: relative;
     top: 0;
     width: 100%;
@@ -651,11 +635,11 @@ service
     padding-top: 4.5rem;
     margin-left: 3.5rem;
     font-size: 2.5rem;
-    @include media(pm){
+    @media (max-width:768px) and (min-width:900px) {
       padding-top: 2rem;
       font-size: 2rem;
     }  
-    @include media(md){
+    @include sp{
       padding-top: 1.5rem;
       margin-left: 2rem;
     }
@@ -664,7 +648,7 @@ service
     margin-left: 3.5rem;
     font-size: 1.6rem;
     margin-top: 17px;
-    @include media(pm){
+    @media (max-width:768px) and (min-width:900px) {
       font-size: 1.4rem;
       margin-top: 1.5rem;
       margin-left: 2rem;
@@ -678,11 +662,11 @@ Works
 #works{ 
     padding-top: 8rem;
     padding-bottom: 9rem;
-   @include media(pm){
+   @media (max-width:768px) and (min-width:900px) {
     padding: 5rem 3rem 1rem 3rem;
    }
     
-    @include media(md){
+    @include sp{
       padding: 5rem 1.5rem 1rem 1.5rem;    
     }    
   }
@@ -691,7 +675,7 @@ Works
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between; 
-  gap: 2rem; /* アイテムの間隔 */
+  gap: 2rem; 
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -705,13 +689,13 @@ Works
 }
 .works-pc{
   display: block;
-  @include media(md){
+  @include sp{
     display: none;
   }
 }
 .works-sp{
   display: none;
-  @include media(md){
+  @include sp{
     display: block;
   }
 }
@@ -721,7 +705,7 @@ Works
 .bg-item {
   width: 22%;   
   
-  @include media(md){
+  @include sp{
     width: 100%;
     text-align: left;    
     padding-bottom: 2.2rem;
@@ -794,7 +778,7 @@ News
   padding-top: 8rem;
   padding-bottom: 8rem;
   position: relative;
-  @include media(md){
+  @include sp{
     margin-top: 4.2rem;
       padding: 8rem 3rem;
   }
@@ -803,13 +787,13 @@ News
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4.5%;
-  @include media(pm){
+  @media (max-width:768px) and (min-width:900px) {
     display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5%;
   align-items: center;
   }
-  @include media(md){
+  @include sp{
     display: grid;
   grid-template-columns: 1fr;
   gap: 5%;
@@ -822,10 +806,10 @@ News
  
   border-radius: 5px;
   max-width: 460px;
-  @include media(pm){
+  @media (max-width:768px) and (min-width:900px) {
     max-width: 400px;
   }  
-  @include media(md){
+  @include sp{
     max-width: 600px;
   }
 }
@@ -864,7 +848,7 @@ News
   font-size: 1.8rem;
   color: #333;
   margin: 0;
-  @include media(md){
+  @include sp{
     display: -webkit-box;             
     -webkit-box-orient: vertical;      
     overflow: hidden;                  
@@ -906,12 +890,12 @@ Company
 -------------------*/
 #company{ 
   padding-top: 8rem;  
-  @include media(pm){
+  @media (max-width:768px) and (min-width:900px) {
     padding-bottom: 10rem;
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  @include media(md){
+  @include sp{
     padding-bottom: 1rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -921,17 +905,15 @@ Company
 
 .company-block{
   position: relative;
-    display: flex;
-  flex-wrap: wrap;
-   justify-content: flex-start;
-  align-items: flex-start;
-   flex-wrap: nowrap; 
+   display: flex;
+ 
+ 
   padding-bottom: 50px;
-  @include media(pc){
+  @media (max-width:1024px){
     padding-bottom: 30px;
   }
     
-  @include media(md){
+  @include sp{
     padding-top: 10px;
   padding-bottom: 40px;
     flex-direction: column;
@@ -943,7 +925,7 @@ Company
     padding-top: 45%;
     height: 0;
     
-    @include media(md){
+    @include sp{
       width: 100%;
       padding-top:56.25%
     }
@@ -970,11 +952,11 @@ Company
     width: 500px;
     height: 262px;    
     z-index: -1;
-    @include media(pm){
+    @media (max-width:768px) and (min-width:900px) {
       padding:  2rem 4rem 4rem 10rem; 
      height: 232px;
       }
-    @include media(md) {
+    @include sp {
       width: 100%;
       margin-top: 2rem;
       margin-left: 0;
@@ -988,11 +970,11 @@ Company
       padding-top:2rem; 
       padding-bottom: 0.7rem;    
       padding-left: 13rem;
-      @include media(pm){
+      @media (max-width:768px) and (min-width:900px) {
         font-size: 1.8rem;
         padding-left: 10rem;
       }
-      @include media(md){
+      @include sp{
         padding-left: 2rem;
       }
     }
@@ -1001,12 +983,12 @@ Company
       padding-left: 13rem;
       padding-bottom: 1.2rem;
        line-height: calc(25/16);
-       @include media(pm){
+       @media (max-width:768px) and (min-width:900px) {
         font-size: 1.5rem;
         padding-bottom: 1rem;
         padding-left: 10rem;
       }
-      @include media(md){
+      @include sp{
         font-size: 1.6rem;
         padding-left: 2rem;
       }
@@ -1019,12 +1001,12 @@ Company
       span{
         font-size: 2rem;
       }
-      @include media(pm){
+      @media (max-width:768px) and (min-width:900px) {
         font-size: 1.5rem;
         padding-bottom: 1rem;
         padding-left: 10rem;
       }
-      @include media(md){
+      @include sp{
         padding-left: 1.6rem;
       }
     }
@@ -1037,12 +1019,12 @@ Company
       span{
         font-size: 2rem;
       }
-      @include media(pm){
+      @media (max-width:768px) and (min-width:900px) {
         font-size: 1.5rem;
         padding-bottom: 1.2rem;
         padding-left: 10rem;
       }
-      @include media(md){
+      @include sp{
         padding-left: 1.6rem;
       }
     }
@@ -1061,7 +1043,7 @@ Contact
     font-size: 2rem;
     margin: 0 auto;
   }
-  @include media(md){
+  @include sp{
       padding: 30px;      
   }
 }
@@ -1091,7 +1073,7 @@ Contact
       font-weight: bold;      
     }
   }
-  @include media(md){
+  @include sp{
     padding-bottom: 0.8rem;
   }
 }
@@ -1114,10 +1096,10 @@ Contact
     color:#A0A0A0;
     font-size: 1.6rem;
   }
-  @include media(pm){
+  @media (max-width:768px) and (min-width:900px) {
     width: 315px;
   }
-  @include media(md){
+  @include sp{
     width: 100%;
     
   }
@@ -1183,10 +1165,10 @@ input[type="radio"] {
      border-bottom-width: 1px;
    border-bottom-color: #707070;
    cursor: pointer;
-   @include media(pm){
+   @media (max-width:768px) and (min-width:900px) {
     width: 500px;
   }
-  @include media(md){
+  @include sp{
     width: 100%;
     max-width:315px;
   }
@@ -1207,10 +1189,10 @@ input[type="radio"] {
   width:  800px;
   height: 200px;
   cursor: pointer;
-  @include media(pm){
+  @media (max-width:768px) and (min-width:900px) {
     width: 700px;
   }
-  @include media(md){
+  @include sp{
     width: 100%;
     max-width: 500px;
   }
@@ -1357,7 +1339,7 @@ footer{
     padding-top: 30px;
     .pc-none{
       display:none;
-   @include media(pm){
+   @media (max-width:768px) and (min-width:900px) {
     display:block ;
   }
   }
