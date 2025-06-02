@@ -15,31 +15,33 @@
 </head>
 <body>
   <div id="container">
-    <a id="top"></a>
+   
     <header id="header" class="header">
-      <div class="header-inner wrapper">
+      <div class="header-container">
         <h1 class="logo"><a href="index.html">株式会社北村建設工業</a></h1>
-        
-
-        <!-- PCナビ -->
-        <nav class="nav-pc" id="nav-pc">
-          <ul class="header-nav-list">
-              <li><a class="here" href="#about">ABOUT</a></li>
-              <li><a href="#service">SERVICE</a></li>
-              <li><a href="#works">WORKS</a></li>
-              <li><a href="#news">NEWS</a></li>
-              <li><a href="#company">COMPANY</a></li>
-              <li><a href="#contact">CONTACT</a></li>
-          </ul>  
-          <!-- ハンバーガーアイコン -->       
-            <button id="hamburger-block" class="hamburger">
-              <span class="hamburger-line">
-            </button>                    
+        <div class="header__hb-box sp" >
+          <button class="header__hb-btn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button> 
+        </div>
+               
+        <nav class="header__right pc">
+          <ul class="header__nav-list">
+              <li class="header__nav-list-item"><a class="here" href="#about">ABOUT</a></li>
+              <li class="header__nav-list-item"><a href="#service">SERVICE</a></li>
+              <li class="header__nav-list-item"><a href="#works">WORKS</a></li>
+              <li class="header__nav-list-item"><a href="#news">NEWS</a></li>
+              <li class="header__nav-list-item"><a href="#company">COMPANY</a></li>
+              <li class="header__nav-list-item"><a href="#contact">CONTACT</a></li>
+          </ul>         
+                    
         </nav>
         
         
          <!-- SPメニュー -->
-        <nav id="nav-sp" class="nav-sp" >
+        <!-- <nav id="nav-sp" class="nav-sp" >
           <ul>
             <li><a href="#">ABOUT</a></li>
             <li><a href="#">SERVICE</a></li>
@@ -48,24 +50,21 @@
             <li><a href="#">COMPANY</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>
-        </nav>
-      </div>
-           
-      <div class="menu-bg" id="menu-bg"></div>         
-        
+        </nav> -->
+      </div>   
     </header>
     <main>        
          <!--Fv-->
         <section id="slide-area">
          
-          <div id="fv" class="inner">
-            <div class="slider slider-pc sp-none">
+          <div id="fv">
+            <div class="slider slider-pc pc">
              <div class="slide"><img src="images/FirstView_01.jpg" alt="Slide 1" class="slide-img"></div>
              <div class="slide"><img src="images/FirstView02.jpg" alt="Slide 2" class="slide-img"></div>
              <div class="slide"><img src="images/FirstView03.jpg" alt="Slide 3" class="slide-img"></div>
             </div>
             
-              <div class="slider slider-sp pc-none">
+              <div class="slider slider-sp sp">
                <div class="slide"><img src="images/SP_FirstView-1.jpg" alt="Slide-sp 1" class="slide-img"></div>
                <div class="slide"><img src="images/SP_FirstView-2.jpg" alt="Slide-sp 2" class="slide-img"></div>
                <div class="slide"><img src="images/SP_FirstView-3.jpg" alt="Slide-sp 3" class="slide-img"></div>
@@ -79,10 +78,12 @@
 
         <!--About-->
         <section id="about">
-          <div class="about-inner">
+          <div class="about-container">
             <div class="about-picture">
-              <img class="about-img-pc" src="images/About.jpg" alt="about-img-pc">
-              <img class="about-img-sp" src="images/about-sp.jpg" alt="about-img-sp">
+              <picture>
+                <source media="(min-width: 768px)" srcset="./images/about.jpg">
+                <img src="./images/about-sp.jpg" alt="獣医師や看護師" title="獣医師や看護師">
+              </picture>
             </div>
           <div class="vertical-rl">
           <h2 class="about-title">伝統とイマを繋ぐ</h2>
@@ -102,9 +103,9 @@
 
         <!--Service-->
         <section id="service">
-          <h2 class="section-title">SERVICE</h2>
-          <h3 class="sub-title">サービス</h3>
-          <div class="wrapper">
+          <h2 class="section__title">SERVICE</h2>
+          <h3 class="section__sub-title">サービス</h3>
+          <div class="inner">
             <div class="service-block-left">
               <div class="service-img">
                 <img src="images/PC_SERVICE01.jpg" alt="静岡県U.I様自宅">                
@@ -140,9 +141,9 @@
 
          <!--Works-->
         <section id="works">
-          <h2 class="section-title">WORKS</h2>
-          <h3 class="sub-title">施工事例</h3>
-          <div class="works-inner wrapper">
+          <h2 class="section__title">WORKS</h2>
+          <h3 class="section__sub-title">施工事例</h3>
+          <div class="works-inner inner">
             <ul class="bg-list">
              <li class="bg-item">
               <div class="img-box">
@@ -206,9 +207,9 @@
 
           <!--News-->
         <section id="news">
-          <h2 class="section-title">NEWS</h2>
-          <h3 class="sub-title">お知らせ</h3>
-          <div class="news-inner wrapper">
+          <h2 class="section__title">NEWS</h2>
+          <h3 class="section__sub-title">お知らせ</h3>
+          <div class="news-inner inner">
             <div class="news-block">              
                 <h2 class="news-title">お知らせ</h2>   
                 <div class="news-list">             
@@ -252,9 +253,9 @@
 
         <!--Company-->
         <section id="company">
-          <h2 class="section-title">COMPANY</h2>
-          <h3 class="sub-title">会社概要</h3>
-          <div class="company-inner wrapper">
+          <h2 class="section__title">COMPANY</h2>
+          <h3 class="section__sub-title">会社概要</h3>
+          <div class="company-inner inner">
             <div class="company-block">              
                 <div class="company-map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6706.6221920847265!2d129.84083198858312!3d32.81052119241811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1747165647083!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -274,9 +275,9 @@
 
         <!--Contact-->
         <section id="contact">
-          <h2 class="section-title">CONTACT</h2>
-          <h3 class="sub-title">お問い合わせ</h3>          
-          <div class="contact-inner wrapper">
+          <h2 class="section__title">CONTACT</h2>
+          <h3 class="section__sub-title">お問い合わせ</h3>          
+          <div class="contact-inner inner">
             <p class="contact-p">３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。</p>
             <div class="contact-form">
               <form action="送信先のURL">
@@ -402,7 +403,7 @@
         </section>
         </main>
         <footer>
-          <div class="footer-inner wrapper">
+          <div class="footer-inner inner">
             <div class="footer-logo">
             <p>株式会社 北村建設興業</p>
           </div>
