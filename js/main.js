@@ -1,65 +1,71 @@
-  // カルーセル
-$(document).ready(function() {
-    if (window.innerWidth <= 767) {
+'use strict';
+//    カルーセル
+ $(document).ready(function() {
+     if (window.innerWidth <= 767) {
       $('.slider-sp').css('display', 'block');
-      $('.slider-sp').slick({
-        autoplay: true,       
-        infinite: true,
+       $('.slider-sp').slick({
+         autoplay: true,       
+         infinite: true,
         autoplaySpeed: 5000,
-        arrows: false,
-        cssEase: 'linear'
-      });
-    } else {
-      $('.slider-pc').slick({
+         arrows: false,
+         cssEase: 'linear'
+       });
+     } else {
+       $('.slider-pc').slick({
         autoplay: true,
-        infinite: true,
+         infinite: true,
         autoplaySpeed: 5000,
         arrows: false,
-        cssEase: 'linear'
-      });
-    }
-  });
+         cssEase: 'linear'
+       });
+     }
+   });
 
 //ヘッダー追従
 window.addEventListener("scroll", function () {
-  const header = document.querySelector(".header");
+  const header = document.querySelector("#header");
   header.classList.toggle("scroll-nav", window.scrollY > 100);
 });
  
  
- // ハンバーガー   
-$("#hamburger-block").click(function() {
-  $(".nav-sp").toggle(300); // メニュー表示/非表示
-  $(".hamburger").toggleClass("active"); // ハンバーガー見た目切り替え
+ // ハンバーガー  
+$(function(){
+
+  $('.header__hb-btn').click(function(){
+    $(this).toggleClass('active');
+    $('.header__nav-list').toggleClass('active')
+  });
+}) ;
+ 
+
+// $("#hamburger-block").click(function() {
+//   $(".nav-sp").toggle(300); // メニュー表示/非表示
+//   $(".hamburger").toggleClass("active"); // ハンバーガー見た目切り替え
+// });
+
+//モーダル
+const modalBtns = document.querySelectorAll(".modal-toggle");
+modalBtns.forEach(function (btn) {
+  btn.onclick = function () {
+    var modal = btn.getAttribute('data-modal');
+    document.getElementById(modal).style.display = "block";
+  };
+});
+const closeBtns = document.querySelectorAll(".modal-close");
+closeBtns.forEach(function (btn) {
+  btn.onclick = function () {
+    var modal = btn.closest('.modal');
+    modal.style.display = "none";
+  };
 });
 
+window.onclick = function (event) {
+  if (event.target.className === "modal") {
+    event.target.style.display = "none";
+  }
+};
 
-    // モーダルを開く
-  document.querySelectorAll(".bg-item .img-box > img").forEach((img) => {
-    img.addEventListener("click", () => {
-      const modalImgSrc = img.getAttribute("data-modal-img"); // 別画像
-      const caption = img.getAttribute("alt");
-
-      // モーダル表示
-      const modal = document.querySelector(".modal-block");
-      modal.style.display = "flex";
-      modal.querySelector("#popup").setAttribute("src", modalImgSrc);
-      modal.querySelector(".caption").textContent = caption;
-    });
-  });
-
-  // モーダルの背景クリックで閉じる
-  document.querySelector(".modal-block").addEventListener("click", (e) => {
-    if (e.target === e.currentTarget) {
-      e.currentTarget.style.display = "none";
-    }
-  });
-
-  // 閉じるボタンがある場合（例：spanタグ）に閉じる
-  document.querySelector(".img-section > span").addEventListener("click", () => {
-    document.querySelector(".modal-block").style.display = "none";
-  });
-
+   
 
 
 //TOPに戻るボタン
