@@ -225,6 +225,7 @@ a {
   line-height: 1.5;
   color: #000;
   margin-top: 8px;
+  padding-left: 6px;
 }
 
 /*---------戻るボタン-------*/
@@ -1172,9 +1173,9 @@ News
       -ms-flex-align: start;
           align-items: flex-start;
   text-decoration: none;
-  -webkit-column-gap: 7.7272727273%;
-     -moz-column-gap: 7.7272727273%;
-          column-gap: 7.7272727273%;
+  -webkit-column-gap: 7.3913043478%;
+     -moz-column-gap: 7.3913043478%;
+          column-gap: 7.3913043478%;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -1264,7 +1265,7 @@ Company
 -------------------*/
 .company__container {
   padding-top: 80px;
-  padding-bottom: 131px;
+  padding-bottom: 81px;
 }
 @media only screen and (max-width: 767px) {
   .company__container {
@@ -1287,6 +1288,7 @@ Company
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 50px;
 }
 .company__box iframe {
   width: 100%;
@@ -1331,21 +1333,16 @@ Company
 .company__box-text {
   position: absolute;
   right: 0;
-  top: 29.6296296296vh;
+  top: 205px;
   background-color: #4D9600;
   color: #fff;
   font-weight: 600;
   width: 46.2962962963vw;
   max-width: 500px;
-  max-height: 250px;
-  padding-top: 4.6296296296vw;
+  max-height: 262px;
+  padding-top: 4.537037037vw;
   padding-bottom: 3.8888888889vw;
   z-index: 1;
-}
-@media screen and (max-width: 900px) {
-  .company__box-text {
-    left: 40.7407407407vw;
-  }
 }
 @media only screen and (max-width: 767px) {
   .company__box-text {
@@ -1364,7 +1361,6 @@ Company
   .company__box-text {
     width: 100%;
     max-width: 100%;
-    padding: 20px;
     margin-top: 22px;
     aspect-ratio: auto;
   }
@@ -1373,27 +1369,29 @@ Company
 .company__box-text p {
   padding-left: 220px;
 }
-@media only screen and (max-width: 767px) {
+@media screen and (min-width: 1080px) {
   .company__box-text p {
-    padding-left: 0;
+    padding-left: 220px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .company__box-text p {
+    padding-left: 140px;
   }
 }
 
 .company-title {
   font-size: 2rem;
-  padding-top: 20px;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
 }
 @media (max-width: 768px) and (min-width: 900px) {
   .company-title {
     font-size: 1.8rem;
-    padding-left: 100px;
   }
 }
 @media only screen and (max-width: 767px) {
   .company-title {
     padding-top: 0;
-    padding-left: 20px;
     margin-bottom: 10px;
   }
 }
@@ -1406,39 +1404,34 @@ Company
   .company-address {
     font-size: 1.5rem;
     max-width: 10px;
-    padding-left: 100px;
   }
 }
 @media only screen and (max-width: 767px) {
   .company-address {
     font-size: 1.6rem;
-    padding-left: 20px;
     margin-bottom: 10px;
   }
 }
 
 .company-tel {
-  padding-bottom: 12px;
+  margin-bottom: 12px;
 }
-.company-tel span {
+.company-tel a {
   font-size: 2.2rem;
 }
 @media (max-width: 768px) and (min-width: 900px) {
   .company-tel {
     font-size: 1.5rem;
     padding-bottom: 10px;
-    padding-left: 100px;
   }
 }
 @media only screen and (max-width: 767px) {
   .company-tel {
-    padding-left: 16px;
     margin-bottom: 4px;
   }
 }
 
 .company-email {
-  padding-bottom: 1.9rem;
   line-height: 1.5625;
 }
 .company-email span {
@@ -1448,12 +1441,10 @@ Company
   .company-email {
     font-size: 1.5rem;
     padding-bottom: 1.2rem;
-    padding-left: 10rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .company-email {
-    padding-left: 16px;
     padding-bottom: 0;
   }
 }
@@ -1462,23 +1453,23 @@ Company
 Contact
 -------------------*/
 .contact__container {
-  padding-top: 8rem;
+  padding-top: 90px;
   position: relative;
-}
-.contact__container p {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto;
 }
 
 .contact__content {
   margin-top: 35px;
+  padding-inline: 60px;
+}
+
+.contact-p {
+  text-align: left;
+  font-size: 2rem;
+  margin: 0 auto;
 }
 
 .contact-form {
-  padding-top: 7rem;
+  margin-top: 78px;
   font-size: 2rem;
 }
 
@@ -1507,7 +1498,7 @@ Contact
 }
 
 .form-area:not(:first-of-type) {
-  margin-top: 30px;
+  margin-top: 45px;
 }
 @media only screen and (max-width: 767px) {
   .form-area:not(:first-of-type) {
@@ -1516,8 +1507,8 @@ Contact
 }
 
 .form-area dt {
-  width: 16.9rem;
-  height: 4rem;
+  width: 169px;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1526,7 +1517,6 @@ Contact
           align-items: center;
   font-size: 2rem;
   line-height: 1.65;
-  font-weight: bold;
 }
 @media only screen and (max-width: 767px) {
   .form-area dt {
@@ -1542,30 +1532,35 @@ Contact
       -ms-flex: 1;
           flex: 1;
 }
-.form-area dd::-webkit-input-placeholder {
+
+::-webkit-input-placeholder {
   color: #A0A0A0;
   font-size: 1.6rem;
 }
-.form-area dd::-moz-placeholder {
+
+::-moz-placeholder {
   color: #A0A0A0;
   font-size: 1.6rem;
 }
-.form-area dd:-ms-input-placeholder {
+
+:-ms-input-placeholder {
   color: #A0A0A0;
   font-size: 1.6rem;
 }
-.form-area dd::-ms-input-placeholder {
+
+::-ms-input-placeholder {
   color: #A0A0A0;
   font-size: 1.6rem;
 }
-.form-area dd::placeholder {
+
+::placeholder {
   color: #A0A0A0;
   font-size: 1.6rem;
 }
 
 .form-control {
   width: 100%;
-  height: 40px;
+  height: 50px;
   background: #fff;
   padding: 0 10px;
   display: block;

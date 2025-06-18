@@ -108,6 +108,7 @@ a {
   line-height: calc(33/22);
   color: #000;
   margin-top: 8px;
+  padding-left:6px;
 
 }
 
@@ -636,7 +637,6 @@ service
   @media screen and (max-width: 540px) {
     width: 100%;
     max-width: 100%;
-
     padding-top: 20px;
     margin-top: 0;
     aspect-ratio: auto;
@@ -944,7 +944,7 @@ News
   display: flex;
   align-items: flex-start;
   text-decoration: none;
-  column-gap: calc(68/880*100%);
+  column-gap: calc(68/920*100%);
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -1024,7 +1024,7 @@ Company
 -------------------*/
 .company__container {
   padding-top: 80px;
-  padding-bottom: 131px;
+  padding-bottom: 81px;
 
   @include sp {
     padding-top: 49px;
@@ -1043,6 +1043,7 @@ Company
 .company__box {
   position: relative;
   display: flex; 
+  margin-bottom: 50px;
 
   iframe {
     width: 100%;
@@ -1063,6 +1064,7 @@ Company
   max-width: 600px;
   aspect-ratio: 600/400;
   z-index: 10;
+  
 
   @include sp {
     width: 100%;
@@ -1080,21 +1082,20 @@ Company
 .company__box-text {
   position: absolute;
   right: 0;
-  top: calc(320/1080*100vh);
+  top: 205px;
   background-color: #4D9600;
   color: #fff;
   font-weight: 600;
   width: calc(500/1080*100vw);
   max-width: 500px;
-  max-height: 250px;
-  padding-top: calc(50/1080*100vw);
+  max-height: 262px;
+  padding-top:calc(49/1080*100vw);
   padding-bottom: calc(42/1080*100vw);
   z-index: 1;
-
-  @media screen and (max-width: 900px) {
-    left: calc(440/1080*100vw);
-  }
-
+ 
+  // @media screen and (max-width: 950px){
+  //   padding-top: 35px;
+  // }
   @include sp {
     position: static;
     transform: none;
@@ -1107,37 +1108,38 @@ Company
   }
 
   @media screen and (max-width: 540px) {
-
     width: 100%;
-    max-width: 100%;
-    padding: 20px;
+    max-width: 100%;    
     margin-top: 22px;
     aspect-ratio: auto;
   }
 
 }
 
+
 .company__box-text p {
   padding-left: 220px;
-  @include sp{
-    padding-left: 0;
+  @media screen and (min-width: 1080px) {
+    padding-left: 220px;
+     }
+  @media screen and (max-width: 950px) {
+     padding-left: 140px;
+   }
   }
-}
 
 
 .company-title {
-  font-size: 2rem;
-  padding-top: 20px;
-  margin-bottom: 7px;
+  font-size: 2rem; 
+  margin-bottom: 9px;
 
   @media (max-width:768px) and (min-width:900px) {
     font-size: 1.8rem;
-    padding-left: 100px;
+    
   }
 
   @include sp {
     padding-top: 0;
-    padding-left: 20px;
+    
     margin-bottom: 10px;
   }
 }
@@ -1150,38 +1152,36 @@ Company
   @media (max-width:768px) and (min-width:900px) {
     font-size: 1.5rem;
     max-width: 10px;
-    padding-left: 100px;
+    
   }
 
   @include sp {
     font-size: 1.6rem;
-    padding-left: 20px;
+    
     margin-bottom: 10px;
   }
 }
 
-.company-tel {
- 
-  padding-bottom: 12px;  
+.company-tel { 
+  margin-bottom: 12px;  
 
-  span {
+  a {
     font-size: 2.2rem;
   }
 
   @media (max-width:768px) and (min-width:900px) {
     font-size: 1.5rem;
     padding-bottom: 10px;
-    padding-left: 100px;
+    
   }
 
   @include sp {
-    padding-left: 16px;
+   
     margin-bottom: 4px;
   }
 }
 
-.company-email {  
-  padding-bottom: 1.9rem;
+.company-email { 
   line-height: calc(25/16);  
 
   span {
@@ -1191,11 +1191,11 @@ Company
   @media (max-width:768px) and (min-width:900px) {
     font-size: 1.5rem;
     padding-bottom: 1.2rem;
-    padding-left: 10rem;
+   
   }
 
   @include sp {
-    padding-left: 16px;
+    
     padding-bottom: 0;
   }
 }
@@ -1207,22 +1207,24 @@ Contact
 -------------------*/
 
 .contact__container {
-  padding-top: 8rem;
+  padding-top:90px;
   position: relative;
 
-  p {
-    justify-content: center;
-    font-size: 2rem;
-    margin: 0 auto;
-  } 
 }
 
 .contact__content {
   margin-top: 35px;
+ 
+  padding-inline: 60px;
 }
+ .contact-p {
+    text-align: left;
+    font-size: 2rem;
+    margin: 0 auto;
+  } 
 
 .contact-form {
-  padding-top: 7rem;
+ margin-top: 78px;
   font-size: 2rem;
 }
 
@@ -1244,7 +1246,7 @@ Contact
 }
 
 .form-area:not(:first-of-type) {
-  margin-top: 30px;
+  margin-top: 45px;
 
   @include sp {
     margin-top: 17px;
@@ -1252,13 +1254,13 @@ Contact
 }
 
 .form-area dt {
-  width: 16.9rem;
-  height: 4rem;
+  width: 169px;
+  height: 50px;
   display: flex;
   align-items: center;
   font-size: 2rem;
   line-height: calc(33 / 20);
-  font-weight: bold;
+ 
 
   @include sp {
     width: 100%;
@@ -1270,16 +1272,16 @@ Contact
 
 .form-area dd {
   flex: 1;
+}
 
-  &::placeholder {
+::placeholder {
     color: #A0A0A0;
     font-size: 1.6rem;
   }
-}
 
 .form-control {
   width: 100%;
-  height: 40px;
+  height: 50px;
   background: #fff;
   padding: 0 10px;
   display: block;
