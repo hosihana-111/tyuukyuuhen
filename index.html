@@ -43,30 +43,38 @@
     </header>
     <main>        
          <!--Fv-->
-        <section id="slide-area">
-         
-          <div id="fv">
-             <div class="slider slider-pc pc">
-             <div class="slide"><img src="./images/fv/pc_firstview_01.jpg" alt="Slide_1" class="slide-img"></div>
-             <div class="slide"><img src="./images/fv/pc_firstview_02.jpg" alt="Slide_2" class="slide-img"></div>
-             <div class="slide"><img src="./images/fv/pc_firstview_03.jpg" alt="Slide_3" class="slide-img"></div>
-            </div>
-            
-              <div class="slider slider-sp sp">
-               <div class="slide"><img src="./images/fv/sp_firstview_01.jpg" alt="Slide-sp_1" class="slide-img"></div>
-               <div class="slide"><img src="./images/fv/sp_firstview_02.jpg" alt="Slide-sp_2" class="slide-img"></div>
-               <div class="slide"><img src="./images/fv/sp_firstview_03.jpg" alt="Slide-sp_3" class="slide-img"></div>
+        <section id="fv"  class="fv">         
+                  
+              <div class="slider">
+               <div class="slide">
+                <picture>
+                <source media="(min-width: 768px)" srcset="./images/fv/pc_firstview_01.jpg">
+                <img src="./images/fv/sp_firstview_01.jpg" alt="Slide-sp_1" class="slide-img">
+                </picture>
+              </div>
+               <div class="slide">
+                <picture>
+                <source media="(min-width: 768px)" srcset="./images/fv/pc_firstview_02.jpg">
+                <img src="./images/fv/sp_firstview_02.jpg" alt="Slide-sp_2" class="slide-img">
+                </picture>
+              </div>
+               <div class="slide">
+                <picture>
+                <source media="(min-width: 768px)" srcset="./images/fv/pc_firstview_03.jpg">
+                <img src="./images/fv/sp_firstview_03.jpg" alt="Slide-sp_3" class="slide-img">
+                </picture>
+              </div>
               </div> 
        
             <div class="fv__content">
               <p class="page-title">永遠も。<br class="sp">瞬間も。<br>あなたと共に。</p>
             </div>
-          </div>
+         
         </section>
         <a class="page-top" href="#"><img src="images/gotop.png" alt="トップへ戻る"></a>
 
         <!--About-->
-        <section id="about">
+        <section id="about" class="about">
           <div class="about__container">
             <div class="about-picture">
               <picture>
@@ -91,7 +99,7 @@
         </section>
 
         <!--Service-->
-        <section id="service" class="section-bg">          
+        <section id="service" class="service section-bg">          
           <div class="inner">
             <h2 class="section__title">SERVICE</h2>
             <h3 class="section__sub-title">サービス</h3>
@@ -101,8 +109,8 @@
                 <picture>
                 <source media="(min-width: 768px)" srcset="./images/service/pc_service_01.jpg">
                 <img src="./images/service/sp_service_01.jpg" alt="自然素材と伝統技術を活かした住宅を提案する建設会社の女性スタッフ" title="伝統技術と自然素材を活かした住宅を提案する北村建設工業">
-                <p class="service__box-img-p">静岡県U.I様自宅</p>  
                 </picture>
+                <p class="service__box-img-p">静岡県U.I様自宅</p>  
               </div>
               <div class="service__box-text">
                 <p class="service-tittle">新築<br class="pc">（土地探し〜建築）</p>
@@ -110,14 +118,14 @@
               </div>
             </div>
             <div class="service__box">
-              <div class="service__box-img reverse__box-img">
+              <div class="service__box-img">
                 <picture>
                 <source media="(min-width: 768px)" srcset="./images/service/pc_service_02.jpg">
                 <img src="./images/service/sp_service_02.jpg" alt="北海道富良野市ブックカフェ" title="北海道富良野市ブックカフェ">
-                <p class="service__box-img-p2">北海道富良野市ブックカフェ</p>  
                 </picture>
+                <p class="service__box-img-p">北海道富良野市ブックカフェ</p>  
               </div>
-              <div class="service__box-text reverse__box-text">
+              <div class="service__box-text">
                 <p class="service-tittle">リフォーム<br>リノベーション</p>
                 <p class="service-desc">温かみと雰囲気をそのままに<br>住み心地、使い心地を<br>追求しご提供いたします。</p>
               </div>
@@ -127,8 +135,8 @@
                 <picture>
                 <source media="(min-width: 768px)" srcset="./images/service/pc_service_03.jpg">
                 <img src="./images/service/sp_service_03.jpg" alt="自然素材と伝統技術を活かした住宅を提案する建設会社の女性スタッフ" title="伝統技術と自然素材を活かした住宅を提案する北村建設工業">
-                <p class="service__box-img-p">広島県竹原市</p>  
                 </picture>
+                <p class="service__box-img-p">広島県竹原市</p>  
               </div>
               <div class="service__box-text">
                 <p class="service-tittle">都市計画〜開発<br>公共施設</p>
@@ -140,11 +148,11 @@
         </section>
 
         <!--Works-->
-        <section id="works" class="works__container">
+        <section id="works" class="works">
           <div class="inner">
           <h2 class="section__title">WORKS</h2>
           <h3 class="section__sub-title">施工事例</h3>
-          
+          <div  class="works__container">
             <div class="modal__items">
               <button class="modal-toggle btn-example" data-modal="modalOne">
               <div class="modal__item">
@@ -198,9 +206,10 @@
                 </div>
               </div>
             </button>
-            </div>
-            
+            </div>            
           </div>
+          </div>
+            
         <!-- modalOne -->
         <div id="modalOne" class="modal">
           <div class="modal-content">
@@ -256,13 +265,13 @@
        
 
           <!--News-->
-        <section id="news" class="news__container section-bg">
+        <section id="news" class="news section-bg">
           <div class="inner">
             <h2 class="section__title">NEWS</h2>
             <h3 class="section__sub-title">お知らせ</h3>
-            <div class="news__content">
+            <div class="news__container">
               <div class="news-block">              
-                <h4 class="news-title">お知らせ</h4> 
+                <h4 class="news-title">お知らせ</h4>                
                 <ul class="news-items">
                   <li>
                      <a href="" title="news" class="news-item">
@@ -315,11 +324,11 @@
         </section>
 
         <!--Company-->
-        <section id="company" class="company__container">
+        <section id="company" class="company">
           <div class="inner">
           <h2 class="section__title">COMPANY</h2>
           <h3 class="section__sub-title">会社概要</h3>
-          <div class="company__content">
+          <div class="company__container">
             <div class="company__box">
               <div class="company-map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6706.6221920847265!2d129.84083198858312!3d32.81052119241811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1747165647083!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -331,7 +340,7 @@
                   長崎県長崎市横尾〇丁目〇-〇
                 </p>
                 <p class="company-tel">TEL <a href="tel:000-000-0000">000-000-0000</a></p>
-                <p class="company-email">Mail　info@example.com</p>
+                <p class="company-email">Mail　<a href="mailto:info@example.com">info@example.com</a></p>
               </div>
             </div>                       
               <div class="company-text">
@@ -344,11 +353,11 @@
         </section>
 
         <!--Contact-->
-        <section id="contact" class="contact__container section-bg">
+        <section id="contact" class="contact section-bg">
           <div class="inner">
           <h2 class="section__title">CONTACT</h2>
           <h3 class="section__sub-title">お問い合わせ</h3>        
-          <div class="contact__content">
+          <div class="contact__container">
              <p class="contact-p">３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。</p>
             <div class="contact-form">
               <form action="">
@@ -392,7 +401,7 @@
                          </select>  
                       </dd>
                     </dl>
-                    <dl class="form-area">
+                    <dl class="form-block-area">
                       <dt>
                         <label for="your-message">内容<span class="contact-span">*</span></label>
                       </dt>
@@ -400,7 +409,7 @@
                         <textarea name="your-message" id="your-message" class="form-control form-textarea" cols="30" rows="10"></textarea>
                       </dd>
                     </dl>
-                    <dl class="form-area">
+                    <dl class="form-block-area">
                       <dt> <label class="contact-checkbox-label">何を見て当社HPを知りましたか？ (複数回答可) <span class="contact-span">*</span></label></dt>
                       <dd>
                         <div class="checkbox-group">

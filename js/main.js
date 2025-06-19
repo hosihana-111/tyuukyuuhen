@@ -1,79 +1,16 @@
 'use strict';
-//    カルーセル
-//  $(document).ready(function() {
-//      if (window.innerWidth <= 767) {
-//       $('.slider-sp').css('display', 'block');
-//        $('.slider-sp').slick({
-//          autoplay: true,       
-//          infinite: true,
-//         autoplaySpeed: 5000,
-//          arrows: false,
-//          cssEase: 'linear'
-//        });
-//      } else {
-//        $('.slider-pc').slick({
-//         autoplay: true,
-//          infinite: true,
-//         autoplaySpeed: 5000,
-//         arrows: false,
-//          cssEase: 'linear'
-//        });
-//      }
-//    });
-$(document).ready(function () {
-  let currentMode = '';
-
-  function initializeSlider() {
-    const windowWidth = window.innerWidth;
-
-    if (windowWidth <= 767 && currentMode !== 'SP') {
-      // PCスライダーを破棄
-      if ($('.slider-pc').hasClass('slick-initialized')) {
-        $('.slider-pc').slick('unslick');
-      }
-
-      // SPスライダーを表示＆初期化
-      $('.slider-sp').css('display', 'block');
-      if (!$('.slider-sp').hasClass('slick-initialized')) {
-        $('.slider-sp').slick({
-          autoplay: true,
-          infinite: true,
-          autoplaySpeed: 5000,
-          arrows: false,
+    // カルーセル
+  $(document).ready(function() {
+     
+      $('.slider').slick({
+         autoplay: true,
+        infinite: true,
+         autoplaySpeed: 5000,
+         arrows: false,
           cssEase: 'linear'
-        });
-      }
+        });      
+    });
 
-      currentMode = 'SP';
-    } else if (windowWidth > 767 && currentMode !== 'PC') {
-      // SPスライダーを破棄
-      if ($('.slider-sp').hasClass('slick-initialized')) {
-        $('.slider-sp').slick('unslick');
-      }
-
-      // PCスライダーを初期化
-      if (!$('.slider-pc').hasClass('slick-initialized')) {
-        $('.slider-pc').slick({
-          autoplay: true,
-          infinite: true,
-          autoplaySpeed: 5000,
-          arrows: false,
-          cssEase: 'linear'
-        });
-      }
-
-      currentMode = 'PC';
-    }
-  }
-
-  // 初期化
-  initializeSlider();
-
-  // ウィンドウリサイズ時に再判定
-  $(window).on('resize', function () {
-    initializeSlider();
-  });
-});
 
 //ヘッダー追従
 window.addEventListener("scroll", function () {
