@@ -77,3 +77,9 @@ const scrollTopBtn = document.querySelector('.page-top');
       behavior: 'smooth'
     });
   });
+//プライバシーポリシー
+  document.querySelector('.toggle-policy').addEventListener('click', function () {
+  const box = document.querySelector('.privacy-policy-box');
+  box.classList.toggle('expanded');
+  this.textContent = box.classList.contains('expanded') ? '閉じる' : '全文を読む';
+});
