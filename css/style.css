@@ -153,7 +153,6 @@ html {
 body {
   color: var(--font-color);
   font-family: var(--font-sans);
-  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   margin: 0;
@@ -274,7 +273,7 @@ header
 }
 #header.scroll-nav {
   top: 0;
-  background-color: rgb(77, 150, 0);
+  background-color: var(--main-color);
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -469,7 +468,7 @@ header
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
+  color: #fff;
   text-decoration: none;
   padding: 0 16px;
   font-size: 1.8rem;
@@ -485,7 +484,7 @@ header
   left: 10%;
   width: 0;
   height: 2px;
-  background-color: white;
+  background-color: #fff;
   -webkit-transition: width 0.3s ease;
   transition: width 0.3s ease;
 }
@@ -581,7 +580,7 @@ slide-area
   width: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: white;
+  color: #fff;
   text-align: center;
   font-size: 4rem;
   font-weight: 700;
@@ -773,7 +772,7 @@ service
 }
 
 .service__box-text {
-  background-color: #4D9600;
+  background-color: var(--main-color);
   width: 54.347826087%;
   max-width: 500px;
   font-weight: 700;
@@ -1115,8 +1114,8 @@ News
 
 .news-title,
 .blog-title {
-  background-color: #4D9600;
-  color: white;
+  background-color: var(--main-color);
+  color: #fff;
   padding: 10px 20px;
   font-size: 2rem;
   font-weight: 700;
@@ -1137,6 +1136,9 @@ News
 }
 .news-items li {
   border-bottom: 1px solid #55A500;
+}
+.news-items li:last-child {
+  border-bottom: none;
 }
 @media only screen and (max-width: 767px) {
   .news-items {
@@ -1341,7 +1343,7 @@ Company
 }
 
 .company__box-text {
-  background-color: #4D9600;
+  background-color: var(--main-color);
   color: #FFF;
   width: 54.347826087%;
   max-width: 500px;
@@ -2019,7 +2021,7 @@ input[type=radio]:checked:before {
   padding-bottom: 1px;
 }
 .form-submit:hover {
-  color: #4D9600;
+  color: var(--main-color);
   background-color: #fff;
   border: 1px solid #4D9600;
 }
@@ -2128,7 +2130,7 @@ footer {
 }
 
 .footer__copyright {
-  background-color: #4D9600;
+  background-color: var(--main-color);
   color: #fff;
   font-size: 2rem;
   padding-block: 30px;

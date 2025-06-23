@@ -132,8 +132,17 @@ window.addEventListener('scroll', () => {
 
 
 //プライバシーポリシー
-  document.querySelector('.toggle-policy').addEventListener('click', function () {
-  const box = document.querySelector('.privacy-policy-box');
-  box.classList.toggle('expanded');
-  this.textContent = box.classList.contains('expanded') ? '閉じる' : '全文を読む';
-});
+//   document.querySelector('.toggle-policy').addEventListener('click', function () {
+//   const box = document.querySelector('.privacy-policy-box');
+//   box.classList.toggle('expanded');
+//   this.textContent = box.classList.contains('expanded') ? '閉じる' : '全文を読む';
+// });
+
+const toggleBtn = document.querySelector('.toggle-policy');
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', function () {
+    const box = document.querySelector('.privacy-policy-box');
+    box.classList.toggle('expanded');
+    this.textContent = box.classList.contains('expanded') ? '閉じる' : '全文を読む';
+  });
+}

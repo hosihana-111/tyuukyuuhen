@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // outline: 1px solid rgba(255, 0, 0, 0.2);
+ 
 }
 
 :root {
@@ -31,8 +31,7 @@ html {
 
 body {
   color: var(--font-color);
-  font-family: var(--font-sans);
-  font-optical-sizing: auto;
+  font-family: var(--font-sans); 
   font-weight: 500;
   font-style: normal;
   margin: 0;
@@ -51,9 +50,7 @@ img {
   display: block;
 }
 
-// li {
-//   list-style: none;
-// }
+
 
 a {
   text-decoration: none;
@@ -64,9 +61,7 @@ a {
   max-width: 980px;
   margin-inline: auto;
   padding-inline: 30px;
-  // @include sp {
-  //         padding-inline: 20px;
-  //     }
+  
 }
 
 .section-bg {
@@ -166,7 +161,7 @@ header
 
   &.scroll-nav {
     top: 0; // スクロール後：上に表示
-    background-color: rgb(77, 150, 0);
+    background-color: var(--main-color);;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
 
@@ -333,7 +328,7 @@ header
     height: inherit;
     display: flex;
     align-items: center;
-    color: white;
+    color: #fff;
     text-decoration: none;
     padding: 0 16px;
     font-size: 1.8rem;
@@ -349,7 +344,7 @@ header
       left: 10%;
       width: 0;
       height: 2px;
-      background-color: white;
+      background-color: #fff;
       transition: width 0.3s ease;
 
     }
@@ -446,7 +441,7 @@ slide-area
   left: 50.5%;
   width: 100%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #fff;
   text-align: center;
   font-size: 4rem;
   font-weight: 700;
@@ -610,7 +605,7 @@ service
 }
 
 .service__box-text {
-  background-color: #4D9600;
+  background-color:var(--main-color);;
   width: calc(500/920*100%);
   max-width: 500px;
   font-weight: 700;
@@ -900,8 +895,8 @@ News
 
 .news-title,
 .blog-title {
-  background-color: #4D9600;
-  color: white;
+  background-color:var(--main-color);;
+  color: #fff;
   padding: 10px 20px;
   font-size: 2rem;
   font-weight: 700;
@@ -917,6 +912,9 @@ News
 
   li {
     border-bottom: 1px solid #55A500;
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   @include sp {
@@ -1098,7 +1096,7 @@ Company
 
 
 .company__box-text {
-  background-color: #4D9600;
+  background-color: var(--main-color);;
   color: #FFF;
   width: calc(500/920*100%);
   max-width: 500px;
@@ -1725,7 +1723,7 @@ input[type="radio"] {
   padding-bottom: 1px;
 
   &:hover {
-    color: #4D9600;
+    color: var(--main-color);;
     background-color: #fff;
     border: 1px solid #4D9600;
   }
@@ -1828,7 +1826,7 @@ footer {
 }
 
 .footer__copyright {
-  background-color: #4D9600;
+  background-color: var(--main-color);;
   color: #fff;
   font-size: 2rem;
   padding-block: 30px;
