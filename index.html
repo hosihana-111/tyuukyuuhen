@@ -276,7 +276,7 @@
                   <li>
                      <a href="" title="news" class="news-item">
                        <time datetime="0000-00-00"  class="news-date">0000.00</time>
-                       <p class="news-text">公式Instagram、Youtube始めました。</p>
+                       <p class="news-text">公式Instagram、YouTubeはじめました。</p>
                       </a>
                   </li>
                   <li>
@@ -337,11 +337,11 @@
               <div class="company__box-text">
                 <p class="company-title">株式会社 北村建設興業</p>
                 <p class="company-address">
-                  〒852-8065<br>
+                  <span>〒852-8065</span><br>
                   長崎県長崎市横尾〇丁目〇-〇
                 </p>
                 <p class="company-tel">TEL <a href="tel:000-000-0000">000-000-0000</a></p>
-                <p class="company-email">Mail　<a href="mailto:info@example.com">info@example.com</a></p>
+                <p class="company-email">Mail<a href="mailto:info@example.com">info@example.com</a></p>
               </div>
               
             </div>      
@@ -359,7 +359,7 @@
             <div class="contact-form">
               <form action="">
                   <div class="contact-sec__form-block">
-                    <dl class="form-area">
+                    <dl class="form-area form-area-name">
                       <dt>
                         <label for="your-name">お名前<span class="contact-span">*</span></label>
                       </dt>
@@ -367,9 +367,9 @@
                         <input type="text" name="your-name" id="your-name" placeholder="例：北村太郎" class="form-control">                        
                       </dd>
                     </dl>
-                    <dl class="form-area">
+                    <dl class="form-area form-area-gender">
                       <dt>
-                        <label for="gender">性別<span class="contact-span">*</span></label>
+                        <label for="gender">性別</label>
                       </dt>
                       <dd>
                         <div class="contact-radio">
@@ -378,7 +378,7 @@
                         </div> 
                       </dd>
                     </dl>
-                    <dl class="form-area">
+                    <dl class="form-area form-area-email">
                       <dt>
                         <label for="your-email" >メールアドレス<span class="contact-span">*</span></label>
                       </dt>
@@ -386,7 +386,7 @@
                         <input type="email" name="your-email" id="your-email" placeholder="例：aaaaaaaa@gmail.com" class="form-control">
                       </dd>
                     </dl>
-                    <dl class="form-area">
+                    <dl class="form-area form-area-select">
                       <dt>
                         <label for="select" >問い合わせ種別</label>
                       </dt>
@@ -398,7 +398,7 @@
                          </select>  
                       </dd>
                     </dl>
-                    <dl class="form-block-area">
+                    <dl class="form-block-area form-area-message">
                       <dt>
                         <label for="your-message">内容<span class="contact-span">*</span></label>
                       </dt>
@@ -406,7 +406,7 @@
                         <textarea name="your-message" id="your-message" class="form-control form-textarea" cols="30" rows="10"></textarea>
                       </dd>
                     </dl>
-                    <dl class="form-block-area">
+                    <dl class="form-block-area form-area-checkbox">
                       <dt> <label class="contact-checkbox-label">何を見て当社HPを知りましたか？ (複数回答可) <span class="contact-span">*</span></label></dt>
                       <dd>
                         <div class="checkbox-group">
@@ -443,14 +443,14 @@
                   <label class="contact-label">個人情報保護方針</label>
                 </div>
                 <div class="privacy-policy-box">
-                  
+                  <div class="policy-scroll-content">
                   <h3 class="privacy-policy-box-title">個人情報取扱事業者の氏名又は名称(法24条1項1号)</h3>
-                  <p>株式会社北村建設興業</p>
+                  <p>株式会社 北村建設興業</p>
                   
                 <div class="policy-block">
                   <div class="policy-title">個人情報の取り扱い</div>
                   <div class="policy-text">
-                      弊社は、個人情報保護に関連する法令を遵守し、お客様からご提供いただく個人情報を細心の注意を払って取り扱っております。このプライバシーポリシーでは、当社におけるお客様の個人情報の取扱いについてご説明しております。
+                      弊社は、個人情報保護に関連する法令を遵守し、お客様からご提供いただく個人情報を、細心の注意を払って取り扱っております。このプライバシーポリシーでは、当社におけるお客様の個人情報の取扱いについてご説明しております。
                   </div>
                 </div>
 
@@ -525,13 +525,14 @@
                       <p>弊社の個人情報の取扱いに関するお問合せは、下記までお問い合せください。</p>
                     
                       <div class="policy-address">
-                      <p>社名　株式会社北村建設興業</p>
-                      <p>住所　長崎県長崎市横尾○丁目○-○</p>
-                      <p>電話　000-000-0000</p>
-                      <p>FAX　000-000-0000</p>
-                      <p>メールアドレス　info@example.com</p>
+                      <p>社名　　株式会社北村建設興業</p>
+                      <p>住所　　長崎県長崎市横尾○丁目○-○</p>
+                      <p>電話　　000-000-0000</p>
+                      <p>FAX　　000-000-0000</p>
+                      <p>メールアドレスinfo@example.com</p>
                       </div>
-                    </div>                             
+                    </div> 
+                    </div>                            
                 </div>
               </div>   
               </div> 
@@ -579,23 +580,23 @@
           <div class="sns-btns">            
             <ul class="footer__sns sns">
                 <li class="sns__list">
-                  <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer" title="twitter">
-                    <img src="./images/icon/icon-twitter.svg" alt="twitter" title="twitter">
+                  <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer" >
+                    <img src="./images/icon/icon-twitter.svg" alt="twitter" >
                   </a>
                 </li>
                 <li class="sns__list">
-                  <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer"title="facebook">
-                    <img src="./images/icon/icon-facebook.svg" alt="facebook" title="facebook">
+                  <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/icon/icon-facebook.svg" alt="facebook" >
                   </a>
                 </li>
                 <li class="sns__list">
-                  <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer" title="youtube">
-                    <img src="./images/icon/icon-youtube.svg" alt="youtube" title="youtube">
+                  <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer" >
+                    <img src="./images/icon/icon-youtube.svg" alt="youtube" >
                   </a>
                 </li>
                 <li class="sns__list">
-                  <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer" title="instagram">
-                    <img src="./images/icon/icon-instagram.svg" alt="instagram" title="instagram">
+                  <a href="#" class="sns__link" target="_blank" rel="noopener noreferrer" >
+                    <img src="./images/icon/icon-instagram.svg" alt="instagram" >
                   </a>
                 </li>
             </ul>
@@ -604,7 +605,7 @@
            
       </footer> 
       <div>
-            <p class="footer__copyright">&copy;Copyright2022　<span class="inline">kitamurakensetukogyo</span></p> 
+            <p class="footer__copyright">&copy;Copyright0000　<span class="ib-span">kitamurakensetukogyo</span></p> 
       </div>     
   </div>
    

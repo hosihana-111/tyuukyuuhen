@@ -15,7 +15,7 @@
 //ヘッダー追従
 window.addEventListener("scroll", function () {
   const header = document.querySelector("#header");
-  header.classList.toggle("scroll-nav", window.scrollY > 100);
+  header.classList.toggle("scroll-nav", window.scrollY > 800);
 });
  
  
@@ -35,48 +35,102 @@ $(function(){
 // });
 
 //モーダル
+// const modalBtns = document.querySelectorAll(".modal-toggle");
+// modalBtns.forEach(function (btn) {
+//   btn.onclick = function () {
+//     var modal = btn.getAttribute('data-modal');
+//     document.getElementById(modal).style.display = "block";
+//   };
+// });
+// const closeBtns = document.querySelectorAll(".modal-close");
+// closeBtns.forEach(function (btn) {
+//   btn.onclick = function () {
+//     var modal = btn.closest('.modal');
+//     modal.style.display = "none";
+//   };
+// });
+
+// window.onclick = function (event) {
+//   if (event.target.className === "modal") {
+//     event.target.style.display = "none";
+//   }
+// };
 const modalBtns = document.querySelectorAll(".modal-toggle");
+const closeBtns = document.querySelectorAll(".modal-close");
+
 modalBtns.forEach(function (btn) {
   btn.onclick = function () {
-    var modal = btn.getAttribute('data-modal');
-    document.getElementById(modal).style.display = "block";
-  };
-});
-const closeBtns = document.querySelectorAll(".modal-close");
-closeBtns.forEach(function (btn) {
-  btn.onclick = function () {
-    var modal = btn.closest('.modal');
-    modal.style.display = "none";
+    const modalId = btn.getAttribute('data-modal');
+    const modal = document.getElementById(modalId);
+    modal.style.display = "block";
+    document.body.classList.add('modal-open'); // 追加：スクロール禁止
   };
 });
 
+closeBtns.forEach(function (btn) {
+  btn.onclick = function () {
+    const modal = btn.closest('.modal');
+    modal.style.display = "none";
+    document.body.classList.remove('modal-open'); // 追加：スクロール復活
+  };
+});
+
+// 背景クリックで閉じる
 window.onclick = function (event) {
-  if (event.target.className === "modal") {
+  if (event.target.classList.contains("modal")) {
     event.target.style.display = "none";
+    document.body.classList.remove('modal-open'); // 追加：スクロール復活
   }
 };
 
-   
+
 
 
 //TOPに戻るボタン
 const scrollTopBtn = document.querySelector('.page-top');
+const modals = document.querySelectorAll('.modal');
+const modalToggles = document.querySelectorAll('.modal-toggle');
+const modalCloses = document.querySelectorAll('.modal-close');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-      scrollTopBtn.classList.add('visible');
-    } else {
-      scrollTopBtn.classList.remove('visible');
+// モーダルを開くとき
+modalToggles.forEach(toggle => {
+  toggle.addEventListener('click', (e) => {
+    const modalId = toggle.getAttribute('data-modal');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = 'block';
+      scrollTopBtn.classList.add('hide-while-modal');
     }
   });
+});
 
-  scrollTopBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+// モーダルを閉じるとき
+modalCloses.forEach(close => {
+  close.addEventListener('click', (e) => {
+    modals.forEach(modal => {
+      modal.style.display = 'none';
     });
+    // スクロール位置が100px以上なら表示復帰
+    if (window.scrollY > 100) {
+      scrollTopBtn.classList.remove('hide-while-modal');
+    }
   });
+});
+
+// TOPに戻るボタンの表示制御
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    scrollTopBtn.classList.add('visible');
+    // モーダルが開いていない場合のみ表示
+    if (![...modals].some(m => m.style.display === 'block')) {
+      scrollTopBtn.classList.remove('hide-while-modal');
+    }
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+});
+
+
 //プライバシーポリシー
   document.querySelector('.toggle-policy').addEventListener('click', function () {
   const box = document.querySelector('.privacy-policy-box');
