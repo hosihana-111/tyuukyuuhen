@@ -479,8 +479,7 @@ header
 .header__nav-list-item a::after {
   content: "";
   position: absolute;
-  bottom: 30px;
-  /* 下線の位置調整 */
+  bottom: 30px; /* 下線の位置調整 */
   left: 10%;
   width: 0;
   height: 2px;
@@ -526,6 +525,13 @@ header
   }
   .header__nav-list-item:hover {
     background-color: #000;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header__nav-list-item a::after {
+    display: none;
   }
 }
 
@@ -1239,7 +1245,7 @@ News
 .more::after {
   position: absolute;
   content: "";
-  background-image: url(/images/pass21.jpg);
+  background-image: url(../images/pass21.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 80px;
@@ -1479,7 +1485,7 @@ Contact
 -------------------*/
 .contact {
   padding-top: 90px;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
   position: relative;
 }
 @media only screen and (max-width: 767px) {

@@ -339,8 +339,7 @@ header
     &::after {
       content: "";
       position: absolute;
-      bottom: 30px;
-      /* 下線の位置調整 */
+      bottom: 30px;/* 下線の位置調整 */
       left: 10%;
       width: 0;
       height: 2px;
@@ -388,10 +387,21 @@ header
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: #000;
+      background-color: #000; // 黒背景に変更
+      opacity: 1; // hover時の薄くなる効果を無効化
     }
-  }
+}
+   
+}
+.header__nav-list-item a {
+  // 共通のホバー下線をSPでは消す
+  @include sp {
+    &::after {
+      display: none;
+    }
 
+    
+  }
 }
 
 /*------------------
@@ -1009,7 +1019,7 @@ News
   &::after {
     position: absolute;
     content: "";
-    background-image: url(/images/pass21.jpg);
+    background-image: url(../images/pass21.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     width: 80px;
@@ -1228,7 +1238,7 @@ Contact
 
 .contact {
   padding-top: 90px;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
   position: relative;
 
   @include sp{
