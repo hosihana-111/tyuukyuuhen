@@ -28,33 +28,7 @@ $(function(){
   });
 }) ;
  
-
-// $("#hamburger-block").click(function() {
-//   $(".nav-sp").toggle(300); // メニュー表示/非表示
-//   $(".hamburger").toggleClass("active"); // ハンバーガー見た目切り替え
-// });
-
-//モーダル
-// const modalBtns = document.querySelectorAll(".modal-toggle");
-// modalBtns.forEach(function (btn) {
-//   btn.onclick = function () {
-//     var modal = btn.getAttribute('data-modal');
-//     document.getElementById(modal).style.display = "block";
-//   };
-// });
-// const closeBtns = document.querySelectorAll(".modal-close");
-// closeBtns.forEach(function (btn) {
-//   btn.onclick = function () {
-//     var modal = btn.closest('.modal');
-//     modal.style.display = "none";
-//   };
-// });
-
-// window.onclick = function (event) {
-//   if (event.target.className === "modal") {
-//     event.target.style.display = "none";
-//   }
-// };
+// モーダル
 const modalBtns = document.querySelectorAll(".modal-toggle");
 const closeBtns = document.querySelectorAll(".modal-close");
 
@@ -132,11 +106,6 @@ window.addEventListener('scroll', () => {
 
 
 //プライバシーポリシー
-//   document.querySelector('.toggle-policy').addEventListener('click', function () {
-//   const box = document.querySelector('.privacy-policy-box');
-//   box.classList.toggle('expanded');
-//   this.textContent = box.classList.contains('expanded') ? '閉じる' : '全文を読む';
-// });
 
 const toggleBtn = document.querySelector('.toggle-policy');
 if (toggleBtn) {
@@ -146,3 +115,8 @@ if (toggleBtn) {
     this.textContent = box.classList.contains('expanded') ? '閉じる' : '全文を読む';
   });
 }
+
+// aos
+$(document).ready(function(){
+  AOS.init(); 
+});
