@@ -197,7 +197,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .sp {
     display: none !important;
   }
@@ -429,7 +429,7 @@ header
   .header__nav-list {
     display: block;
     position: fixed;
-    width: 300px;
+    width: 80%;
     height: 348px;
     top: 50px;
     left: 120%;
@@ -493,7 +493,7 @@ header
 .header__nav-list-item a:hover {
   opacity: 0.4;
 }
-@media screen and (768px <= width <= 900px) {
+@media screen and (767px <= width <= 900px) {
   .header__nav-list-item a {
     font-size: 1.4rem;
     padding: 25px 10px;
@@ -944,6 +944,9 @@ Works
   }
 }
 
+.modal-toggle {
+  cursor: pointer;
+}
 @media only screen and (max-width: 767px) {
   .modal-toggle {
     display: block;
@@ -1220,6 +1223,51 @@ News
   }
 }
 
+@-webkit-keyframes shake-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  75% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes shake-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  75% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
 .more {
   display: block;
   text-align: right;
@@ -1240,7 +1288,8 @@ News
   transition: all 0.3s ease;
 }
 .more:hover {
-  opacity: 0.3;
+  -webkit-animation: shake-right 1s ease;
+          animation: shake-right 1s ease;
 }
 .more::after {
   position: absolute;
@@ -1867,7 +1916,7 @@ input[type=radio]:checked:before {
 .custom-checkbox input[type=checkbox]:checked + span::after {
   content: "";
   position: absolute;
-  left: -22px;
+  left: -32px;
   top: 50%;
   -webkit-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg);
