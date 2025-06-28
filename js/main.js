@@ -13,9 +13,25 @@
 
 
 //ヘッダー追従
+// window.addEventListener("scroll", function () {
+//   const header = document.querySelector("#header");
+//   header.classList.toggle("scroll-nav", window.scrollY > 800);
+// });
+// ヘッダー追従（#aboutに到達したら）
 window.addEventListener("scroll", function () {
   const header = document.querySelector("#header");
-  header.classList.toggle("scroll-nav", window.scrollY > 800);
+  const aboutSection = document.querySelector("#about");
+
+  if (!header || !aboutSection) return;
+
+  const aboutTop = aboutSection.getBoundingClientRect().top;
+
+  // ページ上部からの距離が0未満（＝画面に入ってきた）で発動
+  if (aboutTop <= 0) {
+    header.classList.add("scroll-nav");
+  } else {
+    header.classList.remove("scroll-nav");
+  }
 });
  
  

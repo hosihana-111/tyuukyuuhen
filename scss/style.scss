@@ -9,12 +9,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
+
 }
 
 :root {
   --font-color: #000;
-  --font-sans: YuMincho, "Noto Serif", "Hiragino Mincho ProN", serif;
+  --font-sans:  'YuMincho', 'Yu Mincho', '游明朝体',  'Noto Serif JP',serif;
   --main-color: #4D9600;
 }
 
@@ -31,7 +31,7 @@ html {
 
 body {
   color: var(--font-color);
-  font-family: var(--font-sans); 
+  font-family: var(--font-sans);
   font-weight: 500;
   font-style: normal;
   margin: 0;
@@ -61,7 +61,7 @@ a {
   max-width: 980px;
   margin-inline: auto;
   padding-inline: 30px;
-  
+
 }
 
 .section-bg {
@@ -161,7 +161,8 @@ header
 
   &.scroll-nav {
     top: 0; // スクロール後：上に表示
-    background-color: var(--main-color);;
+    background-color: var(--main-color);
+    ;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
 
@@ -335,11 +336,16 @@ header
     // line-height: calc(33/18);
     position: relative;
     transition: all 0.3s ease;
+     &:hover {
+      opacity: 0.4;
+
+    }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: 30px;/* 下線の位置調整 */
+      bottom: 30px;
+      /* 下線の位置調整 */
       left: 10%;
       width: 0;
       height: 2px;
@@ -352,55 +358,53 @@ header
       width: 80%;
     }
 
-    &:hover {
-      opacity: 0.4;
-
-    }
 
 
 
-    @media screen and (767px <=width <=900px) {
-      font-size: 1.4rem;
-      padding: 25px 10px;
-      transition: all 0.3s ease;
-    }
 
-  }
-
-  &:last-child a {
-    padding-right: 0;
-
-    &::after {
-      left: 20%;
-    }
-
-  }
-
-  @include sp {
-    width: 300px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    font-size: 1.8rem;
-    font-weight: 700;
+  @media screen and (767px <=width <=900px) {
+    font-size: 1.4rem;
+    padding: 25px 10px;
     transition: all 0.3s ease;
+  }
 
-    &:hover {
-      background-color: #000; // 黒背景に変更
-      opacity: 1; // hover時の薄くなる効果を無効化
-    }
 }
-   
+
+&:last-child a {
+  padding-right: 0;
+
+  &::after {
+    left: 20%;
+  }
+
 }
+
+@include sp {
+  width: 300px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #000; // 黒背景に変更
+    opacity: 1; // hover時の薄くなる効果を無効化
+  }
+}
+}
+
 .header__nav-list-item a {
+
   // 共通のホバー下線をSPでは消す
   @include sp {
     &::after {
       display: none;
     }
 
-    
+
   }
 }
 
@@ -454,7 +458,7 @@ slide-area
   color: #fff;
   text-align: center;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 600;
   font-variant-ligatures: none;
   line-height: calc(70/40);
   letter-spacing: calc(40px*0.3);
@@ -595,7 +599,7 @@ service
   display: block;
   margin-bottom: calc(51/920*100%);
   z-index: 10;
- 
+
   @include sp {
     width: 100%;
     margin-bottom: 5px;
@@ -615,16 +619,17 @@ service
 }
 
 .service__box-text {
-  background-color:var(--main-color);;
+  background-color: var(--main-color);
+  ;
   width: calc(500/920*100%);
   max-width: 500px;
-  font-weight: 700;
+  font-weight: 600;
   padding-top: calc(50/920*100%);
   padding-bottom: calc(42/920*100%);
   padding-left: calc(220/920*100%);
   margin-left: calc(-200/920*100%);
   z-index: 2;
-   
+
 
   @media screen and (max-width: 900px) {
     padding-left: calc(200/920*100%);
@@ -676,7 +681,7 @@ service
 
 .service-tittle {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: calc(33/25);
   margin-bottom: calc(17/1080*100vw);
   color: #fff;
@@ -752,7 +757,8 @@ Works
 }
 
 .modal-toggle {
-   cursor: pointer;
+  cursor: pointer;
+
   @include sp {
 
     display: block;
@@ -907,11 +913,12 @@ News
 
 .news-title,
 .blog-title {
-  background-color:var(--main-color);;
+  background-color: var(--main-color);
+  ;
   color: #fff;
   padding: 10px 20px;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -924,6 +931,7 @@ News
 
   li {
     border-bottom: 1px solid #55A500;
+
     &:last-child {
       border-bottom: none;
     }
@@ -985,31 +993,47 @@ News
   flex: 1;
 
   @include sp {
-     display: -webkit-box;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-     overflow: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     height: calc(1.8rem * 1.388 * 2);
     min-width: 0;
     width: 100%;
-   
+
 
   }
 }
+
 @keyframes shake-right {
-  0%   { transform: translateX(0); }
-  25%  { transform: translateX(3px); }
-  50%  { transform: translateX(0); }
-  75%  { transform: translateX(3px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(3px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
+
 .more {
   display: block;
   text-align: right;
   color: #55A500;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: calc(33/20);
   margin-top: 17px;
   text-decoration: none;
@@ -1021,7 +1045,7 @@ News
   transition: all 0.3s ease;
 
   &:hover {
-   
+
     animation: shake-right 1s ease;
   }
 
@@ -1115,11 +1139,12 @@ Company
 
 
 .company__box-text {
-  background-color: var(--main-color);;
+  background-color: var(--main-color);
+  ;
   color: #FFF;
   width: calc(500/920*100%);
   max-width: 500px;
-  font-weight: 700;
+  font-weight: 600;
   padding-top: calc(49/920*100%);
   padding-bottom: calc(42/920*100%);
   padding-left: calc(220/920*100%);
@@ -1148,7 +1173,7 @@ Company
 
 .company-title {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 10px;
 
   @media (max-width:768px) and (min-width:900px) {
@@ -1187,7 +1212,7 @@ Company
 
   a {
     font-size: 2.2rem;
-    font-weight: 700;
+    font-weight: 600;
     transition: all 0.3s ease;
 
     &:hover {
@@ -1211,6 +1236,7 @@ Company
 
 .company-email {
   line-height: calc(25/16);
+
   @include sp {
     font-size: 1.5rem;
   }
@@ -1250,9 +1276,9 @@ Contact
   padding-bottom: 70px;
   position: relative;
 
-  @include sp{
+  @include sp {
     padding-top: 49px;
-  padding-bottom: 50px;
+    padding-bottom: 50px;
   }
 
 }
@@ -1264,7 +1290,7 @@ Contact
 
   @include sp {
     padding-inline: 0;
-   
+
   }
 }
 
@@ -1278,9 +1304,10 @@ Contact
 .contact-form {
   margin-top: 75px;
   font-size: 2rem;
-   @include sp{
+
+  @include sp {
     margin-top: 39px;
-   }
+  }
 }
 
 .contact-sec__form-block {
@@ -1294,10 +1321,10 @@ Contact
 .form-area {
   display: flex;
 
-   @include sp {
+  @include sp {
     flex-direction: column;
     row-gap: 2px;
-   }
+  }
 }
 
 
@@ -1311,10 +1338,10 @@ Contact
 
 
   @include sp {
-  width: 100%;
-  height: initial;
-   
-   }
+    width: 100%;
+    height: initial;
+
+  }
 }
 
 .form-area dd {
@@ -1329,11 +1356,12 @@ Contact
 
 .form-area-gender {
   margin-top: 44px;
-  
-  @include sp{
-    flex-direction: row; 
+
+  @include sp {
+    flex-direction: row;
     align-items: flex-start;
     margin-top: 30px;
+
     dt {
       width: auto;
       min-width: 80px;
@@ -1355,7 +1383,7 @@ Contact
   @include sp {
     margin-top: 27px;
   }
- 
+
 
 }
 
@@ -1365,16 +1393,18 @@ Contact
   @include sp {
     margin-top: 27px;
   }
-  
+
 
 
 }
 
 .form-area-message {
-  margin-top: 45px; 
-  dt{
+  margin-top: 45px;
+
+  dt {
     margin-bottom: 5px;
   }
+
   dd {
     margin-top: 3px;
   }
@@ -1393,6 +1423,7 @@ Contact
 .form-block-area {
   display: block;
   margin-top: 51px;
+
   @include sp {
     margin-top: 29px;
   }
@@ -1400,10 +1431,11 @@ Contact
 }
 
 .form-block-area dt {
-   margin-bottom: 9px;
-   @include sp{
+  margin-bottom: 9px;
+
+  @include sp {
     margin-bottom: 0;
-   }
+  }
 }
 
 ::placeholder {
@@ -1435,16 +1467,17 @@ Contact
   font-size: 1.6rem;
   line-height: calc(33/16);
 
- 
+
 }
 
 .contact-radio {
   display: flex;
   gap: 74px;
+
   @include sp {
     flex-wrap: nowrap;
     justify-content: flex-start;
-     gap: 24px;
+    gap: 24px;
   }
 }
 
@@ -1470,7 +1503,7 @@ input[type="radio"] {
     background: #000;
     content: '';
   }
-  
+
 }
 
 .select {
@@ -1529,15 +1562,16 @@ input[type="radio"] {
   @include sp {
     grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
     gap: 5px 2px;
-     margin-top: 0;
+    margin-top: 0;
   }
 }
 
 .custom-checkbox {
   position: relative;
   padding-left: 40px;
-  cursor: pointer;
   display: inline-block;
+  cursor: pointer;
+
   font-size: 1.8rem;
   line-height: calc(25/18);
   margin-right: 2rem;
@@ -1584,6 +1618,7 @@ input[type="radio"] {
 .custom-checkbox span {
   position: relative;
   display: inline-block;
+
 }
 
 .contact-heading {
@@ -1597,7 +1632,7 @@ input[type="radio"] {
     }
   }
 
-  
+
 }
 
 
@@ -1606,8 +1641,9 @@ input[type="radio"] {
   margin-top: 50px;
   margin-bottom: 40px;
   line-height: calc(31/18);
-  @include sp{
-     margin-top: 30px;
+
+  @include sp {
+    margin-top: 30px;
   }
 }
 
@@ -1628,33 +1664,34 @@ input[type="radio"] {
     text-align: left !important;
   }
 
-  @include sp{
+  @include sp {
     margin-top: 0;
     padding: 30px 10px 30px 30px;
     font-size: 1.6rem;
     line-height: calc(33/16);
-     height: 323px;
+    height: 323px;
   }
 }
 
 .policy-scroll-content {
   font-size: 1.8rem;
   line-height: calc(31/18);
-  max-height: calc(1.8rem * 1.8 * 7); 
+  max-height: calc(1.8rem * 1.8 * 7);
   overflow-y: auto;
   overflow-x: hidden;
   word-break: break-word;
   box-sizing: border-box;
   padding-right: 50px;
 
-  @include sp{
+  @include sp {
     font-size: 1.6rem;
     line-height: calc(33/16);
-     padding-right: 40px;
-      max-height: calc(1.8rem * 1.8 * 8); 
+    padding-right: 40px;
+    max-height: calc(1.8rem * 1.8 * 8);
   }
 
 }
+
 .policy-scroll-content::-webkit-scrollbar {
   width: 10px;
   /* スクロールバーの太さ */
@@ -1714,13 +1751,14 @@ input[type="radio"] {
 .contact__button {
   margin-top: 78px;
   margin-inline: auto;
-  
+
   width: 300px;
+
   @include sp {
     width: 315px;
     margin-top: 49px;
     display: flex;
-  justify-content: center;
+    justify-content: center;
   }
 }
 
@@ -1733,7 +1771,7 @@ input[type="radio"] {
   border: 0.2rem solid var(--main-color);
   font-size: 2rem;
   line-height: calc(33 / 25);
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   display: block;
   text-align: center;
@@ -1742,12 +1780,13 @@ input[type="radio"] {
   padding-bottom: 1px;
 
   &:hover {
-    color: var(--main-color);;
+    color: var(--main-color);
+    ;
     background-color: #fff;
     border: 1px solid #4D9600;
   }
 
- 
+
 }
 
 /*------------------
@@ -1758,12 +1797,14 @@ footer {
   text-align: center;
   padding-top: 90px;
   padding-bottom: 76px;
-  @include sp{
-      padding-top: 50px;
-  padding-bottom: 34px;
+
+  @include sp {
+    padding-top: 50px;
+    padding-bottom: 34px;
   }
 
 }
+
 // .footer__nav{
 //   margin-bottom: 0px;
 //    @include sp{
@@ -1773,8 +1814,9 @@ footer {
 .footer-logo {
   font-size: 2rem;
   margin-bottom: 30px;
-  @include sp{
-     margin-bottom: 21px;
+
+  @include sp {
+    margin-bottom: 21px;
   }
 }
 
@@ -1787,7 +1829,7 @@ footer {
   max-width: 710px;
   width: 100%;
   padding-top: 28px;
- 
+
 
   @include sp {
     flex-wrap: wrap;
@@ -1798,7 +1840,7 @@ footer {
 
 .footer-nav__list {
   list-style: none;
-   height: 40px;
+  height: 40px;
 }
 
 .footer-nav__link {
@@ -1808,6 +1850,7 @@ footer {
   transition: all 0.3s ease-in-out;
   text-transform: capitalize;
   height: inherit;
+
   &:hover {
     opacity: 0.4;
   }
@@ -1845,7 +1888,8 @@ footer {
 }
 
 .footer__copyright {
-  background-color: var(--main-color);;
+  background-color: var(--main-color);
+  ;
   color: #fff;
   font-size: 2rem;
   padding-block: 30px;
@@ -1854,8 +1898,8 @@ footer {
   display: block;
   text-align: center;
 
-  @include sp {  
-    padding-block: 20px;  
+  @include sp {
+    padding-block: 20px;
     line-height: calc(25/20);
     margin-top: 15px;
   }
