@@ -125,6 +125,12 @@ meter {
   display: none;
 }
 
+:root {
+  --font-color: #000;
+  --font-serif: "YuMincho", "Yu Mincho", "游明朝体", "Noto Serif JP",serif;
+  --main-color: #4D9600;
+}
+
 /*------------------
 共通項目
 -------------------*/
@@ -133,12 +139,6 @@ meter {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-:root {
-  --font-color: #000;
-  --font-sans: "YuMincho", "Yu Mincho", "游明朝体", "Noto Serif JP",serif;
-  --main-color: #4D9600;
 }
 
 html {
@@ -152,8 +152,8 @@ html {
 
 body {
   color: var(--font-color);
-  font-family: var(--font-sans);
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-weight: 400;
   font-style: normal;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -274,8 +274,6 @@ header
 #header.scroll-nav {
   top: 0;
   background-color: var(--main-color);
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 @media only screen and (max-width: 767px) {
   #header {
@@ -317,7 +315,7 @@ header
 
 .logo {
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.65;
   height: inherit;
 }
@@ -494,9 +492,9 @@ header
 .header__nav-list-item a:hover::after {
   width: 80%;
 }
-@media screen and (767px <= width <= 900px) {
+@media screen and (767px <= width <= 950px) {
   .header__nav-list-item a {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 25px 10px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;

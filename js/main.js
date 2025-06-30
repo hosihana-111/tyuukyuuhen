@@ -1,138 +1,133 @@
 'use strict';
-    // カルーセル
-  $(document).ready(function() {
-     
-      $('.slider').slick({
-         autoplay: true,
-        infinite: true,
-         autoplaySpeed: 5000,
-         arrows: false,
-          cssEase: 'linear'
-        });      
-    });
+// aos
+$(document).ready(function () {
+ AOS.init();
+  // カルーセル
+  // $(document).ready(function() {
+
+  $('.slider').slick({
+    autoplay: true,
+    infinite: true,
+    autoplaySpeed: 5000,
+    arrows: false,
+    cssEase: 'linear'
+  });
+  // });
 
 
-//ヘッダー追従
-// window.addEventListener("scroll", function () {
-//   const header = document.querySelector("#header");
-//   header.classList.toggle("scroll-nav", window.scrollY > 800);
-// });
-// ヘッダー追従（#aboutに到達したら）
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("#header");
-  const aboutSection = document.querySelector("#about");
+  //ヘッダー追従
 
-  if (!header || !aboutSection) return;
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector("#header");
+    const aboutSection = document.querySelector("#about");
 
-  const aboutTop = aboutSection.getBoundingClientRect().top;
+    if (!header || !aboutSection) return;
 
-  // ページ上部からの距離が0未満（＝画面に入ってきた）で発動
-  if (aboutTop <= 0) {
-    header.classList.add("scroll-nav");
-  } else {
-    header.classList.remove("scroll-nav");
-  }
-});
- 
- 
- // ハンバーガー  
-$(function(){
+    const aboutTop = aboutSection.getBoundingClientRect().top;
 
-  $('.header__hb-btn').click(function(){
+    // ページ上部からの距離が0未満（＝画面に入ってきた）で発動
+    if (aboutTop <= 0) {
+      header.classList.add("scroll-nav");
+    } else {
+      header.classList.remove("scroll-nav");
+    }
+  });
+
+
+  // ハンバーガー  
+  // $(function(){
+
+  $('.header__hb-btn').click(function () {
     $(this).toggleClass('active');
     $('.header__nav-list').toggleClass('active')
   });
-}) ;
- 
-// モーダル
-const modalBtns = document.querySelectorAll(".modal-toggle");
-const closeBtns = document.querySelectorAll(".modal-close");
+  // }) ;
 
-modalBtns.forEach(function (btn) {
-  btn.onclick = function () {
-    const modalId = btn.getAttribute('data-modal');
-    const modal = document.getElementById(modalId);
-    modal.style.display = "block";
-    document.body.classList.add('modal-open'); // 追加：スクロール禁止
-  };
-});
+  // モーダル
+  const modalBtns = document.querySelectorAll(".modal-toggle");
+  const closeBtns = document.querySelectorAll(".modal-close");
 
-closeBtns.forEach(function (btn) {
-  btn.onclick = function () {
-    const modal = btn.closest('.modal');
-    modal.style.display = "none";
-    document.body.classList.remove('modal-open'); // 追加：スクロール復活
-  };
-});
-
-// 背景クリックで閉じる
-window.onclick = function (event) {
-  if (event.target.classList.contains("modal")) {
-    event.target.style.display = "none";
-    document.body.classList.remove('modal-open'); // 追加：スクロール復活
-  }
-};
-
-
-
-
-//TOPに戻るボタン
-const scrollTopBtn = document.querySelector('.page-top');
-const modals = document.querySelectorAll('.modal');
-const modalToggles = document.querySelectorAll('.modal-toggle');
-const modalCloses = document.querySelectorAll('.modal-close');
-
-// モーダルを開くとき
-modalToggles.forEach(toggle => {
-  toggle.addEventListener('click', (e) => {
-    const modalId = toggle.getAttribute('data-modal');
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.style.display = 'block';
-      scrollTopBtn.classList.add('hide-while-modal');
-    }
+  modalBtns.forEach(function (btn) {
+    btn.onclick = function () {
+      const modalId = btn.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      modal.style.display = "block";
+      document.body.classList.add('modal-open'); // 追加：スクロール禁止
+    };
   });
-});
 
-// モーダルを閉じるとき
-modalCloses.forEach(close => {
-  close.addEventListener('click', (e) => {
-    modals.forEach(modal => {
-      modal.style.display = 'none';
+  closeBtns.forEach(function (btn) {
+    btn.onclick = function () {
+      const modal = btn.closest('.modal');
+      modal.style.display = "none";
+      document.body.classList.remove('modal-open'); // 追加：スクロール復活
+    };
+  });
+
+  // 背景クリックで閉じる
+  window.onclick = function (event) {
+    if (event.target.classList.contains("modal")) {
+      event.target.style.display = "none";
+      document.body.classList.remove('modal-open'); // 追加：スクロール復活
+    }
+  };
+
+  //TOPに戻るボタン
+  const scrollTopBtn = document.querySelector('.page-top');
+  const modals = document.querySelectorAll('.modal');
+  const modalToggles = document.querySelectorAll('.modal-toggle');
+  const modalCloses = document.querySelectorAll('.modal-close');
+
+  // モーダルを開くとき
+  modalToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      const modalId = toggle.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.style.display = 'block';
+        scrollTopBtn.classList.add('hide-while-modal');
+      }
     });
-    // スクロール位置が100px以上なら表示復帰
+  });
+
+  // モーダルを閉じるとき
+  modalCloses.forEach(close => {
+    close.addEventListener('click', (e) => {
+      modals.forEach(modal => {
+        modal.style.display = 'none';
+      });
+      // スクロール位置が100px以上なら表示復帰
+      if (window.scrollY > 100) {
+        scrollTopBtn.classList.remove('hide-while-modal');
+      }
+    });
+  });
+
+  // TOPに戻るボタンの表示制御
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-      scrollTopBtn.classList.remove('hide-while-modal');
+      scrollTopBtn.classList.add('visible');
+      // モーダルが開いていない場合のみ表示
+      if (![...modals].some(m => m.style.display === 'block')) {
+        scrollTopBtn.classList.remove('hide-while-modal');
+      }
+    } else {
+      scrollTopBtn.classList.remove('visible');
     }
   });
-});
 
-// TOPに戻るボタンの表示制御
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 100) {
-    scrollTopBtn.classList.add('visible');
-    // モーダルが開いていない場合のみ表示
-    if (![...modals].some(m => m.style.display === 'block')) {
-      scrollTopBtn.classList.remove('hide-while-modal');
-    }
-  } else {
-    scrollTopBtn.classList.remove('visible');
+
+  //プライバシーポリシー
+  const toggleBtn = document.querySelector('.toggle-policy');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      const box = document.querySelector('.privacy-policy-box');
+      box.classList.toggle('expanded');
+      this.textContent = box.classList.contains('expanded') ? '閉じる' : '全文を読む';
+    });
   }
-});
 
 
-//プライバシーポリシー
 
-const toggleBtn = document.querySelector('.toggle-policy');
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', function () {
-    const box = document.querySelector('.privacy-policy-box');
-    box.classList.toggle('expanded');
-    this.textContent = box.classList.contains('expanded') ? '閉じる' : '全文を読む';
-  });
-}
-
-// aos
-$(document).ready(function(){
-  AOS.init(); 
+ 
 });

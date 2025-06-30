@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @use '_reset.scss';
+@use '_variable.scss';
 @use '_mediaQuery.scss' as *;
 
 /*------------------
@@ -12,11 +13,6 @@
 
 }
 
-:root {
-  --font-color: #000;
-  --font-sans:  'YuMincho', 'Yu Mincho', '游明朝体',  'Noto Serif JP',serif;
-  --main-color: #4D9600;
-}
 
 html {
   -webkit-appearance: none;
@@ -31,8 +27,8 @@ html {
 
 body {
   color: var(--font-color);
-  font-family: var(--font-sans);
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-weight: 400;
   font-style: normal;
   margin: 0;
   box-sizing: border-box;
@@ -163,8 +159,7 @@ header
     top: 0; // スクロール後：上に表示
     background-color: var(--main-color);
     ;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
+      }
 
   @include sp {
     height: 50px;
@@ -199,7 +194,7 @@ header
 
 .logo {
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: calc(33/20);
   height: inherit;
 
@@ -362,8 +357,8 @@ header
 
 
 
-  @media screen and (767px <=width <=900px) {
-    font-size: 1.4rem;
+  @media screen and (767px <=width <=950px) {
+    font-size: 1.6rem;
     padding: 25px 10px;
     transition: all 0.3s ease;
   }
