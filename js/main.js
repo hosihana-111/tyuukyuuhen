@@ -1,7 +1,7 @@
 'use strict';
 // aos
 $(document).ready(function () {
- AOS.init();
+
   // カルーセル
   // $(document).ready(function() {
 
@@ -16,23 +16,19 @@ $(document).ready(function () {
 
 
   //ヘッダー追従
+ 
+window.addEventListener("scroll", function () {
+  const fv = document.getElementById("fv");
+  const header = document.querySelector(".header"); 
+  const fvHeight = fv.offsetHeight;
+  const scrollY = window.scrollY;
 
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector("#header");
-    const aboutSection = document.querySelector("#about");
-
-    if (!header || !aboutSection) return;
-
-    const aboutTop = aboutSection.getBoundingClientRect().top;
-
-    // ページ上部からの距離が0未満（＝画面に入ってきた）で発動
-    if (aboutTop <= 0) {
-      header.classList.add("scroll-nav");
-    } else {
-      header.classList.remove("scroll-nav");
-    }
-  });
-
+  if (scrollY > fvHeight) {
+    header.classList.add("is-change");
+  } else {
+    header.classList.remove("is-change");
+  }
+});
 
   // ハンバーガー  
   // $(function(){
@@ -128,6 +124,6 @@ $(document).ready(function () {
   }
 
 
-
+ AOS.init();
  
 });

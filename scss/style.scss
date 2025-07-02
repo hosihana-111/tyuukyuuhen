@@ -155,23 +155,27 @@ header
   z-index: 100;
   transition: all 0.3s ease;
 
-  &.scroll-nav {
-    top: 0; // スクロール後：上に表示
-    background-color: var(--main-color);
-    ;
-      }
-
+  // &.scroll-nav {
+  //   top: 0; // スクロール後：上に表示
+  //   background-color: var(--main-color);
+  //   ;
+  //     }
+  &.is-change {
+    background-color:var(--main-color); // 例：白背景に切り替え
+    
+  }
   @include sp {
     height: 50px;
   }
 }
 
-.header__container {
+.header__inner {
   max-width: 980px;
   width: 100%;
   height: 85px;
   margin: 0 auto;
-  padding-inline: 30px;
+  padding-left: 30px;
+  padding-right: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -179,8 +183,8 @@ header
 
 
   @media screen and (max-width:900px) {
-    padding-left: 30px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 10px;
   }
 
   @include sp {
@@ -194,7 +198,7 @@ header
 
 .logo {
   color: white;
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: calc(33/20);
   height: inherit;
 
@@ -239,7 +243,6 @@ header
   height: 24px;
   margin: 0;
   cursor: pointer;
-
 }
 
 .header__hb-btn span {
@@ -251,7 +254,6 @@ header
   background: var(--main-color);
   transition: 0.3s;
   -webkit-transition: 0.4s;
-
 }
 
 .header__hb-btn span:nth-of-type(1) {
@@ -326,52 +328,38 @@ header
     align-items: center;
     color: #fff;
     text-decoration: none;
-    padding: 0 16px;
+    padding: 0 15px;
     font-size: 1.8rem;
-    // line-height: calc(33/18);
-    position: relative;
-    transition: all 0.3s ease;
-     &:hover {
-      opacity: 0.4;
+    line-height: calc(33/18);
+    position: relative;    
 
-    }
+    span {
+    transition: opacity 0.3s ease;
+  }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: 30px;
-      /* 下線の位置調整 */
+      bottom: 30px;     
       left: 10%;
       width: 0;
-      height: 2px;
+      height: 1px;
       background-color: #fff;
-      transition: width 0.3s ease;
-
+      transition: width 0.3s ease;      
     }
 
     &:hover::after {
-      width: 80%;
+      width: 80%;      
     }
-
-
-
-
+    &:hover span {
+    opacity: 0.4; 
+  }
 
   @media screen and (767px <=width <=950px) {
     font-size: 1.6rem;
     padding: 25px 10px;
     transition: all 0.3s ease;
   }
-
-}
-
-&:last-child a {
-  padding-right: 0;
-
-  &::after {
-    left: 20%;
-  }
-
 }
 
 @include sp {
@@ -446,7 +434,7 @@ slide-area
 
 .page-title {
   position: absolute;
-  top: 50.8%;
+  top: 51.5%;
   left: 50.5%;
   width: 100%;
   transform: translate(-50%, -50%);
@@ -510,10 +498,14 @@ about
 
 .about-title {
   font-size: 3rem;
-  margin-left: 4.2rem;
+  margin-left: 42px;
   line-height: 1.18;
   margin-left: 46px;
   letter-spacing: 5px;
+
+  @media screen and (767px <=width <=950px){
+    font-size: 2.5rem;
+     margin-left: 36px;  }
 
   @include sp {
     font-size: 2.5rem;
@@ -529,9 +521,10 @@ about
   line-height: 2.66;
   letter-spacing: 7px;
 
-  //   @media (max-width:1024px){
-  //   line-height:2;
-  // }
+   @media screen and (767px <=width <=950px){
+    font-size: 1.6rem;
+    line-height: 2.5;
+   }
   @include sp {
     font-size: 1.6rem;
     line-height: 1.6;
@@ -553,7 +546,7 @@ service
 }
 
 .service__container {
-  display: block;
+
   width: 100%;
   margin-top: 70px;
 
@@ -583,22 +576,28 @@ service
 
   @include sp {
     flex-direction: column;
-
+    
   }
 
 }
 
 .service__box-img {
   width: calc(600/920*100%);
-  max-width: 600px;
+  // max-width: 600px;
+
   display: block;
-  margin-bottom: calc(51/920*100%);
+  padding-bottom: calc(51/920*100%);
   z-index: 10;
 
   @include sp {
     width: 100%;
-    margin-bottom: 5px;
+    padding-bottom: 6px;
   }
+}
+.service__box-img img {
+  width: 100%;
+  height: auto;
+    display: block;
 }
 
 .service__box-img-p {
@@ -615,9 +614,9 @@ service
 
 .service__box-text {
   background-color: var(--main-color);
-  ;
+  
   width: calc(500/920*100%);
-  max-width: 500px;
+  // max-width: 500px;
   font-weight: 600;
   padding-top: calc(50/920*100%);
   padding-bottom: calc(42/920*100%);
@@ -632,7 +631,7 @@ service
 
   @include sp {
     justify-content: flex-start;
-    max-width: 600px;
+    // max-width: 600px;
     width: 100%;
     padding: 20px 20px 12px 20px;
     margin-left: 0;
@@ -735,8 +734,9 @@ Works
 .modal__items {
   display: flex;
   gap: calc(40 / 920 * 100%);
-
   align-items: center;
+  
+  justify-content: flex-start; 
 
   @include sp {
     display: flex;
@@ -749,6 +749,10 @@ Works
     padding: 0;
   }
 
+}
+.modal__item{ 
+  flex: 0 0 calc((100% - 3 * 4.3478%) / 4); // 4列分の固定幅
+  box-sizing: border-box;
 }
 
 .modal-toggle {
@@ -804,11 +808,14 @@ Works
 
 .modal-container-img {
   background: #fff;
-  margin-bottom: 9px;
+
 }
 
 .modal-container-p {
-  margin-bottom: 6px;
+  padding-block: 7px;
+  @include sp {
+    padding-block: 10px;
+  }
 }
 
 .modal-content {
@@ -824,6 +831,13 @@ Works
   max-height: 275px;
   animation: show 0.6s linear 0s;
   filter: drop-shadow(0px 2px 6px #777);
+  position: relative;
+  
+  @include sp {
+    max-width: 315px;
+    max-height: 210px;
+     padding: 20px 20px 0;
+  }
 }
 
 .modal-top {
@@ -831,6 +845,7 @@ Works
   position: absolute;
   right: 0;
   top: 0;
+   z-index: 10;
 }
 
 .modal-open {
@@ -838,9 +853,21 @@ Works
 }
 
 .modal-close {
-  color: #000;
-  text-decoration: none;
-  font-size: 15px;
+  // color: #000;
+  // text-decoration: none;
+  // font-size: 15px;
+ 
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: url(../images/works/close.svg)no-repeat center center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  display: inline-block;
 }
 
 .modal-close:hover,
@@ -873,7 +900,7 @@ News
 
   @include sp {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 55px;
   }
 }
 
@@ -885,12 +912,12 @@ News
   justify-content: center;
 
   @include sp {
-    margin-top: 40px;
+    margin-top: 38px;
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    row-gap: 49px;
+    row-gap: 55px;
   }
 
 }
@@ -915,13 +942,18 @@ News
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
+
+  @include sp {
+    padding: 8px 20px;
+   
+  }
 }
 
 .news-items {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  padding: 10px 20px 27px 20px;
+  padding: 9px 20px 20px 20px;
   overflow: hidden;
 
   li {
@@ -933,18 +965,17 @@ News
   }
 
   @include sp {
-    padding: 10px 20px 27px 20px;
+    padding: 10px 20px 15px 20px;
   }
 }
 
 .news-item {
-
   padding-top: 19px;
   padding-bottom: 14px;
   display: flex;
   align-items: flex-start;
   text-decoration: none;
-  // column-gap: calc(68/920*100%);
+  column-gap: calc(70/430*100%);
   cursor: pointer;
   transition: all 0.3s ease;
   list-style: none;
@@ -954,25 +985,26 @@ News
   }
 
   @include sp {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 13px;
+    column-gap: 2px;
   }
 
 }
 
-.news-items li:first-child .news-item {
-  @include sp {
-    margin-top: 5px;
-  }
-}
+// .news-items li:first-child .news-item {
+//   @include sp {
+//     margin-top: 5px;
+//   }
+// }
 
 .news-date {
   display: block;
   line-height: calc(33/16);
-  width: 122px;
+  
   flex-shrink: 0;
   text-align: left;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 
   @include sp {
     width: 72px;
@@ -987,7 +1019,7 @@ News
   margin: 0;
   flex: 1;
 
-  @include sp {
+   @media screen and (max-width:900px)  {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -1027,14 +1059,14 @@ News
   display: block;
   text-align: right;
   color: #55A500;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
   line-height: calc(33/20);
-  margin-top: 17px;
+  margin-top: 10px;
   text-decoration: none;
   width: fit-content;
   margin-left: auto;
-  padding-right: 29px;
+  padding:5px 29px 5px 5px;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
@@ -1060,8 +1092,8 @@ News
   }
 
   @include sp {
-    font-size: 1.8rem;
-    margin-top: 20px;
+   
+    margin-top: 10px;
     padding-right: 30px
   }
 }
@@ -1071,7 +1103,7 @@ Company
 -------------------*/
 .company {
   padding-top: 77px;
-  padding-bottom: 70px;
+  padding-bottom: 73px;
 
   @include sp {
     padding-top: 49px;
@@ -1105,16 +1137,11 @@ Company
     padding-bottom: 0px;
   }
 
-  @include sp {
-    flex-direction: column;
-  }
-
 }
 
 .company-map {
-
   width: calc(600/920*100%);
-  max-width: 600px;
+  // max-width: 600px;
   aspect-ratio: 600 / 400;
   margin-bottom: calc(60/920*100%);
   z-index: 10;
@@ -1131,17 +1158,14 @@ Company
   }
 }
 
-
-
 .company__box-text {
   background-color: var(--main-color);
-  ;
   color: #FFF;
   width: calc(500/920*100%);
-  max-width: 500px;
+  // max-width: 500px;
   font-weight: 600;
-  padding-top: calc(49/920*100%);
-  padding-bottom: calc(42/920*100%);
+  padding-top: calc(50/920*100%);
+  padding-bottom: calc(40/920*100%);
   padding-left: calc(220/920*100%);
   margin-left: calc(-200/920*100%);
 
@@ -1151,13 +1175,12 @@ Company
 
   @include sp {
     justify-content: flex-start;
-    max-width: 600px;
+    // max-width: 600px;
     width: 100%;
     padding-top: 23px;
-    padding-bottom: 16px;
+    padding-bottom: 10px;
     padding-left: 20px;
     margin-left: 0;
-
   }
 
   @media screen and (max-width: 540px) {
@@ -1199,7 +1222,7 @@ Company
 }
 
 .company-address span {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .company-tel {
@@ -1267,26 +1290,25 @@ Contact
 -------------------*/
 
 .contact {
-  padding-top: 90px;
-  padding-bottom: 70px;
+  padding-top: 85px;
+  padding-bottom: 80px;
   position: relative;
 
   @include sp {
     padding-top: 49px;
     padding-bottom: 50px;
   }
-
 }
 
 .contact__container {
   margin-top: 37px;
+//  padding-inline: 60px;
+max-width: 800px ;
+ margin-inline:auto ;
+  // @include sp {
+  //  padding-inline: 0;
 
-  padding-inline: 60px;
-
-  @include sp {
-    padding-inline: 0;
-
-  }
+  //  }
 }
 
 .contact-p {
@@ -1297,7 +1319,7 @@ Contact
 }
 
 .contact-form {
-  margin-top: 75px;
+  margin-top: 69px;
   font-size: 2rem;
 
   @include sp {
@@ -1322,7 +1344,6 @@ Contact
   }
 }
 
-
 .form-area dt {
   width: 169px;
   height: 50px;
@@ -1330,7 +1351,6 @@ Contact
   align-items: center;
   font-size: 2rem;
   line-height: calc(33 / 20);
-
 
   @include sp {
     width: 100%;
@@ -1345,12 +1365,10 @@ Contact
   display: flex;
   align-items: center;
   font-size: 1.8rem;
-
 }
 
-
 .form-area-gender {
-  margin-top: 44px;
+  margin-top: 40px;
 
   @include sp {
     flex-direction: row;
@@ -1367,52 +1385,118 @@ Contact
       width: auto;
       flex: unset;
     }
+    @media screen and (max-width:374px) {
+      dt {
+      width: auto;
+      min-width: 70px;
+     
+    }
+    }
+  }
+
+}
+.contact-radio {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  margin-left: 10px;
+  
+
+  @include sp {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+}
+.contact-radio label {
+  cursor: pointer;
+}
+
+.contact-radio{
+  text-align: left;
+}
+.contact-radio input[type="radio"] {
+  display: none;
+}
+.contact-radio input[type="radio"] + span{ 
+  display: inline-block;
+  position: relative;
+  // width: 20px;
+  // height: 20px;
+  padding: 0 0 0 28px;
+	margin: 0 .2em 0;
+  border-radius: 50%; 
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+     background: #fff;      
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;  
+    
+  }
+}
+.contact-radio input[type="radio"]:checked + span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    background: #000;
+    width:  6px;
+    height:  6px;
+      border-radius: 50%;
+    // border: .2em solid #000;
+    display: block;
+  //   pointer-events: none;
+  //   z-index: 2;
   }
 
 
-}
-
 .form-area-email {
-  margin-top: 41px;
+  margin-top: 42px;
 
   @include sp {
     margin-top: 27px;
   }
-
 
 }
 
 .form-area-select {
-  margin-top: 46px;
+  margin-top: 49px;
 
   @include sp {
     margin-top: 27px;
   }
-
-
-
 }
 
 .form-area-message {
   margin-top: 45px;
 
   dt {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    @include sp {
+      margin-bottom: 5px;
+    }
   }
 
   dd {
     margin-top: 3px;
   }
-
 }
 
 .form-area-checkbox {
   margin-top: 43px;
 
+
   @include sp {
     margin-top: 0;
   }
-
 }
 
 .form-block-area {
@@ -1420,15 +1504,18 @@ Contact
   margin-top: 51px;
 
   @include sp {
-    margin-top: 29px;
+    margin-top: 25px;
   }
-
 }
 
-.form-block-area dt {
-  margin-bottom: 9px;
+.contact-checkbox-label {
+  font-size:2rem ;
+    line-height: calc(33/20);
 
-  @include sp {
+
+  @include sp {   
+    line-height: calc(27
+    /20);
     margin-bottom: 0;
   }
 }
@@ -1461,44 +1548,6 @@ Contact
   padding: 15px;
   font-size: 1.6rem;
   line-height: calc(33/16);
-
-
-}
-
-.contact-radio {
-  display: flex;
-  gap: 74px;
-
-  @include sp {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 24px;
-  }
-}
-
-input[type="radio"] {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  vertical-align: -2px;
-  background-color: #fff;
-  display: inline-block;
-  margin-right: 20px;
-  cursor: pointer;
-
-  &:checked:before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #000;
-    content: '';
-  }
-
 }
 
 .select {
@@ -1545,43 +1594,42 @@ input[type="radio"] {
   }
 }
 
-
-
 .checkbox-group {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px 7px;
-  margin-top: 16px;
+  gap: 14px 7px;
+margin-top: 9px;
 
   @include sp {
-    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-    gap: 5px 2px;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 2px;
     margin-top: 0;
   }
+  &label {
+    cursor: pointer;
+  }
 }
-
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
 .custom-checkbox {
   position: relative;
   padding-left: 40px;
   display: inline-block;
-  cursor: pointer;
-
   font-size: 1.8rem;
   line-height: calc(25/18);
-  margin-right: 2rem;
+  margin-right: 20px;
   user-select: none;
+  cursor: pointer;
 
   @include sp {
     font-size: 1.6rem;
     line-height: calc(25/16);
-    padding-left: 26px;
+    padding-left: 28px;
+     margin-right: 16px;
   }
-
-  input[type="checkbox"] {
-    display: none;
-  }
-
+ 
   &::before {
     content: '';
     position: absolute;
@@ -1605,15 +1653,16 @@ input[type="radio"] {
     height: 10px;
     border-right: 2px solid #000;
     border-bottom: 2px solid #000;
+
+     @include sp {
+      left: -22px;
+    }
   }
-
-
 }
 
 .custom-checkbox span {
   position: relative;
   display: inline-block;
-
 }
 
 .contact-heading {
@@ -1626,11 +1675,7 @@ input[type="radio"] {
       font-weight: bold;
     }
   }
-
-
 }
-
-
 
 .privacy-policy {
   margin-top: 50px;
@@ -1644,7 +1689,7 @@ input[type="radio"] {
 
 .privacy-policy-box {
   background-color: #fff;
-  padding: 36px 10px 40px 40px;
+  padding: 10px 10px 10px 40px;
   margin-top: 10px;
   max-width: 800px;
   height: 300px;
@@ -1671,7 +1716,8 @@ input[type="radio"] {
 .policy-scroll-content {
   font-size: 1.8rem;
   line-height: calc(31/18);
-  max-height: calc(1.8rem * 1.8 * 7);
+  max-height: 280px;
+  padding-top: 30px;
   overflow-y: auto;
   overflow-x: hidden;
   word-break: break-word;
@@ -1738,20 +1784,16 @@ input[type="radio"] {
   margin-top: 20px;
 }
 
-
-
-
-
 /* ボタン */
 .contact__button {
-  margin-top: 78px;
+  margin-top: 80px;
   margin-inline: auto;
 
   width: 300px;
 
   @include sp {
     width: 315px;
-    margin-top: 49px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
   }
@@ -1790,28 +1832,22 @@ Footer
 footer {
   background-color: #fff;
   text-align: center;
-  padding-top: 90px;
-  padding-bottom: 76px;
+  padding-top: 80px;
+  padding-bottom: 74px;
 
   @include sp {
     padding-top: 50px;
-    padding-bottom: 34px;
+    padding-bottom: 30px;
   }
-
 }
 
-// .footer__nav{
-//   margin-bottom: 0px;
-//    @include sp{
-//     margin-bottom: 24px;
-//    }
-// }
+
 .footer-logo {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 29px;
 
   @include sp {
-    margin-bottom: 21px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1819,17 +1855,16 @@ footer {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  column-gap: 50px;
+  column-gap: 40px;
   border-top: 1px solid #000;
-  max-width: 710px;
+  max-width: 722px;
   width: 100%;
   padding-top: 28px;
 
-
   @include sp {
     flex-wrap: wrap;
-    column-gap: 30px;
-    padding-top: 18px;
+    column-gap: 20px;
+    padding-top: 15px;
   }
 }
 
@@ -1845,29 +1880,22 @@ footer {
   transition: all 0.3s ease-in-out;
   text-transform: capitalize;
   height: inherit;
+  padding: 5px;
 
   &:hover {
     opacity: 0.4;
-  }
-
-  // @include sp {
-  //     font-size: 1.8rem;
-  //     line-height: calc(33/18);
-  //     padding: 5px 10px;
-  // }
-
+  } 
 }
 
 .footer__sns {
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 30px;
-  margin-top: 26px;
-
+  column-gap: 20px;
+  margin-top: 17px;
 
   @include sp {
-    margin-top: 23px;
+    margin-top: 20px;
   }
 }
 
@@ -1875,6 +1903,7 @@ footer {
   display: block;
   list-style: none;
   line-height: 0;
+  padding: 5px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -1895,6 +1924,7 @@ footer {
 
   @include sp {
     padding-block: 20px;
+    padding-inline:30px ;
     line-height: calc(25/20);
     margin-top: 15px;
   }
