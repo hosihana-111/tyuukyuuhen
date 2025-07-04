@@ -31,13 +31,16 @@ window.addEventListener("scroll", function () {
 });
 
   // ハンバーガー  
-  // $(function(){
-
   $('.header__hb-btn').click(function () {
     $(this).toggleClass('active');
     $('.header__nav-list').toggleClass('active')
   });
-  // }) ;
+  // ナビリンクをクリックしたらメニューを閉じる
+  $('.header__nav-list a').on('click', function () {
+    $('.header__hb-btn').removeClass('active');
+    $('.header__nav-list').removeClass('active');
+  });
+
 
   // モーダル
   const modalBtns = document.querySelectorAll(".modal-toggle");

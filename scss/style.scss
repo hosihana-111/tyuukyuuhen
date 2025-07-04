@@ -93,7 +93,7 @@ a {
   padding-left: 9px;
 }
 
-.section__sub-title {
+.section__title span{
   text-align: center;
   font-size: 2rem;
   letter-spacing: calc(20px*0.3);
@@ -121,8 +121,10 @@ a {
   }
 
   @include sp {
+    height: 50px;
+    width: 50px;
     right: 20px;
-    bottom: 20px;
+    bottom: 60px;
   }
 }
 
@@ -213,7 +215,9 @@ header
     }
   }
 
-  @include sp {}
+  @media screen and (767px <=width <=950px){
+     font-size: 1.8rem;
+  }
 
 }
 
@@ -239,9 +243,13 @@ header
 
 .header__hb-btn {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 24px;
-  margin: 0;
+  // margin: 0;
+  margin-bottom: 4px;
   cursor: pointer;
 }
 
@@ -254,6 +262,7 @@ header
   background: var(--main-color);
   transition: 0.3s;
   -webkit-transition: 0.4s;
+  
 }
 
 .header__hb-btn span:nth-of-type(1) {
@@ -363,7 +372,7 @@ header
 }
 
 @include sp {
-  width: 300px;
+  // width: 300px;
   height: 58px;
   display: flex;
   align-items: center;
@@ -546,7 +555,7 @@ service
 }
 
 .service__container {
-
+  flex-direction:column;
   width: 100%;
   margin-top: 70px;
 
@@ -586,7 +595,7 @@ service
   // max-width: 600px;
 
   display: block;
-  padding-bottom: calc(51/920*100%);
+  padding-bottom: 51px;
   z-index: 10;
 
   @include sp {
@@ -618,8 +627,8 @@ service
   width: calc(500/920*100%);
   // max-width: 500px;
   font-weight: 600;
-  padding-top: calc(50/920*100%);
-  padding-bottom: calc(42/920*100%);
+  padding-top: 50px;
+  padding-bottom: 42px;
   padding-left: calc(220/920*100%);
   margin-left: calc(-200/920*100%);
   z-index: 2;
@@ -734,9 +743,9 @@ Works
 .modal__items {
   display: flex;
   gap: calc(40 / 920 * 100%);
-  align-items: center;
-  
+  align-items: stretch;
   justify-content: flex-start; 
+
 
   @include sp {
     display: flex;
@@ -750,23 +759,24 @@ Works
   }
 
 }
-.modal__item{ 
-  flex: 0 0 calc((100% - 3 * 4.3478%) / 4); // 4列分の固定幅
-  box-sizing: border-box;
-}
+
 
 .modal-toggle {
   cursor: pointer;
-
+   width: calc(200/920*100%);
+   height: 100%;
+  
   @include sp {
-
     display: block;
     width: 100%;
   }
-
+  &:hover {
+    opacity: 0.4;
+  }
 }
 
 .modal__item-img {
+ 
   @include sp {
     width: 100%;
     height: auto;
@@ -791,6 +801,9 @@ Works
 
 .modal__item-text p {
   line-height: calc(25/16);
+  @media screen and (767px <=width <=950px) {
+    font-size: 1.4rem;
+  }
 }
 
 .modal {
@@ -828,16 +841,20 @@ Works
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-height: 275px;
+  // max-height: 275px;
   animation: show 0.6s linear 0s;
   filter: drop-shadow(0px 2px 6px #777);
   position: relative;
   
   @include sp {
-    max-width: 315px;
-    max-height: 210px;
+    // max-width: 315px;
+    // max-height: 210px;
+
      padding: 20px 20px 0;
   }
+}
+.modal-content img {
+ aspect-ratio:274/144 ;
 }
 
 .modal-top {
@@ -868,6 +885,9 @@ Works
   cursor: pointer;
   z-index: 999;
   display: inline-block;
+  &:hover {
+    opacity: 0.4;
+  }
 }
 
 .modal-close:hover,
@@ -1638,31 +1658,51 @@ margin-top: 9px;
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-
     background-color: #fff;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  &:hover::before {
+    border-color: var(--main-color);
+  }
+
+  input[type="checkbox"]:checked + span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
     box-sizing: border-box;
   }
 
-  input[type="checkbox"]:checked+span::after {
+  input[type="checkbox"]:checked + span::after {
     content: '';
     position: absolute;
-    left: -32px;
+    left: 6px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    width: 5px;
-    height: 10px;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
+    width: 6px;
+    height: 12px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
 
-     @include sp {
-      left: -22px;
+    @include sp {
+      left: 5px;
+      width: 5px;
+      height: 10px;
     }
   }
 }
 
 .custom-checkbox span {
   position: relative;
-  display: inline-block;
+ 
 }
 
 .contact-heading {

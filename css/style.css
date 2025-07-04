@@ -213,7 +213,7 @@ a {
   padding-left: 9px;
 }
 
-.section__sub-title {
+.section__title span {
   text-align: center;
   font-size: 2rem;
   letter-spacing: 6px;
@@ -241,8 +241,10 @@ a {
 }
 @media only screen and (max-width: 767px) {
   .page-top {
+    height: 50px;
+    width: 50px;
     right: 20px;
-    bottom: 20px;
+    bottom: 60px;
   }
 }
 
@@ -333,6 +335,12 @@ header
 .logo a:hover {
   opacity: 0.4;
 }
+@media screen and (767px <= width <= 950px) {
+  .logo {
+    font-size: 1.8rem;
+  }
+}
+
 .header__right {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -364,9 +372,18 @@ header
 
 .header__hb-btn {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 32px;
   height: 24px;
-  margin: 0;
+  margin-bottom: 4px;
   cursor: pointer;
 }
 
@@ -504,7 +521,6 @@ header
 }
 @media only screen and (max-width: 767px) {
   .header__nav-list-item {
-    width: 300px;
     height: 58px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -703,6 +719,10 @@ service
 }
 
 .service__container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   margin-top: 70px;
 }
@@ -759,7 +779,7 @@ service
 .service__box-img {
   width: 65.2173913043%;
   display: block;
-  padding-bottom: 5.5434782609%;
+  padding-bottom: 51px;
   z-index: 10;
 }
 @media only screen and (max-width: 767px) {
@@ -792,8 +812,8 @@ service
   background-color: var(--main-color);
   width: 54.347826087%;
   font-weight: 600;
-  padding-top: 5.4347826087%;
-  padding-bottom: 4.5652173913%;
+  padding-top: 50px;
+  padding-bottom: 42px;
   padding-left: 23.9130434783%;
   margin-left: -21.7391304348%;
   z-index: 2;
@@ -927,9 +947,9 @@ Works
   display: -ms-flexbox;
   display: flex;
   gap: 4.347826087%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -956,22 +976,19 @@ Works
   }
 }
 
-.modal__item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 21.73915%;
-          flex: 0 0 21.73915%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .modal-toggle {
   cursor: pointer;
+  width: 21.7391304348%;
+  height: 100%;
 }
 @media only screen and (max-width: 767px) {
   .modal-toggle {
     display: block;
     width: 100%;
   }
+}
+.modal-toggle:hover {
+  opacity: 0.4;
 }
 
 @media only screen and (max-width: 767px) {
@@ -999,6 +1016,11 @@ Works
 
 .modal__item-text p {
   line-height: 1.5625;
+}
+@media screen and (767px <= width <= 950px) {
+  .modal__item-text p {
+    font-size: 1.4rem;
+  }
 }
 
 .modal {
@@ -1039,7 +1061,6 @@ Works
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  max-height: 275px;
   -webkit-animation: show 0.6s linear 0s;
           animation: show 0.6s linear 0s;
   -webkit-filter: drop-shadow(0px 2px 6px #777);
@@ -1048,10 +1069,12 @@ Works
 }
 @media only screen and (max-width: 767px) {
   .modal-content {
-    max-width: 315px;
-    max-height: 210px;
     padding: 20px 20px 0;
   }
+}
+
+.modal-content img {
+  aspect-ratio: 274/144;
 }
 
 .modal-top {
@@ -1078,6 +1101,9 @@ Works
   cursor: pointer;
   z-index: 999;
   display: inline-block;
+}
+.modal-close:hover {
+  opacity: 0.4;
 }
 
 .modal-close:hover,
@@ -1991,7 +2017,7 @@ Contact
 .custom-checkbox input[type=checkbox]:checked + span::after {
   content: "";
   position: absolute;
-  left: -32px;
+  left: 5px;
   top: 50%;
   -webkit-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg);
@@ -2002,13 +2028,14 @@ Contact
 }
 @media only screen and (max-width: 767px) {
   .custom-checkbox input[type=checkbox]:checked + span::after {
-    left: -22px;
+    left: 4px;
+    width: 5px;
+    height: 10px;
   }
 }
 
 .custom-checkbox span {
   position: relative;
-  display: inline-block;
 }
 
 .contact-heading {
