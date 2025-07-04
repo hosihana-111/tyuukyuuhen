@@ -93,15 +93,14 @@ a {
   padding-left: 9px;
 }
 
-.section__title span{
+.section__title span {
   text-align: center;
   font-size: 2rem;
   letter-spacing: calc(20px*0.3);
   line-height: calc(33/22);
   color: #000;
-  margin-top: 8px;
-  padding-left: 6px;
-
+  margin-top: 10px;
+  display: block;
 }
 
 /*---------戻るボタン-------*/
@@ -163,9 +162,10 @@ header
   //   ;
   //     }
   &.is-change {
-    background-color:var(--main-color); // 例：白背景に切り替え
-    
+    background-color: var(--main-color); // 例：白背景に切り替え
+
   }
+
   @include sp {
     height: 50px;
   }
@@ -215,8 +215,8 @@ header
     }
   }
 
-  @media screen and (767px <=width <=950px){
-     font-size: 1.8rem;
+  @media screen and (767px <=width <=950px) {
+    font-size: 1.8rem;
   }
 
 }
@@ -262,7 +262,7 @@ header
   background: var(--main-color);
   transition: 0.3s;
   -webkit-transition: 0.4s;
-  
+
 }
 
 .header__hb-btn span:nth-of-type(1) {
@@ -340,52 +340,53 @@ header
     padding: 0 15px;
     font-size: 1.8rem;
     line-height: calc(33/18);
-    position: relative;    
+    position: relative;
 
     span {
-    transition: opacity 0.3s ease;
-  }
+      transition: opacity 0.3s ease;
+    }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: 30px;     
+      bottom: 30px;
       left: 10%;
       width: 0;
       height: 1px;
       background-color: #fff;
-      transition: width 0.3s ease;      
+      transition: width 0.3s ease;
     }
 
     &:hover::after {
-      width: 80%;      
+      width: 80%;
     }
+
     &:hover span {
-    opacity: 0.4; 
+      opacity: 0.4;
+    }
+
+    @media screen and (767px <=width <=950px) {
+      font-size: 1.6rem;
+      padding: 25px 10px;
+      transition: all 0.3s ease;
+    }
   }
 
-  @media screen and (767px <=width <=950px) {
-    font-size: 1.6rem;
-    padding: 25px 10px;
+  @include sp {
+    // width: 300px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
     transition: all 0.3s ease;
-  }
-}
 
-@include sp {
-  // width: 300px;
-  height: 58px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  font-size: 1.8rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: #000; // 黒背景に変更
-    opacity: 1; // hover時の薄くなる効果を無効化
+    &:hover {
+      background-color: #000; // 黒背景に変更
+      opacity: 1; // hover時の薄くなる効果を無効化
+    }
   }
-}
 }
 
 .header__nav-list-item a {
@@ -512,9 +513,10 @@ about
   margin-left: 46px;
   letter-spacing: 5px;
 
-  @media screen and (767px <=width <=950px){
+  @media screen and (767px <=width <=950px) {
     font-size: 2.5rem;
-     margin-left: 36px;  }
+    margin-left: 36px;
+  }
 
   @include sp {
     font-size: 2.5rem;
@@ -530,10 +532,11 @@ about
   line-height: 2.66;
   letter-spacing: 7px;
 
-   @media screen and (767px <=width <=950px){
+  @media screen and (767px <=width <=950px) {
     font-size: 1.6rem;
     line-height: 2.5;
-   }
+  }
+
   @include sp {
     font-size: 1.6rem;
     line-height: 1.6;
@@ -555,7 +558,7 @@ service
 }
 
 .service__container {
-  flex-direction:column;
+  flex-direction: column;
   width: 100%;
   margin-top: 70px;
 
@@ -585,7 +588,7 @@ service
 
   @include sp {
     flex-direction: column;
-    
+
   }
 
 }
@@ -600,13 +603,14 @@ service
 
   @include sp {
     width: 100%;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
 }
+
 .service__box-img img {
   width: 100%;
   height: auto;
-    display: block;
+  display: block;
 }
 
 .service__box-img-p {
@@ -623,7 +627,7 @@ service
 
 .service__box-text {
   background-color: var(--main-color);
-  
+
   width: calc(500/920*100%);
   // max-width: 500px;
   font-weight: 600;
@@ -744,7 +748,7 @@ Works
   display: flex;
   gap: calc(40 / 920 * 100%);
   align-items: stretch;
-  justify-content: flex-start; 
+  justify-content: flex-start;
 
 
   @include sp {
@@ -763,20 +767,21 @@ Works
 
 .modal-toggle {
   cursor: pointer;
-   width: calc(200/920*100%);
-   height: 100%;
-  
+  width: calc(200/920*100%);
+  height: 100%;
+
   @include sp {
     display: block;
     width: 100%;
   }
+
   &:hover {
     opacity: 0.4;
   }
 }
 
 .modal__item-img {
- 
+
   @include sp {
     width: 100%;
     height: auto;
@@ -801,6 +806,7 @@ Works
 
 .modal__item-text p {
   line-height: calc(25/16);
+
   @media screen and (767px <=width <=950px) {
     font-size: 1.4rem;
   }
@@ -826,6 +832,7 @@ Works
 
 .modal-container-p {
   padding-block: 7px;
+
   @include sp {
     padding-block: 10px;
   }
@@ -845,16 +852,17 @@ Works
   animation: show 0.6s linear 0s;
   filter: drop-shadow(0px 2px 6px #777);
   position: relative;
-  
+
   @include sp {
     // max-width: 315px;
     // max-height: 210px;
 
-     padding: 20px 20px 0;
+    padding: 20px 20px 0;
   }
 }
+
 .modal-content img {
- aspect-ratio:274/144 ;
+  aspect-ratio: 274/144;
 }
 
 .modal-top {
@@ -862,7 +870,7 @@ Works
   position: absolute;
   right: 0;
   top: 0;
-   z-index: 10;
+  z-index: 10;
 }
 
 .modal-open {
@@ -873,7 +881,7 @@ Works
   // color: #000;
   // text-decoration: none;
   // font-size: 15px;
- 
+
   position: absolute;
   top: 0;
   right: 0;
@@ -885,6 +893,7 @@ Works
   cursor: pointer;
   z-index: 999;
   display: inline-block;
+
   &:hover {
     opacity: 0.4;
   }
@@ -925,7 +934,7 @@ News
 }
 
 .news__container {
-  margin-top: 71px;
+  margin-top: 65px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 6%;
@@ -965,7 +974,7 @@ News
 
   @include sp {
     padding: 8px 20px;
-   
+
   }
 }
 
@@ -1021,7 +1030,7 @@ News
 .news-date {
   display: block;
   line-height: calc(33/16);
-  
+
   flex-shrink: 0;
   text-align: left;
   font-size: 1.6rem;
@@ -1039,7 +1048,7 @@ News
   margin: 0;
   flex: 1;
 
-   @media screen and (max-width:900px)  {
+  @media screen and (max-width:900px) {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -1086,7 +1095,7 @@ News
   text-decoration: none;
   width: fit-content;
   margin-left: auto;
-  padding:5px 29px 5px 5px;
+  padding: 5px 29px 5px 5px;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
@@ -1112,7 +1121,7 @@ News
   }
 
   @include sp {
-   
+
     margin-top: 10px;
     padding-right: 30px
   }
@@ -1322,9 +1331,9 @@ Contact
 
 .contact__container {
   margin-top: 37px;
-//  padding-inline: 60px;
-max-width: 800px ;
- margin-inline:auto ;
+  //  padding-inline: 60px;
+  max-width: 800px;
+  margin-inline: auto;
   // @include sp {
   //  padding-inline: 0;
 
@@ -1393,7 +1402,7 @@ max-width: 800px ;
   @include sp {
     flex-direction: row;
     align-items: flex-start;
-    margin-top: 30px;
+    margin-top: 25px;
 
     dt {
       width: auto;
@@ -1405,22 +1414,24 @@ max-width: 800px ;
       width: auto;
       flex: unset;
     }
+
     @media screen and (max-width:374px) {
       dt {
-      width: auto;
-      min-width: 70px;
-     
-    }
+        width: auto;
+        min-width: 70px;
+
+      }
     }
   }
 
 }
+
 .contact-radio {
   display: flex;
   gap: 80px;
   align-items: center;
   margin-left: 10px;
-  
+
 
   @include sp {
     flex-wrap: nowrap;
@@ -1428,25 +1439,30 @@ max-width: 800px ;
     gap: 24px;
   }
 }
+
 .contact-radio label {
   cursor: pointer;
 }
 
-.contact-radio{
+.contact-radio {
   text-align: left;
+
 }
+
 .contact-radio input[type="radio"] {
   display: none;
 }
-.contact-radio input[type="radio"] + span{ 
+
+.contact-radio input[type="radio"]+span {
   display: inline-block;
-  position: relative;
-  // width: 20px;
-  // height: 20px;
+  position: relative;  
   padding: 0 0 0 28px;
-	margin: 0 .2em 0;
-  border-radius: 50%; 
+  margin: 0 4px 0;
+  border-radius: 50%;
   cursor: pointer;
+
+
+
 
   &::before {
     position: absolute;
@@ -1454,28 +1470,30 @@ max-width: 800px ;
     top: 50%;
     left: 0;
     transform: translate(-50%, -50%);
-     background: #fff;      
+    background: #fff;
     width: 20px;
     height: 20px;
-    border-radius: 50%;  
-    
+    border-radius: 50%;
+    opacity: 1;
   }
+
 }
-.contact-radio input[type="radio"]:checked + span::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
-    background: #000;
-    width:  6px;
-    height:  6px;
-      border-radius: 50%;
-    // border: .2em solid #000;
-    display: block;
+
+.contact-radio input[type="radio"]:checked+span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background: #000;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  // border: .2em solid #000;
+  display: block;
   //   pointer-events: none;
   //   z-index: 2;
-  }
+}
 
 
 .form-area-email {
@@ -1500,6 +1518,7 @@ max-width: 800px ;
 
   dt {
     margin-bottom: 10px;
+
     @include sp {
       margin-bottom: 5px;
     }
@@ -1529,13 +1548,12 @@ max-width: 800px ;
 }
 
 .contact-checkbox-label {
-  font-size:2rem ;
-    line-height: calc(33/20);
+  font-size: 2rem;
+  line-height: calc(33/20);
 
 
-  @include sp {   
-    line-height: calc(27
-    /20);
+  @include sp {
+    line-height: calc(27 /20);
     margin-bottom: 0;
   }
 }
@@ -1619,91 +1637,121 @@ max-width: 800px ;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px 7px;
-margin-top: 9px;
+  
 
   @include sp {
     grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     gap: 2px;
     margin-top: 0;
   }
+
   &label {
     cursor: pointer;
   }
 }
+
+.custom-checkbox-wrap {
+  pointer-events: none;
+}
+
 .custom-checkbox input[type="checkbox"] {
   display: none;
 }
+
+
+
 .custom-checkbox {
   position: relative;
   padding-left: 40px;
   display: inline-block;
   font-size: 1.8rem;
   line-height: calc(25/18);
-  margin-right: 20px;
+  // margin-right: 20px;
   user-select: none;
   cursor: pointer;
+  pointer-events: auto;
 
   @include sp {
     font-size: 1.6rem;
     line-height: calc(25/16);
-    padding-left: 28px;
-     margin-right: 16px;
+   padding-left: 30px;
   }
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   left: 0;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   width: 20px;
+  //   height: 20px;
+  //   background-color: #fff;
+  //   box-sizing: border-box;
+  //   transition: all 0.3s ease;
+  // }
+
+  // &:hover::before {
+  //   border-color: var(--main-color);
+  // }
+
  
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-  }
+  // input[type="checkbox"]:checked+span::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: -33px;
+  //   top: 45%;
+  //   transform: translateY(-50%) rotate(45deg);
+  //   width: 6px;
+  //   height: 12px;
+  //   border-right: 2px solid #000;
+  //   border-bottom: 2px solid #000;
 
-  &:hover::before {
-    border-color: var(--main-color);
-  }
-
-  input[type="checkbox"]:checked + span::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background-color: var(--main-color);
-    border: 2px solid var(--main-color);
-    box-sizing: border-box;
-  }
-
-  input[type="checkbox"]:checked + span::after {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    width: 6px;
-    height: 12px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-
-    @include sp {
-      left: 5px;
-      width: 5px;
-      height: 10px;
-    }
-  }
+  //   @include sp {
+  //     left: 6px;
+  //     width: 5px;
+  //     height: 10px;
+  //   }
+  // }
 }
 
 .custom-checkbox span {
   position: relative;
- 
+  display: inline-block;
+
+&::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left:-32px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  @include sp {
+  left:-22px;
 }
+
+}
+
+
+}
+input[type="checkbox"]:checked + span::after{
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: -32px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 6px;
+  height: 12px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  @include sp {
+  left:-22px;
+}
+}
+
+
 
 .contact-heading {
   width: 170px;
@@ -1718,12 +1766,12 @@ margin-top: 9px;
 }
 
 .privacy-policy {
-  margin-top: 50px;
+  margin-top: 45px;
   margin-bottom: 40px;
   line-height: calc(31/18);
 
   @include sp {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 
@@ -1768,6 +1816,7 @@ margin-top: 9px;
     font-size: 1.6rem;
     line-height: calc(33/16);
     padding-right: 40px;
+    padding-top: 0;
     max-height: calc(1.8rem * 1.8 * 8);
   }
 
@@ -1812,10 +1861,27 @@ margin-top: 9px;
 
 
   ul {
-    padding-left: 20px;
-    list-style-type: disc;
-    list-style-position: outside;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
+    li {
+      position: relative;
+      padding-left: 27px;
+      line-height: calc(31/18);
+
+      &::before {
+        content: "・";
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: inherit;
+      }
+
+      @include sp {
+        padding-left: 18px;
+      }
+    }
   }
 
 }
@@ -1826,14 +1892,14 @@ margin-top: 9px;
 
 /* ボタン */
 .contact__button {
-  margin-top: 80px;
+  margin-top: 78px;
   margin-inline: auto;
 
   width: 300px;
 
   @include sp {
     width: 315px;
-    margin-top: 50px;
+    margin-top: 45px;
     display: flex;
     justify-content: center;
   }
@@ -1873,7 +1939,7 @@ footer {
   background-color: #fff;
   text-align: center;
   padding-top: 80px;
-  padding-bottom: 74px;
+  padding-bottom: 80px;
 
   @include sp {
     padding-top: 50px;
@@ -1888,6 +1954,10 @@ footer {
 
   @include sp {
     margin-bottom: 20px;
+  }
+
+  &:hover {
+    opacity: 0.4;
   }
 }
 
@@ -1904,13 +1974,13 @@ footer {
   @include sp {
     flex-wrap: wrap;
     column-gap: 20px;
-    padding-top: 15px;
+    padding-top: 25px;
   }
 }
 
 .footer-nav__list {
   list-style: none;
-  height: 40px;
+
 }
 
 .footer-nav__link {
@@ -1920,11 +1990,11 @@ footer {
   transition: all 0.3s ease-in-out;
   text-transform: capitalize;
   height: inherit;
-  padding: 5px;
+  padding:5px;
 
   &:hover {
     opacity: 0.4;
-  } 
+  }
 }
 
 .footer__sns {
@@ -1964,7 +2034,7 @@ footer {
 
   @include sp {
     padding-block: 20px;
-    padding-inline:30px ;
+    padding-inline: 30px;
     line-height: calc(25/20);
     margin-top: 15px;
   }

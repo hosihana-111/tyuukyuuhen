@@ -219,8 +219,8 @@ a {
   letter-spacing: 6px;
   line-height: 1.5;
   color: #000;
-  margin-top: 8px;
-  padding-left: 6px;
+  margin-top: 10px;
+  display: block;
 }
 
 /*---------戻るボタン-------*/
@@ -785,7 +785,7 @@ service
 @media only screen and (max-width: 767px) {
   .service__box-img {
     width: 100%;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
 }
 
@@ -1148,7 +1148,7 @@ News
 }
 
 .news__container {
-  margin-top: 71px;
+  margin-top: 65px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 6%;
@@ -1696,7 +1696,7 @@ Contact
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    margin-top: 30px;
+    margin-top: 25px;
   }
   .form-area-gender dt {
     width: auto;
@@ -1754,7 +1754,7 @@ Contact
   display: inline-block;
   position: relative;
   padding: 0 0 0 28px;
-  margin: 0 0.2em 0;
+  margin: 0 4px 0;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -1769,6 +1769,7 @@ Contact
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  opacity: 1;
 }
 
 .contact-radio input[type=radio]:checked + span::after {
@@ -1963,7 +1964,6 @@ Contact
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px 7px;
-  margin-top: 9px;
 }
 @media only screen and (max-width: 767px) {
   .checkbox-group {
@@ -1976,6 +1976,10 @@ Contact
   cursor: pointer;
 }
 
+.custom-checkbox-wrap {
+  pointer-events: none;
+}
+
 .custom-checkbox input[type=checkbox] {
   display: none;
 }
@@ -1986,56 +1990,59 @@ Contact
   display: inline-block;
   font-size: 1.8rem;
   line-height: 1.3888888889;
-  margin-right: 20px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
+  pointer-events: auto;
 }
 @media only screen and (max-width: 767px) {
   .custom-checkbox {
     font-size: 1.6rem;
     line-height: 1.5625;
-    padding-left: 28px;
-    margin-right: 16px;
-  }
-}
-.custom-checkbox::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.custom-checkbox input[type=checkbox]:checked + span::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 50%;
-  -webkit-transform: translateY(-50%) rotate(45deg);
-          transform: translateY(-50%) rotate(45deg);
-  width: 5px;
-  height: 10px;
-  border-right: 2px solid #000;
-  border-bottom: 2px solid #000;
-}
-@media only screen and (max-width: 767px) {
-  .custom-checkbox input[type=checkbox]:checked + span::after {
-    left: 4px;
-    width: 5px;
-    height: 10px;
+    padding-left: 30px;
   }
 }
 
 .custom-checkbox span {
   position: relative;
+  display: inline-block;
+}
+.custom-checkbox span::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -32px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+}
+@media only screen and (max-width: 767px) {
+  .custom-checkbox span::before {
+    left: -22px;
+  }
+}
+
+input[type=checkbox]:checked + span::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -32px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  width: 6px;
+  height: 12px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+@media only screen and (max-width: 767px) {
+  input[type=checkbox]:checked + span::after {
+    left: -22px;
+  }
 }
 
 .contact-heading {
@@ -2049,13 +2056,13 @@ Contact
 }
 
 .privacy-policy {
-  margin-top: 50px;
+  margin-top: 45px;
   margin-bottom: 40px;
   line-height: 1.7222222222;
 }
 @media only screen and (max-width: 767px) {
   .privacy-policy {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 
@@ -2103,6 +2110,7 @@ Contact
     font-size: 1.6rem;
     line-height: 2.0625;
     padding-right: 40px;
+    padding-top: 0;
     max-height: 25.92rem;
   }
 }
@@ -2138,9 +2146,26 @@ Contact
 }
 
 .policy-text ul {
-  padding-left: 20px;
-  list-style-type: disc;
-  list-style-position: outside;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.policy-text ul li {
+  position: relative;
+  padding-left: 27px;
+  line-height: 1.7222222222;
+}
+.policy-text ul li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
+}
+@media only screen and (max-width: 767px) {
+  .policy-text ul li {
+    padding-left: 18px;
+  }
 }
 
 .policy-address {
@@ -2149,14 +2174,14 @@ Contact
 
 /* ボタン */
 .contact__button {
-  margin-top: 80px;
+  margin-top: 78px;
   margin-inline: auto;
   width: 300px;
 }
 @media only screen and (max-width: 767px) {
   .contact__button {
     width: 315px;
-    margin-top: 50px;
+    margin-top: 45px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2196,7 +2221,7 @@ footer {
   background-color: #fff;
   text-align: center;
   padding-top: 80px;
-  padding-bottom: 74px;
+  padding-bottom: 80px;
 }
 @media only screen and (max-width: 767px) {
   footer {
@@ -2213,6 +2238,9 @@ footer {
   .footer-logo {
     margin-bottom: 20px;
   }
+}
+.footer-logo:hover {
+  opacity: 0.4;
 }
 
 .footer-nav__lists {
@@ -2238,13 +2266,12 @@ footer {
     -webkit-column-gap: 20px;
        -moz-column-gap: 20px;
             column-gap: 20px;
-    padding-top: 15px;
+    padding-top: 25px;
   }
 }
 
 .footer-nav__list {
   list-style: none;
-  height: 40px;
 }
 
 .footer-nav__link {
