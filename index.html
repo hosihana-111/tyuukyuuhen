@@ -14,7 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
@@ -25,12 +24,12 @@
     <header id="header" class="header">
       <div class="header__inner">
         <h1 class="logo"><a href="#">株式会社北村建設興業</a></h1>
-        <div class="header__hb-box sp">
-          <button class="header__hb-btn">
+        <div class="header__hb-btn sp">
+        
             <span></span>
             <span></span>
             <span></span>
-          </button>
+          
         </div>
 
         <nav class="header__right">
@@ -76,7 +75,8 @@
         </div>
 
       </section>
-      <a class="page-top" href="#"><img src="images/gotop.png" alt="トップへ戻る"></a>
+      <a class="page-top" href="#"><img src="./images/icon-to-top.svg" alt="トップへ戻る"></a>
+      <!-- <a class="page-top" href="#"><img src="images/gotop.png" alt="トップへ戻る"></a> -->
 
       <!--About-->
       <section id="about" class="about">
@@ -109,12 +109,13 @@
       <!--Service-->
       <section id="service" class="service section-bg">
         <div class="inner">
-          <h2 class="section__title">SERVICE <br><span>サービス</span></h2>
+          <h2 class="section__title"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+              data-aos-easing="ease-out" data-aos-once="true">SERVICE <br><span>サービス</span></h2>
 
           <div class="service__container">
-            <div class="service__box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+            <div class="service__box" >
+              <div class="service__box-img" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
               data-aos-easing="ease-out" data-aos-once="true">
-              <div class="service__box-img">
                 <picture>
                   <source media="(min-width: 768px)" srcset="./images/service/pc_service_01.jpg">
                   <img src="./images/service/sp_service_01.jpg" alt="自然素材と伝統技術を活かした住宅を提案する建設会社の女性スタッフ"
@@ -122,28 +123,30 @@
                 </picture>
                 <p class="service__box-img-p">静岡県U.I様自宅</p>
               </div>
-              <div class="service__box-text">
+              <div class="service__box-text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+              data-aos-easing="ease-out" data-aos-once="true">
                 <p class="service-tittle">新築<br class="pc">（土地探し〜建築）</p>
                 <p class="service-desc">お客様にあった土地探しから<br>建築、施工までサポートいたします。<br>風水的観点からもご提案。</p>
               </div>
             </div>
-            <div class="service__box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+            <div class="service__box" >
+              <div class="service__box-img" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"
               data-aos-easing="ease-out" data-aos-once="true">
-              <div class="service__box-img">
                 <picture>
                   <source media="(min-width: 768px)" srcset="./images/service/pc_service_02.jpg">
                   <img src="./images/service/sp_service_02.jpg" alt="北海道富良野市ブックカフェ" title="北海道富良野市ブックカフェ">
                 </picture>
                 <p class="service__box-img-p">北海道富良野市ブックカフェ</p>
               </div>
-              <div class="service__box-text">
+              <div class="service__box-text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"
+              data-aos-easing="ease-out" data-aos-once="true">
                 <p class="service-tittle">リフォーム<br>リノベーション</p>
                 <p class="service-desc">温かみと雰囲気をそのままに<br>住み心地、使い心地を<br>追求しご提供いたします。</p>
               </div>
             </div>
-            <div class="service__box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+            <div class="service__box" >
+              <div class="service__box-img" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800"
               data-aos-easing="ease-out" data-aos-once="true">
-              <div class="service__box-img">
                 <picture>
                   <source media="(min-width: 768px)" srcset="./images/service/pc_service_03.jpg">
                   <img src="./images/service/sp_service_03.jpg" alt="自然素材と伝統技術を活かした住宅を提案する建設会社の女性スタッフ"
@@ -151,7 +154,8 @@
                 </picture>
                 <p class="service__box-img-p">広島県竹原市</p>
               </div>
-              <div class="service__box-text">
+              <div class="service__box-text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800"
+              data-aos-easing="ease-out" data-aos-once="true">
                 <p class="service-tittle">都市計画〜開発<br>公共施設</p>
                 <p class="service-desc">都市計画から都市開発まで<br>ご提案いたします。<br>公共施設もさらに居心地良く。</p>
               </div>
@@ -163,7 +167,8 @@
       <!--Works-->
       <section id="works" class="works">
         <div class="inner">
-          <h2 class="section__title">WORKS<br><span>施工事例</span></h2>
+          <h2 class="section__title"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+              data-aos-easing="ease-out" data-aos-once="true">WORKS<br><span>施工事例</span></h2>
 
           <div class="works__container">
             <div class="modal__items">
@@ -289,7 +294,8 @@
       <!--News-->
       <section id="news" class="news section-bg">
         <div class="inner">
-          <h2 class="section__title">NEWS<br><span>お知らせ</span></h2>
+          <h2 class="section__title"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+              data-aos-easing="ease-out" data-aos-once="true">NEWS<br><span>お知らせ</span></h2>
           <div class="news__container" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
             data-aos-easing="ease-out" data-aos-once="true">
             <div class="news-block">
@@ -351,19 +357,20 @@
       <!--Company-->
       <section id="company" class="company">
         <div class="inner">
-          <h2 class="section__title">COMPANY<br><span>会社概要</span></h2>
+          <h2 class="section__title"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+              data-aos-easing="ease-out" data-aos-once="true">COMPANY<br><span>会社概要</span></h2>
 
           <div class="company__container">
-            <div class="company__box">
+            <div class="company__box" >
 
-              <div class="company-map" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
+              <div class="company-map"data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
                 data-aos-easing="ease-out" data-aos-once="true">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6706.6221920847265!2d129.84083198858312!3d32.81052119241811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1747165647083!5m2!1sja!2sjp"
                   width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-              <div class="company__box-text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
+              <div class="company__box-text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"
                 data-aos-easing="ease-out" data-aos-once="true">
                 <p class="company-title">株式会社 北村建設興業</p>
                 <p class="company-address">
@@ -382,7 +389,8 @@
       <!--Contact-->
       <section id="contact" class="contact section-bg">
         <div class="inner">
-          <h2 class="section__title">CONTACT<br><span>お問い合わせ</span></h2>
+          <h2 class="section__title"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
+              data-aos-easing="ease-out" data-aos-once="true">CONTACT<br><span>お問い合わせ</span></h2>
           <div class="contact__container" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
             data-aos-easing="ease-out" data-aos-once="true">
             <p class="contact-p">３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。</p>
@@ -527,7 +535,7 @@
                         </div>
 
                         <div class="policy-block">
-                          <div class="policy-title">個人情報の利用目的(法18条、15条)</div>
+                          <h4 class="policy-title">個人情報の利用目的(法18条、15条)</h4>
                           <div class="policy-text">
                             <p>
                               弊社は建築物の設計、施工を主とした当社業務ならびにアフターサービスをさせていただく上で、お客様の個人情報を原則として次の利用目的の範囲内で利用させていただきます。なお、アンケート用紙・ウェブサイトの他のページ等で特に利用目的を定めている場合は、その利用目的を含みます。
@@ -545,7 +553,7 @@
                           </div>
                         </div>
                         <div class="policy-block">
-                          <div class="policy-title">保有個人データ利用目的(法24条1項2号)</div>
+                          <h4 class="policy-title">保有個人データ利用目的(法24条1項2号)</h4>
                           <div class="policy-text">
                             <ul>
                               <li>当社が建築したお客様宅のアフターメンテナンスを行うため</li>
@@ -560,14 +568,14 @@
                         </div>
 
                         <div class="policy-block">
-                          <div class="policy-title">個人情報の安全対策(法20条)</div>
+                          <h4 class="policy-title">個人情報の安全対策(法20条)</h4>
                           <div class="policy-text">
                             お客様の個人情報を安全に管理・運営するよう鋭意努力しており、個人情報への外部からの不正なアクセス、個人情報の紛失・毀損・破壊・改ざん・漏えい、社外への不正な流出などへの危険防止に対する合理的かつ適切な安全対策を行っています。また個人情報を取り扱う部門ごとに情報管理責任者を置き、個人情報の適切な管理に努めるとともに、情報セキュリティに関する規程を設けて社員への周知徹底を実施しています。
                           </div>
                         </div>
 
                         <div class="policy-block">
-                          <div class="policy-title">第三者への提供(法23条)</div>
+                          <h4 class="policy-title">第三者への提供(法23条)</h4>
                           <div class="policy-text">
                             <p>個人情報は、以下のいずれかに該当する場合を除いて、いかなる第三者にも開示・提供いたしません。</p>
                             <ul>
@@ -586,21 +594,21 @@
                         </div>
 
                         <div class="policy-block">
-                          <div class="policy-title">個人情報の開示手続(法25条)</div>
+                          <h4 class="policy-title">個人情報の開示手続(法25条)</h4>
                           <div class="policy-text">
                             お客様本人の個人情報に関する保有データの開示請求があった場合には、ご本人であることを運転免許証・パスポート等の身分証明書で確認させていただいた上、本人確認が終了後、速やかに開示させていただきます。
                           </div>
                         </div>
 
                         <div class="policy-block">
-                          <div class="policy-title">個人情報の訂正等(法26条)</div>
+                          <h4 class="policy-title">個人情報の訂正等(法26条)</h4>
                           <div class="policy-text">
                             前項の開示手続きにより、弊社が保有する保有個人データ内容に事実と異なる記載がある場合には、訂正、変更又は削除の手続きを取らせて頂きます。
                           </div>
                         </div>
 
                         <div class="policy-block">
-                          <div class="policy-title">プライバシーポリシーに関するお問合せ先</div>
+                          <h4 class="policy-title">プライバシーポリシーに関するお問合せ先</h4>
                           <div class="policy-text">
                             <p>弊社の個人情報の取扱いに関するお問合せは、下記までお問い合せください。</p>
 
@@ -631,7 +639,7 @@
 
         <div class="footer__content">
           <div class="footer-logo">
-            <p><a href="#">株式会社 北村建設興業</a></p>
+            <a href="#">株式会社 北村建設興業</a>
           </div>
           <nav class="footer__nav footer-nav">
             <ul class="footer-nav__lists">
@@ -683,10 +691,11 @@
         </div>
 
       </div>
-    </footer>
-    <div>
+      <div>
       <p class="footer__copyright">&copy;Copyright0000　<span class="ib-span">kitamurakensetukogyo</span></p>
     </div>
+    </footer>
+    
   </div>
 
 

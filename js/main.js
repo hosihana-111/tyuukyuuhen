@@ -1,10 +1,7 @@
 'use strict';
-// aos
+
 $(document).ready(function () {
-
-  // カルーセル
-  // $(document).ready(function() {
-
+  // slick
   $('.slider').slick({
     autoplay: true,
     infinite: true,
@@ -12,111 +9,77 @@ $(document).ready(function () {
     arrows: false,
     cssEase: 'linear'
   });
-  // });
 
-
-  //ヘッダー追従
- 
-window.addEventListener("scroll", function () {
-  const fv = document.getElementById("fv");
-  const header = document.querySelector(".header"); 
-  const fvHeight = fv.offsetHeight;
-  const scrollY = window.scrollY;
-
-  if (scrollY > fvHeight) {
-    header.classList.add("is-change");
-  } else {
-    header.classList.remove("is-change");
-  }
-});
-
-  // ハンバーガー  
+  // ハンバーガー
   $('.header__hb-btn').click(function () {
     $(this).toggleClass('active');
-    $('.header__nav-list').toggleClass('active')
+    $('.header__nav-list').toggleClass('active');
   });
-  // ナビリンクをクリックしたらメニューを閉じる
   $('.header__nav-list a').on('click', function () {
     $('.header__hb-btn').removeClass('active');
     $('.header__nav-list').removeClass('active');
   });
 
-
-  // モーダル
-  const modalBtns = document.querySelectorAll(".modal-toggle");
-  const closeBtns = document.querySelectorAll(".modal-close");
-
-  modalBtns.forEach(function (btn) {
-    btn.onclick = function () {
-      const modalId = btn.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
-      modal.style.display = "block";
-      document.body.classList.add('modal-open'); // 追加：スクロール禁止
-    };
-  });
-
-  closeBtns.forEach(function (btn) {
-    btn.onclick = function () {
-      const modal = btn.closest('.modal');
-      modal.style.display = "none";
-      document.body.classList.remove('modal-open'); // 追加：スクロール復活
-    };
-  });
-
-  // 背景クリックで閉じる
-  window.onclick = function (event) {
-    if (event.target.classList.contains("modal")) {
-      event.target.style.display = "none";
-      document.body.classList.remove('modal-open'); // 追加：スクロール復活
-    }
-  };
-
-  //TOPに戻るボタン
-  const scrollTopBtn = document.querySelector('.page-top');
+  // 要素取得
+  const fv = document.getElementById('fv');
+  const header = document.querySelector('.header');
+  const pageTop = document.querySelector('.page-top');
   const modals = document.querySelectorAll('.modal');
   const modalToggles = document.querySelectorAll('.modal-toggle');
   const modalCloses = document.querySelectorAll('.modal-close');
 
-  // モーダルを開くとき
+  // scroll時の制御（ヘッダー＋戻るボタン＋モーダル判定）
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const fvHeight = fv ? fv.offsetHeight : 0;
+
+    // ヘッダー
+    if (scrollY > fvHeight) {
+      header?.classList.add('is-change');
+      pageTop?.classList.add('is-change');
+    } else {
+      header?.classList.remove('is-change');
+      pageTop?.classList.remove('is-change');
+    }
+
+    // モーダルが開いていれば戻るボタンを隠す
+    const isModalOpen = Array.from(modals).some(m => m.style.display === 'block');
+    if (isModalOpen) {
+      pageTop?.classList.add('hide-while-modal');
+    } else {
+      pageTop?.classList.remove('hide-while-modal');
+    }
+  });
+
+  // モーダル開閉処理
   modalToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
+    toggle.addEventListener('click', () => {
       const modalId = toggle.getAttribute('data-modal');
       const modal = document.getElementById(modalId);
       if (modal) {
         modal.style.display = 'block';
-        scrollTopBtn.classList.add('hide-while-modal');
+        document.body.classList.add('modal-open');
       }
     });
   });
 
-  // モーダルを閉じるとき
   modalCloses.forEach(close => {
-    close.addEventListener('click', (e) => {
-      modals.forEach(modal => {
-        modal.style.display = 'none';
-      });
-      // スクロール位置が100px以上なら表示復帰
-      if (window.scrollY > 100) {
-        scrollTopBtn.classList.remove('hide-while-modal');
-      }
+    close.addEventListener('click', () => {
+      const modal = close.closest('.modal');
+      if (modal) modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
     });
   });
 
-  // TOPに戻るボタンの表示制御
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      scrollTopBtn.classList.add('visible');
-      // モーダルが開いていない場合のみ表示
-      if (![...modals].some(m => m.style.display === 'block')) {
-        scrollTopBtn.classList.remove('hide-while-modal');
-      }
-    } else {
-      scrollTopBtn.classList.remove('visible');
+  // 背景クリックでモーダル閉じる
+  window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal')) {
+      event.target.style.display = 'none';
+      document.body.classList.remove('modal-open');
     }
   });
 
-
-  //プライバシーポリシー
+  // プライバシーポリシー展開
   const toggleBtn = document.querySelector('.toggle-policy');
   if (toggleBtn) {
     toggleBtn.addEventListener('click', function () {
@@ -126,7 +89,6 @@ window.addEventListener("scroll", function () {
     });
   }
 
-
- AOS.init();
- 
+  // AOS初期化
+  AOS.init();
 });
