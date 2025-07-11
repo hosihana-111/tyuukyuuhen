@@ -1,7 +1,9 @@
 'use strict';
 
 $(document).ready(function () {
-  // slick
+  // =============================
+  // slick 初期化
+  // =============================
   $('.slider').slick({
     autoplay: true,
     infinite: true,
@@ -10,48 +12,94 @@ $(document).ready(function () {
     cssEase: 'linear'
   });
 
-  // ハンバーガー
+   // =============================
+  // ハンバーガーメニュー操作
+  // =============================
   $('.header__hb-btn').click(function () {
     $(this).toggleClass('active');
     $('.header__nav-list').toggleClass('active');
+    $('.overlay').toggleClass('is-active'); // ← 追加：オーバーレイ切り替え
   });
+
+  // メニュー内リンクをクリックしたらメニューとオーバーレイを閉じる
   $('.header__nav-list a').on('click', function () {
     $('.header__hb-btn').removeClass('active');
     $('.header__nav-list').removeClass('active');
+    $('.overlay').removeClass('is-active'); // ← 追加
   });
 
-  // 要素取得
-  const fv = document.getElementById('fv');
-  const header = document.querySelector('.header');
-  const pageTop = document.querySelector('.page-top');
-  const modals = document.querySelectorAll('.modal');
-  const modalToggles = document.querySelectorAll('.modal-toggle');
-  const modalCloses = document.querySelectorAll('.modal-close');
+  // オーバーレイをクリックしたらメニューとオーバーレイを閉じる
+  $('.overlay').on('click', function () {
+    $('.header__hb-btn').removeClass('active');
+    $('.header__nav-list').removeClass('active');
+    $(this).removeClass('is-active'); // 自分自身を非表示
+  });
 
-  // scroll時の制御（ヘッダー＋戻るボタン＋モーダル判定）
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const fvHeight = fv ? fv.offsetHeight : 0;
 
-    // ヘッダー
-    if (scrollY > fvHeight) {
+
+  // =============================
+  // スクロールによるヘッダー・戻るボタン制御
+  // =============================
+
+const fv = document.getElementById('fv');
+const header = document.querySelector('.header');
+const pageTop = document.querySelector('.page-top');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  if (fv) {
+    const fvBottom = fv.offsetTop + fv.offsetHeight;
+
+    // ヘッダー：fvの高さだけを基準に（必要であれば）
+    if (scrollY > fvBottom) {
       header?.classList.add('is-change');
       pageTop?.classList.add('is-change');
     } else {
       header?.classList.remove('is-change');
       pageTop?.classList.remove('is-change');
     }
+  }
+});
 
-    // モーダルが開いていれば戻るボタンを隠す
-    const isModalOpen = Array.from(modals).some(m => m.style.display === 'block');
-    if (isModalOpen) {
-      pageTop?.classList.add('hide-while-modal');
-    } else {
-      pageTop?.classList.remove('hide-while-modal');
-    }
-  });
+// フッターに重ならないようにフッター上で止める
+const footer = document.querySelector('footer');
 
-  // モーダル開閉処理
+window.addEventListener('scroll', () => {
+  if (!pageTop || !footer) return;
+
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const footerTop = footer.getBoundingClientRect().top + scrollY;
+  const pageTopHeight = pageTop.offsetHeight;
+
+  
+//   // ウィンドウ下端の位置
+//   const windowBottom = scrollY + windowHeight;
+
+//   // フッターが画面に入りはじめたらボタンを止める
+//   if (windowBottom >= footerTop) {
+//     // absolute にしてフッターの上に止める
+//     pageTop.classList.add('is-fixed-stop');
+//     pageTop.style.top = 'auto';
+//     pageTop.style.bottom = `${windowBottom - footerTop + 20}px`; // 20px余白
+//   } else {
+//     // 通常固定表示
+//     pageTop.classList.remove('is-fixed-stop');
+//     pageTop.style.bottom = '60px'; // 通常時の固定位置
+//   }
+});
+
+
+
+
+  // =============================
+  // モーダル開閉制御（＋戻るボタン非表示）
+  // =============================
+ const modals = document.querySelectorAll('.modal');
+  const modalToggles = document.querySelectorAll('.modal-toggle');
+  const modalCloses = document.querySelectorAll('.modal-close');
+
   modalToggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const modalId = toggle.getAttribute('data-modal');
@@ -59,6 +107,9 @@ $(document).ready(function () {
       if (modal) {
         modal.style.display = 'block';
         document.body.classList.add('modal-open');
+
+        // ★ トップへ戻るボタンを非表示に
+        pageTop?.classList.add('hide-while-modal');
       }
     });
   });
@@ -68,6 +119,9 @@ $(document).ready(function () {
       const modal = close.closest('.modal');
       if (modal) modal.style.display = 'none';
       document.body.classList.remove('modal-open');
+
+      // ★ トップへ戻るボタンを再表示
+      pageTop?.classList.remove('hide-while-modal');
     });
   });
 
@@ -76,9 +130,11 @@ $(document).ready(function () {
     if (event.target.classList.contains('modal')) {
       event.target.style.display = 'none';
       document.body.classList.remove('modal-open');
+
+      // ★ トップへ戻るボタンを再表示
+      pageTop?.classList.remove('hide-while-modal');
     }
   });
-
   // プライバシーポリシー展開
   const toggleBtn = document.querySelector('.toggle-policy');
   if (toggleBtn) {
