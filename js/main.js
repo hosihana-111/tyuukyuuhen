@@ -19,6 +19,7 @@ $(document).ready(function () {
     $(this).toggleClass('active');
     $('.header__nav-list').toggleClass('active');
     $('.overlay').toggleClass('is-active'); // ← 追加：オーバーレイ切り替え
+     $('.page-top').toggleClass('hide-while-modal', $(this).hasClass('active'));
   });
 
   // メニュー内リンクをクリックしたらメニューとオーバーレイを閉じる
@@ -26,6 +27,7 @@ $(document).ready(function () {
     $('.header__hb-btn').removeClass('active');
     $('.header__nav-list').removeClass('active');
     $('.overlay').removeClass('is-active'); // ← 追加
+    $('.page-top').removeClass('hide-while-modal');
   });
 
   // オーバーレイをクリックしたらメニューとオーバーレイを閉じる
@@ -33,6 +35,7 @@ $(document).ready(function () {
     $('.header__hb-btn').removeClass('active');
     $('.header__nav-list').removeClass('active');
     $(this).removeClass('is-active'); // 自分自身を非表示
+    $('.page-top').removeClass('hide-while-modal');
   });
 
 

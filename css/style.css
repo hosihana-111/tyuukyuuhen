@@ -338,10 +338,9 @@ header
           box-sizing: border-box;
   position: relative;
 }
-@media screen and (max-width: 900px) {
+@media screen and (767px < width <= 950px) {
   .header__inner {
-    padding-left: 20px;
-    padding-right: 10px;
+    padding-inline: 20px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -354,7 +353,7 @@ header
 
 .overlay {
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -388,7 +387,7 @@ header
   transition: all 0.3s ease;
 }
 .logo a:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 @media screen and (767px < width <= 950px) {
   .logo {
@@ -428,10 +427,6 @@ header
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.header__hb-btn:hover {
-  background-color: #fff !important;
-  opacity: 0.7;
-}
 
 .header__hb-btn span {
   position: absolute;
@@ -450,6 +445,8 @@ header
   position: absolute;
   top: 50%;
   left: 25%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .header__hb-btn span:nth-of-type(1) {
@@ -465,7 +462,7 @@ header
 }
 
 .header__hb-btn.active span:nth-of-type(1) {
-  top: 25px;
+  top: 22px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -475,7 +472,7 @@ header
 }
 
 .header__hb-btn.active span:nth-of-type(3) {
-  top: 25px;
+  top: 22px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
@@ -498,9 +495,9 @@ header
 }
 @media screen and (767px < width <= 950px) {
   .header__nav-list {
-    -webkit-column-gap: 15px;
-       -moz-column-gap: 15px;
-            column-gap: 15px;
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -552,7 +549,7 @@ header
     font-weight: 600;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    padding: 0 px;
+    padding: 0;
   }
 }
 
@@ -620,7 +617,7 @@ header
   transition: opacity 0.3s ease;
 }
 .header__nav-list-item a span:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 @media only screen and (max-width: 767px) {
   .header__nav-list-item a span:hover {
@@ -746,7 +743,7 @@ about
   font-size: 3rem;
   margin-left: 42px;
   line-height: 1.18;
-  margin-left: 46px;
+  margin-left: 44px;
   letter-spacing: 5px;
 }
 @media screen and (767px < width <= 950px) {
@@ -817,7 +814,7 @@ service
 }
 @media only screen and (max-width: 767px) {
   .service__container {
-    margin-top: 38px;
+    margin-top: 35px;
     row-gap: 50px;
     margin-bottom: 50px;
   }
@@ -1084,7 +1081,7 @@ Works
   -webkit-tap-highlight-color: transparent;
 }
 .modal-toggle:hover {
-  opacity: 0.5 !important;
+  opacity: 0.6 !important;
 }
 .modal-toggle:focus {
   outline: none;
@@ -1213,7 +1210,7 @@ Works
   transition: all 0.3s ease;
 }
 .modal-close:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .modal-close:hover,
@@ -1357,7 +1354,7 @@ News
   list-style: none;
 }
 .news-item:hover {
-  opacity: 0.3;
+  opacity: 0.6;
 }
 @media only screen and (max-width: 767px) {
   .news-item {
@@ -1565,7 +1562,7 @@ Company
   .company-map {
     width: 100%;
     aspect-ratio: 315/300;
-    margin-bottom: 19px;
+    margin-bottom: 21px;
   }
 }
 
@@ -1650,7 +1647,7 @@ Company
   transition: all 0.3s ease;
 }
 .company-tel a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 @media screen and (min-width: 768px) {
   .company-tel {
@@ -1684,7 +1681,7 @@ Company
   transition: all 0.3s ease;
 }
 .company-email a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 @media (max-width: 768px) and (min-width: 900px) {
   .company-email a {
@@ -1794,7 +1791,13 @@ Contact
 }
 
 .form-area-gender {
-  margin-top: 40px;
+  margin-top: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media only screen and (max-width: 767px) {
   .form-area-gender {
@@ -1802,9 +1805,6 @@ Contact
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
     margin-top: 28px;
   }
   .form-area-gender dt {
@@ -2099,6 +2099,7 @@ Contact
 }
 .checkbox-grouplabel {
   cursor: pointer;
+  line-height: 1.5625;
 }
 
 .custom-checkbox-wrap {
@@ -2181,13 +2182,13 @@ input[type=checkbox]:checked + span::after {
 }
 
 .privacy-policy {
-  margin-top: 48px;
+  margin-top: 45px;
   margin-bottom: 40px;
   line-height: 1.7222222222;
 }
 @media only screen and (max-width: 767px) {
   .privacy-policy {
-    margin-top: 28px;
+    margin-top: 20px;
   }
 }
 
@@ -2322,7 +2323,7 @@ input[type=checkbox]:checked + span::after {
   height: 50px;
   background: var(--main-color);
   color: #fff;
-  border: 0.2rem solid var(--main-color);
+  border: 1px solid var(--main-color);
   font-size: 2rem;
   line-height: 1.32;
   font-weight: 600;
@@ -2332,12 +2333,10 @@ input[type=checkbox]:checked + span::after {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   text-decoration: none;
-  padding-bottom: 1px;
 }
 .form-submit:hover {
   color: var(--main-color);
   background-color: #fff;
-  border: 1px solid #4D9600;
 }
 
 /*------------------
@@ -2366,7 +2365,7 @@ footer {
   transition: all 0.3s ease;
 }
 .footer-logo a:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 @media only screen and (max-width: 767px) {
   .footer-logo {
@@ -2389,6 +2388,13 @@ footer {
   max-width: 722px;
   width: 100%;
   padding-top: 28px;
+}
+@media screen and (767px < width <= 950px) {
+  .footer-nav__lists {
+    -webkit-column-gap: 30px;
+       -moz-column-gap: 30px;
+            column-gap: 30px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .footer-nav__lists {
@@ -2416,12 +2422,7 @@ footer {
   padding: 5px;
 }
 .footer-nav__link:hover {
-  opacity: 0.4;
-}
-@media screen and (767px < width <= 950px) {
-  .footer-nav__link {
-    font-size: 1.6rem;
-  }
+  opacity: 0.6;
 }
 
 .footer__sns {
@@ -2454,7 +2455,7 @@ footer {
   transition: all 0.3s ease-in-out;
 }
 .sns__link:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .footer__copyright {

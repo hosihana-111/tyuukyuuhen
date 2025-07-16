@@ -215,9 +215,9 @@ header
   box-sizing: border-box;
   position: relative;
 
-  @media screen and (max-width:900px) {
-    padding-left: 20px;
-    padding-right: 10px;
+  @media screen and (767px < width <=950px) {
+    padding-inline: 20px;
+   
   }
 
   @include sp {
@@ -229,7 +229,7 @@ header
 }
 .overlay{
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -259,7 +259,7 @@ header
     transition: all 0.3s ease;
 
     &:hover {
-      opacity: 0.4;
+      opacity: 0.6;
     }
   }
 
@@ -289,11 +289,8 @@ header
   cursor: pointer;
    transition: all 0.3s ease;
 
-  &:hover {
-    background-color: #fff !important;
-    opacity: 0.7;
-
-  }
+  
+ 
 }
 
 .header__hb-btn span {
@@ -306,7 +303,6 @@ header
   width: 32px;
   height: 4px;
   background: var(--main-color);
-
   -webkit-transition: 0.4s;
 
 }
@@ -315,6 +311,7 @@ header
   position: absolute;
   top: 50%;
   left: 25%;
+  transform: translate(-50%, -50%);
 }
 
 .header__hb-btn span:nth-of-type(1) {
@@ -330,7 +327,7 @@ header
 }
 
 .header__hb-btn.active span:nth-of-type(1) {
-  top: 25px;
+  top: 22px;
   transform: rotate(45deg);
 }
 
@@ -339,7 +336,7 @@ header
 }
 
 .header__hb-btn.active span:nth-of-type(3) {
-  top: 25px;
+  top: 22px;
   transform: rotate(-45deg);
 }
 
@@ -355,7 +352,7 @@ header
   column-gap: 30px;
 
   @media screen and (767px < width <=950px) {
-    column-gap: 15px;
+    column-gap: 20px;
   }
 
 
@@ -398,7 +395,7 @@ header
     font-size: 1.8rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    padding: 0 px;
+    padding: 0 ;
   }
 }
 
@@ -455,7 +452,7 @@ header
       transition: opacity 0.3s ease;
 
       &:hover  {
-      opacity: 0.4;
+      opacity: 0.6;
       @include sp {
       opacity: 1;
     }
@@ -570,7 +567,7 @@ about
   font-size: 3rem;
   margin-left: 42px;
   line-height: 1.18;
-  margin-left: 46px;
+  margin-left: 44px;
   letter-spacing: 5px;
 
   @media screen and (767px < width <=950px) {
@@ -629,7 +626,7 @@ service
   row-gap: 80px;
 
   @include sp {
-    margin-top: 38px;
+    margin-top: 35px;
     row-gap: 50px;
     margin-bottom: 50px;
   }
@@ -850,7 +847,7 @@ Works
   -webkit-tap-highlight-color: transparent;
 
   &:hover {
-    opacity: 0.5 !important;
+    opacity:0.6 !important;
   }
   &:focus {
     outline: none; 
@@ -976,7 +973,7 @@ Works
   transition: all 0.3s ease;
 
   &:hover {
-    opacity: 0.4;
+    opacity: 0.6;
   }
 }
 
@@ -1091,7 +1088,7 @@ News
   list-style: none;
 
   &:hover {
-    opacity: 0.3;
+    opacity:0.6;
   }
 
   @include sp {
@@ -1264,7 +1261,7 @@ Company
   @include sp {
     width: 100%;
     aspect-ratio: 315 / 300;
-    margin-bottom: 19px;
+    margin-bottom: 21px;
   }
 }
 
@@ -1344,7 +1341,7 @@ Company
     transition: all 0.3s ease;
 
     &:hover {
-      opacity: 0.7;
+      opacity: 0.6;
     }
   }
 
@@ -1375,7 +1372,7 @@ Company
   transition: all 0.3s ease;
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.6;
   }
 
 
@@ -1478,11 +1475,12 @@ Contact
 }
 
 .form-area-gender {
-  margin-top: 40px;
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
 
   @include sp {
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: row;    
     margin-top: 28px;
 
     dt {
@@ -1742,6 +1740,7 @@ Contact
 
   &label {
     cursor: pointer;
+    line-height: calc(25/16);
   }
 }
 
@@ -1829,12 +1828,12 @@ input[type="checkbox"]:checked+span::after {
 }
 
 .privacy-policy {
-  margin-top: 48px;
+  margin-top: 45px;
   margin-bottom: 40px;
   line-height: calc(31/18);
 
   @include sp {
-    margin-top: 28px;
+    margin-top: 20px;
   }
 }
 
@@ -1975,7 +1974,7 @@ input[type="checkbox"]:checked+span::after {
   height: 50px;
   background: var(--main-color);
   color: #fff;
-  border: 0.2rem solid var(--main-color);
+  border: 1px solid var(--main-color);
   font-size: 2rem;
   line-height: calc(33 / 25);
   font-weight: 600;
@@ -1984,13 +1983,12 @@ input[type="checkbox"]:checked+span::after {
   text-align: center;
   transition: all .4s;
   text-decoration: none;
-  padding-bottom: 1px;
+ 
 
   &:hover {
-    color: var(--main-color);
-    ;
+    color: var(--main-color);    
     background-color: #fff;
-    border: 1px solid #4D9600;
+    
   }
 
 
@@ -2021,7 +2019,7 @@ footer {
       padding: 5px;
       transition: all 0.3s ease;
       &:hover {
-    opacity: 0.4;
+    opacity: 0.6;
   }
   }
 
@@ -2041,6 +2039,9 @@ footer {
   max-width: 722px;
   width: 100%;
   padding-top: 28px;
+  @media screen and (767px < width <=950px) {
+   column-gap: 30px;
+  }
 
   @include sp {
     flex-wrap: wrap;
@@ -2064,12 +2065,10 @@ footer {
   padding: 5px;
 
   &:hover {
-    opacity: 0.4;
+    opacity: 0.6;
   }
 
-   @media screen and (767px < width <=950px) {
-    font-size: 1.6rem;
-  }
+   
 }
 
 .footer__sns {
@@ -2092,7 +2091,7 @@ footer {
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    opacity: 0.4;
+    opacity: 0.6;
   }
 }
 
