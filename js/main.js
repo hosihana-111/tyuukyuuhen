@@ -15,7 +15,7 @@ $(document).ready(function () {
    // =============================
   // ハンバーガーメニュー操作
   // =============================
-  $('.header__hb-btn').click(function () {
+  $('.header__hamburger').click(function () {
     $(this).toggleClass('active');
     $('.header__nav-list').toggleClass('active');
     $('.overlay').toggleClass('is-active'); // ← 追加：オーバーレイ切り替え
@@ -24,7 +24,7 @@ $(document).ready(function () {
 
   // メニュー内リンクをクリックしたらメニューとオーバーレイを閉じる
   $('.header__nav-list a').on('click', function () {
-    $('.header__hb-btn').removeClass('active');
+    $('.header__hamburger').removeClass('active');
     $('.header__nav-list').removeClass('active');
     $('.overlay').removeClass('is-active'); // ← 追加
     $('.page-top').removeClass('hide-while-modal');
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
   // オーバーレイをクリックしたらメニューとオーバーレイを閉じる
   $('.overlay').on('click', function () {
-    $('.header__hb-btn').removeClass('active');
+    $('.header__hamburger').removeClass('active');
     $('.header__nav-list').removeClass('active');
     $(this).removeClass('is-active'); // 自分自身を非表示
     $('.page-top').removeClass('hide-while-modal');
