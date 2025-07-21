@@ -178,19 +178,19 @@ a {
 /*------------------
 header
 -------------------*/
-#header {
+.header {
   position: fixed;
   top: -100px; // 初期状態：上に隠す
   top: 0;
   left: 0;
   width: 100%;
   background: transparent;
-  z-index: 100;
+  z-index: 9999;
   transition: all 0.3s ease;
 
   &.is-change {
     background-color: var(--main-color); // 例：白背景に切り替え
-
+   
     &:hover {
       background-color: #4D9600;
       
@@ -234,7 +234,7 @@ header
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9998;
+  // z-index: 1;
    opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -379,6 +379,7 @@ top: 50%;
 .header__nav-list.active {
   @include sp {
     left: 20%
+
   }
 
 }
