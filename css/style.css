@@ -127,7 +127,7 @@ meter {
 
 :root {
   --font-color: #000;
-  --font-serif: "YuMincho", "Yu Mincho", "游明朝体", "Noto Serif JP",serif;
+  --font-serif: "YuMincho", "Yu Mincho", "Noto Serif JP",serif;
   --main-color: #4D9600;
 }
 
@@ -145,7 +145,7 @@ html {
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 85px;
+  scroll-padding-top: 86px;
   word-break: break-all;
   font-size: 62.5%;
 }
@@ -158,12 +158,32 @@ html {
 body {
   color: var(--font-color);
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 1.6rem;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+input,
+textarea {
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+p,
+span,
+a,
+li,
+dt,
+dd,
+label,
+h1, h2, h3, h4, h5, h6 {
+  line-height: inherit;
+  letter-spacing: inherit;
 }
 
 #container {
@@ -213,9 +233,9 @@ a {
   text-align: center;
   font-size: 3rem;
   color: var(--main-color);
-  letter-spacing: 9px;
+  letter-spacing: 0.3em;
   line-height: 1.1;
-  padding-left: 9px;
+  padding-left: 0.3em;
 }
 
 .section__title span {
@@ -224,7 +244,7 @@ a {
   letter-spacing: 6px;
   line-height: 1.5;
   color: #000;
-  margin-top: 10px;
+  margin-top: 9px;
   display: block;
 }
 @media only screen and (max-width: 767px) {
@@ -327,7 +347,7 @@ header
 .header__inner {
   max-width: 980px;
   width: 100%;
-  height: 85px;
+  height: 86px;
   margin: 0 auto;
   padding-inline: 30px;
   display: -webkit-box;
@@ -345,7 +365,7 @@ header
 }
 @media screen and (767px < width <= 950px) {
   .header__inner {
-    padding-inline: 20px;
+    padding-inline: 15px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -427,7 +447,7 @@ header
 
 .header__hamburger span {
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -439,11 +459,11 @@ header
 }
 
 .header__hamburger span:nth-of-type(1) {
-  top: 23%;
+  top: 25%;
 }
 
 .header__hamburger span:nth-of-type(3) {
-  top: 72%;
+  top: 75%;
 }
 
 .header__hamburger.active span:nth-of-type(1) {
@@ -474,9 +494,9 @@ header
   padding: 0;
   height: inherit;
   cursor: pointer;
-  -webkit-column-gap: 30px;
-     -moz-column-gap: 30px;
-          column-gap: 30px;
+  -webkit-column-gap: 29px;
+     -moz-column-gap: 29px;
+          column-gap: 29px;
 }
 @media screen and (767px < width <= 950px) {
   .header__nav-list {
@@ -744,6 +764,7 @@ about
     display: -ms-flexbox;
     display: flex;
     margin: 20px auto 0 auto;
+    line-height: 1.19;
   }
 }
 @media screen and (max-width: 374px) {
@@ -799,7 +820,7 @@ service
 }
 @media only screen and (max-width: 767px) {
   .service__container {
-    margin-top: 38px;
+    margin-top: 39px;
     row-gap: 49px;
     margin-bottom: 50px;
   }
@@ -949,7 +970,7 @@ service
   }
 }
 
-.service-tittle {
+.service-title {
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.32;
@@ -957,14 +978,14 @@ service
   color: #fff;
 }
 @media screen and (max-width: 900px) {
-  .service-tittle {
+  .service-title {
     font-size: 2.2rem;
     line-height: 1.25;
     margin-bottom: 13px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .service-tittle {
+  .service-title {
     font-size: 2rem;
     margin-bottom: 14px;
   }
@@ -1127,6 +1148,7 @@ Works
 
 .modal-container-p {
   padding-block: 7px;
+  line-height: 0.64;
 }
 @media only screen and (max-width: 767px) {
   .modal-container-p {
@@ -1171,10 +1193,6 @@ Works
   z-index: 10;
 }
 
-.page-top.hide-while-modal {
-  display: none;
-}
-
 .modal-open {
   overflow: hidden;
 }
@@ -1202,10 +1220,6 @@ Works
 .modal-close:focus {
   text-decoration: none;
   cursor: pointer;
-}
-
-.modal-title {
-  color: #FFF;
 }
 
 @-webkit-keyframes show {
@@ -1240,13 +1254,12 @@ News
 }
 
 .news__container {
-  margin-top: 65px;
+  margin-top: 67px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  gap: 6.5217391304%;
+  max-width: 920px;
+  margin-inline: auto;
 }
 @media only screen and (max-width: 767px) {
   .news__container {
@@ -1264,7 +1277,7 @@ News
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    row-gap: 51px;
+    row-gap: 49px;
   }
 }
 
@@ -1287,6 +1300,7 @@ News
   padding: 9px 20px;
   font-size: 2rem;
   font-weight: 600;
+  line-height: 1.65;
   margin: 0;
 }
 @media only screen and (max-width: 767px) {
@@ -1305,7 +1319,7 @@ News
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #fff;
-  padding: 9px 20px 20px 20px;
+  padding: 8px 20px 20px 20px;
   overflow: hidden;
 }
 .news-items li {
@@ -1316,13 +1330,13 @@ News
 }
 @media only screen and (max-width: 767px) {
   .news-items {
-    padding: 10px 20px 20px 20px;
+    padding: 9px 20px 20px 20px;
   }
 }
 
 .news-item {
-  padding-top: 19px;
-  padding-bottom: 14px;
+  padding-top: 22px;
+  padding-bottom: 11px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1330,9 +1344,9 @@ News
       -ms-flex-align: start;
           align-items: flex-start;
   text-decoration: none;
-  -webkit-column-gap: 16.2790697674%;
-     -moz-column-gap: 16.2790697674%;
-          column-gap: 16.2790697674%;
+  -webkit-column-gap: 16.976744186%;
+     -moz-column-gap: 16.976744186%;
+          column-gap: 16.976744186%;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -1352,16 +1366,12 @@ News
 }
 
 .news-date {
-  display: block;
-  line-height: 2.0625;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  text-align: left;
+  line-height: 1;
   font-size: 1.6rem;
 }
 @media only screen and (max-width: 767px) {
   .news-date {
-    width: 72px;
+    width: 70px;
   }
 }
 
@@ -1445,7 +1455,7 @@ News
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
-  padding: 5px 29px 5px 5px;
+  padding: 7px 35px 5px 5px;
   position: relative;
   z-index: 1;
   -webkit-transition: all 0.3s ease;
@@ -1463,7 +1473,7 @@ News
   background-repeat: no-repeat;
   width: 80px;
   height: 18px;
-  left: 0;
+  left: 6px;
   top: 20px;
   bottom: 0;
   margin: auto;
@@ -1472,7 +1482,7 @@ News
 @media only screen and (max-width: 767px) {
   .more {
     margin-top: 12px;
-    padding-right: 30px;
+    padding: 5px 33px 5px 5px;
   }
 }
 
@@ -1485,7 +1495,7 @@ Company
 }
 @media only screen and (max-width: 767px) {
   .company {
-    padding-top: 49px;
+    padding-top: 50px;
     padding-bottom: 50px;
   }
 }
@@ -1526,9 +1536,6 @@ Company
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     padding-bottom: 0px;
   }
 }
@@ -1536,7 +1543,7 @@ Company
 .company-map {
   width: 65.2173913043%;
   aspect-ratio: 600/400;
-  margin-bottom: 5.9782608696%;
+  margin-bottom: 6.7391304348%;
   z-index: 10;
 }
 .company-map iframe {
@@ -1547,7 +1554,7 @@ Company
   .company-map {
     width: 100%;
     aspect-ratio: 315/300;
-    margin-bottom: 21px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1556,8 +1563,8 @@ Company
   color: #FFF;
   width: 54.347826087%;
   font-weight: 600;
-  padding-top: 5.4347826087%;
-  padding-bottom: 4.347826087%;
+  padding-top: 5.3260869565%;
+  padding-bottom: 4.5652173913%;
   padding-left: 23.9130434783%;
   margin-left: -21.7391304348%;
 }
@@ -1568,14 +1575,8 @@ Company
 }
 @media only screen and (max-width: 767px) {
   .company__box-text {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    margin-left: 0;
+    padding: 20px 20px 11px 20px;
   }
 }
 @media screen and (max-width: 540px) {
@@ -1587,7 +1588,8 @@ Company
 .company-title {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  line-height: 1.65;
 }
 @media (max-width: 768px) and (min-width: 900px) {
   .company-title {
@@ -1602,7 +1604,7 @@ Company
 }
 
 .company-address {
-  margin-bottom: 6px;
+  margin-bottom: 13px;
   line-height: 1.5625;
 }
 @media (max-width: 768px) and (min-width: 900px) {
@@ -1614,7 +1616,7 @@ Company
 @media only screen and (max-width: 767px) {
   .company-address {
     font-size: 1.6rem;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
 }
 
@@ -1623,11 +1625,12 @@ Company
 }
 
 .company-tel {
-  margin-bottom: 16px;
+  margin-bottom: 17px;
+  line-height: 1.5625;
 }
 .company-tel a {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1647,17 +1650,13 @@ Company
 }
 @media only screen and (max-width: 767px) {
   .company-tel {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 }
 
 .company-email {
   line-height: 1.5625;
-}
-@media only screen and (max-width: 767px) {
-  .company-email {
-    font-size: 1.5rem;
-  }
+  font-size: 1.6rem;
 }
 
 .company-email a {
@@ -1688,10 +1687,11 @@ Contact
   padding-top: 82px;
   padding-bottom: 80px;
   position: relative;
+  background-color: rgba(77, 150, 0, 0.149);
 }
 @media only screen and (max-width: 767px) {
   .contact {
-    padding-top: 52px;
+    padding-top: 50px;
     padding-bottom: 50px;
   }
 }
@@ -1701,17 +1701,26 @@ Contact
   max-width: 800px;
   margin-inline: auto;
 }
+@media only screen and (max-width: 767px) {
+  .contact__container {
+    margin-top: 35px;
+  }
+}
+
+.contact-span {
+  padding-left: 5px;
+}
 
 .contact-p {
   text-align: left;
   font-size: 2rem;
   line-height: 1.65;
-  margin: 0 auto;
 }
 
 .contact-form {
   margin-top: 69px;
   font-size: 2rem;
+  max-width: 100%;
 }
 @media only screen and (max-width: 767px) {
   .contact-form {
@@ -1773,6 +1782,7 @@ Contact
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.8rem;
+  line-height: 1.65;
 }
 
 .form-area-gender {
@@ -1783,6 +1793,7 @@ Contact
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  line-height: 1.65;
 }
 @media only screen and (max-width: 767px) {
   .form-area-gender {
@@ -1796,6 +1807,7 @@ Contact
     width: auto;
     min-width: 80px;
     margin-right: 10px;
+    line-height: 1.65;
   }
   .form-area-gender dd {
     width: auto;
@@ -1856,6 +1868,7 @@ Contact
   padding: 0 0 0 28px;
   margin: 0 4px 0;
   border-radius: 50%;
+  line-height: 1.65;
   cursor: pointer;
 }
 .contact-radio input[type=radio] + span::before {
@@ -1887,7 +1900,7 @@ Contact
 }
 
 .form-area-email {
-  margin-top: 42px;
+  margin-top: 39px;
 }
 @media only screen and (max-width: 767px) {
   .form-area-email {
@@ -1896,7 +1909,7 @@ Contact
 }
 
 .form-area-select {
-  margin-top: 49px;
+  margin-top: 51px;
 }
 @media only screen and (max-width: 767px) {
   .form-area-select {
@@ -1904,32 +1917,118 @@ Contact
   }
 }
 
+.form-select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  max-width: 630px;
+  width: 100%;
+  height: 50px;
+  padding: 10px 10px 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) and (min-width: 900px) {
+  .form-select {
+    width: 500px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .form-select {
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 1.5625;
+  }
+}
+
+.form-control {
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .form-control {
+    height: 50px;
+  }
+}
+
+.select {
+  background-color: #fff;
+  position: relative;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+}
+.select::after {
+  content: "";
+  position: absolute;
+  top: 56%;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 0.8rem solid transparent;
+  border-right: 0.8rem solid transparent;
+  border-top: 1.2rem solid #4D9600;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+@media only screen and (max-width: 767px) {
+  .select::after {
+    top: 51%;
+    right: 22px;
+  }
+}
+
 .form-area-message {
-  margin-top: 45px;
+  margin-top: 50px;
+}
+.form-area-message dt {
+  line-height: 1.65;
 }
 @media only screen and (max-width: 767px) {
   .form-area-message {
     margin-top: 30px;
   }
 }
-.form-area-message dt {
-  margin-bottom: 12px;
+
+.form-textarea {
+  display: block;
+  background-color: #fff;
+  min-height: 200px;
+  width: 100%;
+  resize: vertical;
+  padding: 15px;
+  font-size: 1.6rem;
+  line-height: 2.0625;
+  margin-top: 10px;
 }
 @media only screen and (max-width: 767px) {
-  .form-area-message dt {
-    margin-bottom: 0;
+  .form-textarea {
+    margin-top: 0;
   }
-}
-.form-area-message dd {
-  margin-top: 3px;
 }
 
 .form-area-checkbox {
-  margin-top: 53px;
+  margin-top: 51px;
+  line-height: 0.7407407407;
 }
 @media only screen and (max-width: 767px) {
   .form-area-checkbox {
-    margin-top: 27px;
+    margin-top: 30px;
   }
 }
 
@@ -1974,104 +2073,21 @@ Contact
   line-height: 1.5625;
 }
 
-.form-control {
-  width: 100%;
-  height: 50px;
-  background: #fff;
-  padding: 0 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-@media only screen and (max-width: 767px) {
-  .form-control {
-    height: 50px;
-  }
-}
-
-.form-textarea {
-  display: block;
-  background-color: #fff;
-  min-height: 200px;
-  width: 100%;
-  resize: vertical;
-  padding: 15px;
-  font-size: 1.6rem;
-  line-height: 2.0625;
-}
-
-.select {
-  background-color: #fff;
-  position: relative;
-  font-size: 1.8rem;
-  line-height: 1.3888888889;
-}
-.select::after {
-  content: "";
-  position: absolute;
-  top: 56%;
-  right: 20px;
-  width: 0;
-  height: 0;
-  border-left: 0.8rem solid transparent;
-  border-right: 0.8rem solid transparent;
-  border-top: 1.2rem solid #4D9600;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  pointer-events: none;
-  z-index: 2;
-}
-@media only screen and (max-width: 767px) {
-  .select::after {
-    top: 51%;
-    right: 22px;
-  }
-}
-
-.form-select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  max-width: 630px;
-  width: 100%;
-  height: 50px;
-  padding: 10px 10px 10px 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-@media (max-width: 768px) and (min-width: 900px) {
-  .form-select {
-    width: 500px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .form-select {
-    width: 100%;
-    font-size: 1.6rem;
-    line-height: 1.5625;
-  }
+.contact-checkbox-span {
+  padding-left: 12px;
 }
 
 .checkbox-group {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px 7px;
-  margin-top: 3px;
+  gap: 12px 7px;
+  margin-top: 10px;
 }
 @media only screen and (max-width: 767px) {
   .checkbox-group {
     grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-    gap: 2px;
+    gap: 5px 2px;
     margin-top: 0;
     font-size: 1.6rem;
     line-height: 1.5625;
@@ -2151,25 +2167,22 @@ input[type=checkbox]:checked + span::after {
   }
 }
 
+.privacy-policy {
+  margin-top: 52px;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .privacy-policy {
+    margin-top: 30px;
+  }
+}
+
 .contact-heading {
   width: 170px;
   -ms-flex-item-align: center;
       align-self: center;
-}
-.contact-heading label span {
-  margin: 0 0 0 5px;
-  font-weight: bold;
-}
-
-.privacy-policy {
-  margin-top: 46px;
-  margin-bottom: 40px;
-  line-height: 1.7222222222;
-}
-@media only screen and (max-width: 767px) {
-  .privacy-policy {
-    margin-top: 29px;
-  }
+  font-size: 2rem;
+  line-height: 1.65;
 }
 
 .privacy-policy-box {
@@ -2180,7 +2193,7 @@ input[type=checkbox]:checked + span::after {
   height: 300px;
   width: 100%;
   font-size: 1.8rem;
-  line-height: 1.7222222222;
+  line-height: 1.8333333333;
   overflow: hidden;
   word-break: break-word;
   -webkit-box-sizing: border-box;
@@ -2192,7 +2205,7 @@ input[type=checkbox]:checked + span::after {
 @media only screen and (max-width: 767px) {
   .privacy-policy-box {
     margin-top: 0;
-    padding: 33px 10px 30px 30px;
+    padding: 10px 10px 30px 30px;
     font-size: 1.6rem;
     line-height: 2.0625;
     height: 323px;
@@ -2216,8 +2229,8 @@ input[type=checkbox]:checked + span::after {
     font-size: 1.6rem;
     line-height: 2.0625;
     padding-right: 40px;
-    padding-top: 0;
-    max-height: 25.92rem;
+    padding-top: 20px;
+    max-height: 290px;
   }
 }
 
@@ -2250,6 +2263,11 @@ input[type=checkbox]:checked + span::after {
 .policy-title {
   margin-top: 30px;
 }
+@media only screen and (max-width: 767px) {
+  .policy-title {
+    margin-top: 32px;
+  }
+}
 
 .policy-text ul {
   list-style: none;
@@ -2280,7 +2298,7 @@ input[type=checkbox]:checked + span::after {
 
 /* ボタン */
 .contact__button {
-  margin-top: 80px;
+  margin-top: 79px;
   margin-inline: auto;
   width: 300px;
 }
@@ -2318,11 +2336,16 @@ input[type=checkbox]:checked + span::after {
   color: var(--main-color);
   background-color: #fff;
 }
+@media only screen and (max-width: 767px) {
+  .form-submit {
+    line-height: 1.65;
+  }
+}
 
 /*------------------
 Footer
 -------------------*/
-footer {
+.footer {
   background-color: #fff;
   text-align: center;
   padding-top: 80px;
@@ -2330,14 +2353,15 @@ footer {
   transition: all 0.3s ease;
 }
 @media only screen and (max-width: 767px) {
-  footer {
-    padding-top: 50px;
+  .footer {
+    padding-top: 52px;
   }
 }
 
 .footer-logo {
   font-size: 2rem;
-  margin-bottom: 27px;
+  margin-bottom: 30px;
+  line-height: 1.65;
 }
 .footer-logo a {
   padding: 5px;
@@ -2349,7 +2373,7 @@ footer {
 }
 @media only screen and (max-width: 767px) {
   .footer-logo {
-    margin-bottom: 20px;
+    margin-bottom: 17px;
   }
 }
 
@@ -2361,9 +2385,9 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
-  -webkit-column-gap: 40px;
-     -moz-column-gap: 40px;
-          column-gap: 40px;
+  -webkit-column-gap: 38px;
+     -moz-column-gap: 38px;
+          column-gap: 38px;
   border-top: 1px solid #000;
   max-width: 722px;
   width: 100%;
@@ -2380,10 +2404,10 @@ footer {
   .footer-nav__lists {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-column-gap: 20px;
-       -moz-column-gap: 20px;
-            column-gap: 20px;
-    padding-top: 22px;
+    -webkit-column-gap: 18px;
+       -moz-column-gap: 18px;
+            column-gap: 18px;
+    padding-top: 20px;
   }
 }
 
@@ -2440,7 +2464,7 @@ footer {
 
 .footer__copyright {
   background-color: var(--main-color);
-  margin-top: 77px;
+  margin-top: 75px;
   color: #fff;
   font-size: 2rem;
   padding-block: 30px;
@@ -2452,7 +2476,7 @@ footer {
   .footer__copyright {
     padding-block: 20px;
     padding-inline: 30px;
-    line-height: 1.25;
+    line-height: 1.4;
     margin-top: 48px;
   }
 }
