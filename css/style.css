@@ -241,7 +241,7 @@ a {
 .section__title span {
   text-align: center;
   font-size: 2rem;
-  letter-spacing: 6px;
+  letter-spacing: 0.3em;
   line-height: 1.5;
   color: #000;
   margin-top: 9px;
@@ -688,7 +688,7 @@ slide-area
   -webkit-font-variant-ligatures: none;
           font-variant-ligatures: none;
   line-height: 1.75;
-  letter-spacing: 12px;
+  letter-spacing: 0.3em;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   z-index: 2;
 }
@@ -696,7 +696,7 @@ slide-area
   .page-title {
     font-size: 3rem;
     line-height: 2;
-    letter-spacing: 9px;
+    letter-spacing: 0.3em;
     left: 51%;
   }
 }
@@ -749,7 +749,7 @@ about
   margin-left: 42px;
   line-height: 1.18;
   margin-left: 44px;
-  letter-spacing: 5px;
+  letter-spacing: 0.17em;
 }
 @media screen and (767px < width <= 950px) {
   .about-title {
@@ -776,7 +776,7 @@ about
 .about-text {
   font-size: 1.8rem;
   line-height: 2.66;
-  letter-spacing: 7px;
+  letter-spacing: 0.39em;
 }
 @media screen and (767px < width <= 950px) {
   .about-text {
@@ -788,7 +788,7 @@ about
   .about-text {
     font-size: 1.6rem;
     line-height: 1.6;
-    letter-spacing: 4px;
+    letter-spacing: 0.25em;
   }
 }
 

@@ -120,7 +120,7 @@ a {
 .section__title span {
   text-align: center;
   font-size: 2rem;
-  letter-spacing: calc(20px*0.3);
+  letter-spacing: 0.3em;
   line-height: calc(33/22);
   color: #000;
   margin-top: 9px;
@@ -524,14 +524,14 @@ slide-area
   font-weight: 600;
   font-variant-ligatures: none;
   line-height: calc(70/40);
-  letter-spacing: calc(40px*0.3);
+  letter-spacing: 0.3em;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   z-index: 2;
 
   @include sp {
     font-size: 3rem;
     line-height: calc(60/30);
-    letter-spacing: calc(30px*0.3);
+    letter-spacing: 0.3em;
     left: 51%;
   }
 }
@@ -579,8 +579,8 @@ about
   margin-left: 42px;
   line-height: 1.18;
   margin-left: 44px;
-  letter-spacing: 5px;
-
+  //  letter-spacing: 0.167em;
+  letter-spacing:0.17em;
   @media screen and (767px < width <=950px) {
     font-size: 2.5rem;
     margin-left: 36px;
@@ -601,7 +601,7 @@ about
 .about-text {
   font-size: 1.8rem;
   line-height: 2.66;
-  letter-spacing: 7px;
+  letter-spacing: 0.39em;
 
   @media screen and (767px < width <=950px) {
     font-size: 1.6rem;
@@ -611,7 +611,7 @@ about
   @include sp {
     font-size: 1.6rem;
     line-height: 1.6;
-    letter-spacing: 4px;
+    letter-spacing: 0.25em;
   }
 
 }
