@@ -605,7 +605,7 @@ header
   content: "";
   position: absolute;
   bottom: 30px;
-  left: 10%;
+  left: 0;
   width: 0;
   height: 1px;
   background-color: #fff;
@@ -614,7 +614,7 @@ header
 }
 
 .header__nav-list-item a:hover::after {
-  width: 80%;
+  width: 100%;
 }
 
 .header__nav-list-item a span {
@@ -2360,7 +2360,7 @@ Footer
 
 .footer-logo {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   line-height: 1.65;
 }
 .footer-logo a {
@@ -2407,6 +2407,7 @@ Footer
     -webkit-column-gap: 18px;
        -moz-column-gap: 18px;
             column-gap: 18px;
+    row-gap: 5px;
     padding-top: 20px;
   }
 }
@@ -2474,10 +2475,13 @@ Footer
 }
 @media only screen and (max-width: 767px) {
   .footer__copyright {
-    padding-block: 20px;
+    padding-block: 17px;
     padding-inline: 30px;
     line-height: 1.4;
-    margin-top: 48px;
+    margin-top: 44px;
+  }
+  .footer__copyright span {
+    font-weight: 500;
   }
 }
 @media screen and (max-width: 374px) {
