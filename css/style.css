@@ -168,24 +168,6 @@ body {
   line-height: 1;
 }
 
-input,
-textarea {
-  line-height: 1;
-  letter-spacing: 0;
-}
-
-p,
-span,
-a,
-li,
-dt,
-dd,
-label,
-h1, h2, h3, h4, h5, h6 {
-  line-height: inherit;
-  letter-spacing: inherit;
-}
-
 #container {
   width: 100%;
   overflow: hidden;
@@ -1148,7 +1130,7 @@ Works
 
 .modal-container-p {
   padding-block: 7px;
-  line-height: 0.64;
+  line-height: 1.5625;
 }
 @media only screen and (max-width: 767px) {
   .modal-container-p {

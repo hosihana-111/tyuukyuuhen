@@ -39,25 +39,8 @@ body {
   letter-spacing: 0;
   line-height: 1;
 }
-input,
-textarea {
-  line-height: 1;
-  letter-spacing: 0;
-}
 
 
-
-p,
-span,
-a,
-li,
-dt,
-dd,
-label,
-h1, h2, h3, h4, h5, h6 {
-  line-height: inherit;
-  letter-spacing: inherit;
-}
 
 #container {
   width: 100%;
@@ -113,7 +96,7 @@ a {
   font-size: 3rem;
   color: var(--main-color);
   letter-spacing: 0.3em;
-  line-height: calc(33/30);
+  line-height: calc(33 / 30);
   padding-left: 0.3em;
 }
 
@@ -121,7 +104,7 @@ a {
   text-align: center;
   font-size: 2rem;
   letter-spacing: 0.3em;
-  line-height: calc(33/22);
+  line-height: calc(33 / 22);
   color: #000;
   margin-top: 9px;
   display: block;
@@ -268,7 +251,7 @@ header
 .logo {
   color: white;
   font-size: 2rem;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
   height: inherit;
 
   a {
@@ -412,7 +395,7 @@ header
   color: #fff;
   text-decoration: none;
   font-size: 1.8rem;
-  line-height: calc(33/18);
+  line-height: calc(33 / 18);
   position: relative;
 
   // 共通のホバー下線をSPでは消す
@@ -523,14 +506,14 @@ slide-area
   font-size: 4rem;
   font-weight: 600;
   font-variant-ligatures: none;
-  line-height: calc(70/40);
+  line-height: calc(70 / 40);
   letter-spacing: 0.3em;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   z-index: 2;
 
   @include sp {
     font-size: 3rem;
-    line-height: calc(60/30);
+    line-height: calc(60 / 30);
     letter-spacing: 0.3em;
     left: 51%;
   }
@@ -693,7 +676,7 @@ service
   color: #000;
   margin-top: 19px;
   display: block;
-  line-height: calc(25/16);
+  line-height: calc(25 / 16);
 
   @include sp {
     margin-top: 6px;
@@ -765,13 +748,13 @@ service
 .service-title {
   font-size: 2.5rem;
   font-weight: 600;
-  line-height: calc(33/25);
+  line-height: calc(33 / 25);
   margin-bottom: calc(17/1080*100vw);
   color: #fff;
 
   @media screen and (max-width:900px) {
     font-size: 2.2rem;
-    line-height: calc(25/20);
+    line-height: calc(25 / 20);
     margin-bottom: 13px;
   }
 
@@ -782,7 +765,7 @@ service
 }
 
 .service-desc {
-  line-height: calc(25/16);
+  line-height: calc(25 / 16);
   color: #fff;
 
   @media screen and (max-width:900px) {
@@ -893,7 +876,7 @@ Works
 }
 
 .modal__item-text p {
-  line-height: calc(25/16);
+  line-height: calc(25 / 16);
 
   @media screen and (767px < width <=950px) {
     font-size: 1.4rem;
@@ -920,7 +903,8 @@ Works
 
 .modal-container-p {
   padding-block: 7px;
-  line-height: calc(16/25);
+  line-height: calc(25 / 16);
+ 
 
   @include sp {
     padding-block: 10px;
@@ -1057,7 +1041,7 @@ News
   padding: 9px 20px;
   font-size: 2rem;
   font-weight: 600;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
   margin: 0;
 
   @include sp {
@@ -1119,7 +1103,7 @@ News
 
 .news-text {
   font-size: 1.8rem;
-  line-height: calc(25/18);
+  line-height: calc(25 / 18);
   color: #000;
   margin: 0;
   flex: 1;
@@ -1166,7 +1150,7 @@ News
   color: #55A500;
   font-size: 2rem;
   font-weight: 600;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
   margin-top: 10px;
   text-decoration: none;
   width: fit-content;
@@ -1296,7 +1280,7 @@ Company
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 8px;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
 
   @media (max-width:768px) and (min-width:900px) {
     font-size: 1.8rem;
@@ -1311,7 +1295,7 @@ Company
 
 .company-address {
   margin-bottom: 13px;
-  line-height: calc(25/16);
+  line-height: calc(25 / 16);
 
   @media (max-width:768px) and (min-width:900px) {
     font-size: 1.5rem;
@@ -1331,11 +1315,11 @@ Company
 
 .company-tel {
   margin-bottom: 17px;
-  line-height: calc(25/16);
+  line-height: calc(25 / 16);
 
   a {
     font-size: 2.5rem;
-    line-height: calc(25/25);  
+    line-height: calc(25 / 25);  
     transition: all 0.3s ease;
 
     &:hover {
@@ -1359,7 +1343,7 @@ Company
 }
 
 .company-email {
-  line-height: calc(25/16);
+  line-height: calc(25 / 16);
   font-size: 1.6rem;
  
 }
@@ -1424,7 +1408,7 @@ Contact
 .contact-p {
   text-align: left;
   font-size: 2rem;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
 
 
 }
@@ -1477,14 +1461,14 @@ Contact
   display: flex;
   align-items: center;
   font-size: 1.8rem;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
 }
 
 .form-area-gender {
   margin-top: 44px;
   display: flex;
   align-items: center;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
 
   @include sp {
     flex-direction: row;
@@ -1494,7 +1478,7 @@ Contact
       width: auto;
       min-width: 80px;
       margin-right: 10px;
-      line-height: calc(33/20);
+      line-height: calc(33 / 20);
     }
 
     dd {
@@ -1550,7 +1534,7 @@ Contact
   padding: 0 0 0 28px;
   margin: 0 4px 0;
   border-radius: 50%;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
   cursor: pointer;
 
   &::before {
@@ -1616,7 +1600,7 @@ Contact
   @include sp {
     width: 100%;
     font-size: 1.6rem;
-    line-height: calc(25/16);   
+    line-height: calc(25 / 16);   
   }
 }
 .form-control {
@@ -1635,7 +1619,7 @@ Contact
   background-color: #fff;
   position: relative;
   font-size: 1.8rem;
-  line-height: calc(25/18);
+  line-height: calc(25 / 18);
 
   &::after {
     content: "";
@@ -1662,7 +1646,7 @@ Contact
 .form-area-message {
   margin-top: 50px;
   dt{
-    line-height: calc(33/20);
+    line-height: calc(33 / 20);
   }
   
   @include sp {
@@ -1678,7 +1662,7 @@ Contact
   resize: vertical;
   padding: 15px;
   font-size: 1.6rem;
-  line-height: calc(33/16);
+  line-height: calc(33 / 16);
   margin-top: 10px;
   @include sp {
       margin-top: 0;
@@ -1688,7 +1672,7 @@ Contact
 
 .form-area-checkbox {
   margin-top: 51px;
-  line-height: calc(20/27);
+  line-height: calc(20 / 27);
 
   @include sp {
     margin-top: 30px;
@@ -1698,11 +1682,11 @@ Contact
 
 .contact-checkbox-label {
   font-size: 2rem;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
 
 
   @include sp {
-    line-height: calc(27 /20);
+    line-height: calc(27 / 20);
     margin-bottom: 0;
   }
 }
@@ -1710,7 +1694,7 @@ Contact
 ::placeholder {
   color: #A0A0A0;
   font-size: 1.6rem;
-  line-height: calc(25/16);
+  line-height: calc(25 / 16);
 }
 
 .contact-checkbox-span {
@@ -1729,12 +1713,12 @@ Contact
     gap: 5px 2px;
     margin-top: 0;
     font-size: 1.6rem;
-    line-height: calc(25/16);
+    line-height: calc(25 / 16);
   }
 
   &label {
     cursor: pointer;
-    line-height: calc(25/16);
+    line-height: calc(25 / 16);
   }
 }
 
@@ -1751,14 +1735,14 @@ Contact
   padding-left: 40px;
   display: inline-block;
   font-size: 1.8rem;
-  line-height: calc(25/18);
+  line-height: calc(25 / 18);
   user-select: none;
   cursor: pointer;
   pointer-events: auto;
 
   @include sp {
     font-size: 1.6rem;
-    line-height: calc(25/16);
+    line-height: calc(25 / 16);
     padding-left: 30px;
   }
 }
@@ -1815,7 +1799,7 @@ input[type="checkbox"]:checked+span::after {
   width: 170px;
   align-self: center;  
   font-size: 2rem;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
   
   
 }
@@ -1828,7 +1812,7 @@ input[type="checkbox"]:checked+span::after {
   height: 300px;
   width: 100%;
   font-size: 1.8rem;
-  line-height: calc(33/18);
+  line-height: calc(33 / 18);
   overflow: hidden;
   word-break: break-word;
   box-sizing: border-box;
@@ -1841,14 +1825,14 @@ input[type="checkbox"]:checked+span::after {
     margin-top: 0;
     padding: 10px 10px 30px 30px;
     font-size: 1.6rem;
-    line-height: calc(33/16);
+    line-height: calc(33 / 16);
     height: 323px;
   }
 }
 
 .policy-scroll-content {
   font-size: 1.8rem;
-  line-height: calc(31/18);
+  line-height: calc(31 / 18);
   max-height: 280px;
   padding-top: 30px;
   overflow-y: auto;
@@ -1859,7 +1843,7 @@ input[type="checkbox"]:checked+span::after {
 
   @include sp {
     font-size: 1.6rem;
-    line-height: calc(33/16);
+    line-height: calc(33 / 16);
     padding-right: 40px;
     padding-top: 20px;
     max-height: 290px;
@@ -1918,7 +1902,7 @@ input[type="checkbox"]:checked+span::after {
     li {
       position: relative;
       padding-left: 27px;
-      line-height: calc(31/18);
+      line-height: calc(31 / 18);
 
       &::before {
         content: "・";
@@ -2005,7 +1989,7 @@ Footer
 .footer-logo {
   font-size: 2rem;
   margin-bottom: 28px;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
 
   a {
     padding: 5px;
@@ -2054,7 +2038,7 @@ Footer
 .footer-nav__link {
   color: #000;
   font-size: 1.8rem;
-  line-height: calc(33/18);
+  line-height: calc(33 / 18);
   transition: all 0.3s ease-in-out;
   text-transform: capitalize;
   height: inherit;
@@ -2097,7 +2081,7 @@ Footer
   color: #fff;
   font-size: 2rem;
   padding-block: 30px;
-  line-height: calc(33/20);
+  line-height: calc(33 / 20);
 
   display: block;
   text-align: center;
