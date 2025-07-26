@@ -1129,12 +1129,14 @@ Works
 }
 
 .modal-container-p {
-  padding-block: 7px;
   line-height: 1.5625;
+  padding-top: 9px;
+  padding-bottom: 6px;
 }
 @media only screen and (max-width: 767px) {
   .modal-container-p {
-    padding-block: 10px;
+    padding-top: 7px;
+    padding-bottom: 14px;
   }
 }
 

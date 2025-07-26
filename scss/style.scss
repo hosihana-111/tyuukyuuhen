@@ -902,12 +902,16 @@ Works
 }
 
 .modal-container-p {
-  padding-block: 7px;
+  // padding-block: 7px;
   line-height: calc(25 / 16);
+  padding-top: 9px;
+  padding-bottom: 6px;
  
 
   @include sp {
-    padding-block: 10px;
+    padding-top: 7px;
+    padding-bottom: 14px;
+    // padding-block: 10px;
   }
 }
 
