@@ -326,6 +326,10 @@ header
   }
 }
 
+body.modal-open .header {
+  z-index: 500 !important;
+}
+
 .header__inner {
   max-width: 980px;
   width: 100%;
@@ -1124,22 +1128,6 @@ Works
   transition: all 0.2s ease-in-out;
 }
 
-.modal-container-img {
-  background: #fff;
-}
-
-.modal-container-p {
-  line-height: 1.5625;
-  padding-top: 9px;
-  padding-bottom: 6px;
-}
-@media only screen and (max-width: 767px) {
-  .modal-container-p {
-    padding-top: 7px;
-    padding-bottom: 14px;
-  }
-}
-
 .modal-content {
   background: #FFF;
   overflow-y: auto;
@@ -1165,8 +1153,53 @@ Works
   }
 }
 
-.modal-content img {
+.modal-close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 15px;
+  height: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+.modal-close::before, .modal-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 1px;
+  background-color: #000;
+}
+.modal-close::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+.modal-close::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal-close:hover {
+  opacity: 0.6;
+}
+
+.modal-container-img {
+  background: #fff;
   aspect-ratio: 274/144;
+}
+
+.modal-container-p {
+  line-height: 1.5625;
+  padding-top: 9px;
+  padding-bottom: 6px;
+}
+@media only screen and (max-width: 767px) {
+  .modal-container-p {
+    padding-top: 7px;
+    padding-bottom: 14px;
+  }
 }
 
 .modal-top {
@@ -1177,33 +1210,12 @@ Works
   z-index: 10;
 }
 
+.page-top.hide-while-modal {
+  display: none !important;
+}
+
 .modal-open {
   overflow: hidden;
-}
-
-.modal-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
-  height: 20px;
-  background: url(../images/works/close.svg) no-repeat center center;
-  background-size: contain;
-  border: none;
-  cursor: pointer;
-  z-index: 999;
-  display: inline-block;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.modal-close:hover {
-  opacity: 0.6;
-}
-
-.modal-close:hover,
-.modal-close:focus {
-  text-decoration: none;
-  cursor: pointer;
 }
 
 @-webkit-keyframes show {
@@ -1958,7 +1970,7 @@ Contact
 .select::after {
   content: "";
   position: absolute;
-  top: 56%;
+  top: 50%;
   right: 20px;
   width: 0;
   height: 0;
@@ -1972,7 +1984,7 @@ Contact
 }
 @media only screen and (max-width: 767px) {
   .select::after {
-    top: 51%;
+    top: 50%;
     right: 22px;
   }
 }

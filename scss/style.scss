@@ -196,6 +196,7 @@ header
       background-color: #4D9600;
 
     }
+   
   }
 
   @include sp {
@@ -203,6 +204,10 @@ header
 
   }
 }
+body.modal-open .header {
+  z-index: 500 !important;
+}
+
 
 .header__inner {
   max-width: 980px;
@@ -895,26 +900,6 @@ Works
   background-color: rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease-in-out;
 }
-
-.modal-container-img {
-  background: #fff;
-
-}
-
-.modal-container-p {
-  // padding-block: 7px;
-  line-height: calc(25 / 16);
-  padding-top: 9px;
-  padding-bottom: 6px;
- 
-
-  @include sp {
-    padding-top: 7px;
-    padding-bottom: 14px;
-    // padding-block: 10px;
-  }
-}
-
 .modal-content {
   background: #FFF;
   overflow-y: auto;
@@ -931,15 +916,64 @@ Works
 
   @include sp {
     width: 90vw;
-    max-width: 90vw;
-    // width: clamp(280px, 90vw, 450px);
+    max-width: 90vw;   
     padding: 20px 20px 0;
   }
 }
+.modal-close {
+  position: absolute;
+  top:2px;
+  right: 2px;
+  width: 15px;
+  height: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
 
-.modal-content img {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 1px;
+    background-color: #000;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.modal-container-img {
+  background: #fff;
   aspect-ratio: 274/144;
 }
+
+.modal-container-p {
+  // padding-block: 7px;
+  line-height: calc(25 / 16);
+  padding-top: 9px;
+  padding-bottom: 6px;
+ 
+
+  @include sp {
+    padding-top: 7px;
+    padding-bottom: 14px;
+    // padding-block: 10px;
+  }
+}
+
 
 .modal-top {
   display: inline-block;
@@ -949,40 +983,13 @@ Works
   z-index: 10;
 }
 
-// .page-top.hide-while-modal {
-//   display: none;
-// }
+.page-top.hide-while-modal {
+  display: none !important;
+}
 
 .modal-open {
   overflow: hidden;
 }
-
-.modal-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
-  height: 20px;
-  background: url(../images/works/close.svg)no-repeat center center;
-  background-size: contain;
-  border: none;
-  cursor: pointer;
-  z-index: 999;
-  display: inline-block;
-  transition: all 0.3s ease;
-
-  &:hover {
-    opacity: 0.6;
-  }
-}
-
-.modal-close:hover,
-.modal-close:focus {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
 
 @keyframes show {
   from {
@@ -1628,7 +1635,7 @@ Contact
   &::after {
     content: "";
     position: absolute;
-    top: 56%;
+    top: 50%;
     right: 20px;
     width: 0;
     height: 0;
@@ -1636,12 +1643,12 @@ Contact
     border-right: 0.8rem solid transparent;
     border-top: 1.2rem solid #4D9600;
     -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    transform: translateY(-50%);   
     pointer-events: none;
     z-index: 2;
 
     @include sp {
-      top: 51%;
+      top: 50%;
       right: 22px;
     }
   }

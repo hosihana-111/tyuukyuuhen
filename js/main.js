@@ -77,67 +77,66 @@ window.addEventListener('scroll', () => {
   const pageTopHeight = pageTop.offsetHeight;
 
   
-//   // ウィンドウ下端の位置
-//   const windowBottom = scrollY + windowHeight;
-
-//   // フッターが画面に入りはじめたらボタンを止める
-//   if (windowBottom >= footerTop) {
-//     // absolute にしてフッターの上に止める
-//     pageTop.classList.add('is-fixed-stop');
-//     pageTop.style.top = 'auto';
-//     pageTop.style.bottom = `${windowBottom - footerTop + 20}px`; // 20px余白
-//   } else {
-//     // 通常固定表示
-//     pageTop.classList.remove('is-fixed-stop');
-//     pageTop.style.bottom = '60px'; // 通常時の固定位置
-//   }
 });
 
 
 
 
-  // =============================
-  // モーダル開閉制御（＋戻るボタン非表示）
-  // =============================
- const modals = document.querySelectorAll('.modal');
-  const modalToggles = document.querySelectorAll('.modal-toggle');
-  const modalCloses = document.querySelectorAll('.modal-close');
+ // =============================
+// モーダル開閉制御（＋戻るボタン非表示）
+// =============================
+const modals = document.querySelectorAll('.modal');
+const modalToggles = document.querySelectorAll('.modal-toggle');
+const modalCloses = document.querySelectorAll('.modal-close');
 
-  modalToggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const modalId = toggle.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.style.display = 'block';
-        document.body.classList.add('modal-open');
+modalToggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const modalId = toggle.getAttribute('data-modal');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = 'block';
+      document.body.classList.add('modal-open');
 
-        // ★ トップへ戻るボタンを非表示に
-        pageTop?.classList.add('hide-while-modal');
-      }
-    });
-  });
+      // ① ヘッダーをモーダルの下に移動
+      // header?.classList.add('is-modal-open');
 
-  modalCloses.forEach(close => {
-    close.addEventListener('click', () => {
-      const modal = close.closest('.modal');
-      if (modal) modal.style.display = 'none';
-      document.body.classList.remove('modal-open');
-
-      // ★ トップへ戻るボタンを再表示
-      pageTop?.classList.remove('hide-while-modal');
-    });
-  });
-
-  // 背景クリックでモーダル閉じる
-  window.addEventListener('click', (event) => {
-    if (event.target.classList.contains('modal')) {
-      event.target.style.display = 'none';
-      document.body.classList.remove('modal-open');
-
-      // ★ トップへ戻るボタンを再表示
-      pageTop?.classList.remove('hide-while-modal');
+      // ② トップボタンを即時非表示（クラス & スタイルで確実に）
+      pageTop.style.display = 'none';
+      pageTop.classList.add('hide-while-modal');
     }
   });
+});
+
+modalCloses.forEach(close => {
+  close.addEventListener('click', () => {
+    const modal = close.closest('.modal');
+    if (modal) modal.style.display = 'none';
+    document.body.classList.remove('modal-open');
+
+    // ① ヘッダーを元に戻す
+    // header?.classList.remove('is-modal-open');
+
+    // ② トップボタンを再表示
+    pageTop.classList.remove('hide-while-modal');
+    pageTop.style.display = '';
+  });
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = 'none';
+    document.body.classList.remove('modal-open');
+
+    // ① ヘッダーを元に戻す
+    // header?.classList.remove('is-modal-open');
+
+    // ② トップボタンを再表示
+    pageTop.classList.remove('hide-while-modal');
+    pageTop.style.display = '';
+  }
+});
+
+
   // プライバシーポリシー展開
   const toggleBtn = document.querySelector('.toggle-policy');
   if (toggleBtn) {
