@@ -1164,6 +1164,12 @@ Works
   cursor: pointer;
   z-index: 1000;
 }
+@media only screen and (max-width: 767px) {
+  .modal-close {
+    top: 5px;
+    right: 5px;
+  }
+}
 .modal-close::before, .modal-close::after {
   content: "";
   position: absolute;
