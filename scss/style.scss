@@ -204,9 +204,9 @@ header
 
   }
 }
-body.modal-open .header {
-  z-index: 500 !important;
-}
+// body.modal-open .header {
+//   z-index: 500 !important;
+// }
 
 
 .header__inner {
@@ -891,7 +891,7 @@ Works
 .modal {
   display: none;
   position: fixed;
-  z-index: 888;
+  z-index: 10000;
   left: 0;
   top: 0;
   width: 100%;
