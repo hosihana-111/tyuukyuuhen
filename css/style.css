@@ -490,9 +490,11 @@ header
   padding: 0;
   height: inherit;
   cursor: pointer;
-  -webkit-column-gap: 29px;
-     -moz-column-gap: 29px;
-          column-gap: 29px;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  font-size: 1.8rem;
+  line-height: 1.8333333333;
 }
 @media screen and (767px < width <= 950px) {
   .header__nav-list {
@@ -535,6 +537,7 @@ header
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  line-height: 1.8333333333;
 }
 @media only screen and (max-width: 767px) {
   .header__nav-list-item {
@@ -568,11 +571,18 @@ header
           align-items: center;
   color: #fff;
   text-decoration: none;
-  font-size: 1.8rem;
-  line-height: 1.8333333333;
   position: relative;
 }
-.header__nav-list-item a:hover {
+.header__nav-list-item a span {
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+@media only screen and (max-width: 767px) {
+  .header__nav-list-item a span {
+    opacity: 1;
+  }
+}
+.header__nav-list-item a:hover span {
   opacity: 0.6;
 }
 @media only screen and (max-width: 767px) {
@@ -615,16 +625,6 @@ header
 
 .header__nav-list-item a:hover::after {
   width: 100%;
-}
-
-.header__nav-list-item a span {
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-}
-@media only screen and (max-width: 767px) {
-  .header__nav-list-item a span {
-    opacity: 1;
-  }
 }
 
 /*------------------

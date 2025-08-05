@@ -346,7 +346,9 @@ header
   padding: 0;
   height: inherit;
   cursor: pointer;
-  column-gap: 29px;
+  column-gap: 30px;
+  font-size: 1.8rem;
+  line-height: calc(33 / 18);
 
 
   @media screen and (767px < width <=950px) {
@@ -384,6 +386,7 @@ header
   height: inherit;
   display: flex;
   align-items: center;
+  line-height: calc(33 / 18);
 
   @include sp {
     height: 58px;
@@ -405,11 +408,18 @@ header
   align-items: center;
   color: #fff;
   text-decoration: none;
-  font-size: 1.8rem;
-  line-height: calc(33 / 18);
+  
   position: relative;
 
-  &:hover {
+  span {
+    transition: opacity 0.3s ease;
+
+    @include sp {
+      opacity: 1;
+    }
+  }
+
+  &:hover span {
     opacity: 0.6;
   }
 
@@ -428,8 +438,7 @@ header
       background-color: #000;
     }
 
-    // 黒背景に変更}
-    //  opacity: 1; // hover時の薄くなる効果を無効化
+   
   }
 
   @media screen and (767px < width <=950px) {
@@ -452,22 +461,9 @@ header
   opacity: 1;
 }
 
-
 .header__nav-list-item a:hover::after {
   width: 100%;
 }
-
-
-.header__nav-list-item a span {
-  transition: opacity 0.3s ease;
-
- 
-
-    @include sp {
-      opacity: 1;
-    }
-  }
-
 
 
 /*------------------
