@@ -145,7 +145,7 @@ html {
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 86px;
+  scroll-padding-top: 80px;
   word-break: break-all;
   font-size: 62.5%;
 }
@@ -204,7 +204,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
   .sp {
     display: none !important;
   }
@@ -329,7 +329,7 @@ header
 .header__inner {
   max-width: 980px;
   width: 100%;
-  height: 86px;
+  height: 80px;
   margin: 0 auto;
   padding-inline: 30px;
   display: -webkit-box;
@@ -413,6 +413,7 @@ header
 }
 
 .header__hamburger {
+  display: none;
   position: absolute;
   top: 0px;
   right: 0;
@@ -425,6 +426,19 @@ header
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 9999;
+}
+@media only screen and (max-width: 767px) {
+  .header__hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .header__hamburger span {
@@ -558,6 +572,9 @@ header
   line-height: 1.8333333333;
   position: relative;
 }
+.header__nav-list-item a:hover {
+  opacity: 0.6;
+}
 @media only screen and (max-width: 767px) {
   .header__nav-list-item a {
     font-size: 1.8rem;
@@ -593,6 +610,7 @@ header
   background-color: #fff;
   -webkit-transition: width 0.3s ease;
   transition: width 0.3s ease;
+  opacity: 1;
 }
 
 .header__nav-list-item a:hover::after {
@@ -603,11 +621,8 @@ header
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-.header__nav-list-item a span:hover {
-  opacity: 0.6;
-}
 @media only screen and (max-width: 767px) {
-  .header__nav-list-item a span:hover {
+  .header__nav-list-item a span {
     opacity: 1;
   }
 }
@@ -1272,10 +1287,12 @@ News
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     row-gap: 49px;
+    max-width: 100%;
+    margin-inline: 0;
   }
 }
 
@@ -1286,8 +1303,10 @@ News
 @media only screen and (max-width: 767px) {
   .news-block,
   .blog-block {
-    max-width: 600px;
+    max-width: none;
     width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
 }
 
@@ -1317,7 +1336,7 @@ News
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #fff;
-  padding: 8px 20px 20px 20px;
+  padding: 8px 20px 25px 20px;
   overflow: hidden;
 }
 .news-items li {
@@ -1389,7 +1408,6 @@ News
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 4.9968rem;
     min-width: 0;
     width: 100%;
   }
@@ -1447,13 +1465,13 @@ News
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.65;
-  margin-top: 10px;
+  margin-top: 17px;
   text-decoration: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
-  padding: 7px 35px 5px 5px;
+  padding: 0 35px 0px 5px;
   position: relative;
   z-index: 1;
   -webkit-transition: all 0.3s ease;
@@ -1466,7 +1484,7 @@ News
 .more::after {
   position: absolute;
   content: "";
-  background-image: url(../images/pass21.jpg);
+  background-image: url(../images/pass21.svg);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 80px;
@@ -1658,7 +1676,7 @@ Company
 }
 
 .company-email a {
-  padding-left: 14px;
+  margin-left: 14px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1723,15 +1741,6 @@ Contact
 @media only screen and (max-width: 767px) {
   .contact-form {
     margin-top: 42px;
-  }
-}
-
-.contact-sec__form-block {
-  margin-top: 39px;
-}
-@media only screen and (max-width: 767px) {
-  .contact-sec__form-block {
-    margin-top: 24px;
   }
 }
 
@@ -2010,7 +2019,7 @@ Contact
   width: 100%;
   resize: vertical;
   padding: 15px;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 2.0625;
   margin-top: 10px;
 }
@@ -2167,7 +2176,6 @@ input[type=checkbox]:checked + span::after {
 
 .privacy-policy {
   margin-top: 52px;
-  margin-bottom: 40px;
 }
 @media only screen and (max-width: 767px) {
   .privacy-policy {
@@ -2480,10 +2488,5 @@ Footer
   }
   .footer__copyright span {
     font-weight: 500;
-  }
-}
-@media screen and (max-width: 374px) {
-  .footer__copyright {
-    font-size: 1.4rem;
   }
 }/*# sourceMappingURL=style.css.map */

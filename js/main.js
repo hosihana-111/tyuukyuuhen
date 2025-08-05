@@ -7,7 +7,7 @@ $(document).ready(function () {
   $('.slider').slick({
     autoplay: true,
     infinite: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 8000,
     arrows: false,
     cssEase: 'linear'
   });
