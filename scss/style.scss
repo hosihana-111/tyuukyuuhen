@@ -180,8 +180,7 @@ a {
 header
 -------------------*/
 .header {
-  position: fixed;
-  top: -100px; // 初期状態：上に隠す
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
@@ -258,6 +257,7 @@ header
   font-size: 2rem;
   line-height: calc(33 / 20);
   height: inherit;
+  letter-spacing: normal;
 
   a {
     display: flex;
@@ -346,9 +346,10 @@ header
   padding: 0;
   height: inherit;
   cursor: pointer;
-  column-gap: 30px;
+  column-gap: 29px;
   font-size: 1.8rem;
   line-height: calc(33 / 18);
+  letter-spacing: normal;
 
 
   @media screen and (767px < width <=950px) {
@@ -387,6 +388,7 @@ header
   display: flex;
   align-items: center;
   line-height: calc(33 / 18);
+  
 
   @include sp {
     height: 58px;
@@ -407,9 +409,9 @@ header
   justify-content: center;
   align-items: center;
   color: #fff;
-  text-decoration: none;
-  
+  text-decoration: none;  
   position: relative;
+  letter-spacing: normal;
 
   span {
     transition: opacity 0.3s ease;

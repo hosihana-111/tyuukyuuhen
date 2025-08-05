@@ -305,7 +305,6 @@ header
 -------------------*/
 .header {
   position: fixed;
-  top: -100px;
   top: 0;
   left: 0;
   width: 100%;
@@ -381,6 +380,7 @@ header
   font-size: 2rem;
   line-height: 1.65;
   height: inherit;
+  letter-spacing: normal;
 }
 .logo a {
   display: -webkit-box;
@@ -490,11 +490,12 @@ header
   padding: 0;
   height: inherit;
   cursor: pointer;
-  -webkit-column-gap: 30px;
-     -moz-column-gap: 30px;
-          column-gap: 30px;
+  -webkit-column-gap: 29px;
+     -moz-column-gap: 29px;
+          column-gap: 29px;
   font-size: 1.8rem;
   line-height: 1.8333333333;
+  letter-spacing: normal;
 }
 @media screen and (767px < width <= 950px) {
   .header__nav-list {
@@ -572,6 +573,7 @@ header
   color: #fff;
   text-decoration: none;
   position: relative;
+  letter-spacing: normal;
 }
 .header__nav-list-item a span {
   -webkit-transition: opacity 0.3s ease;
