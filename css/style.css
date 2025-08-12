@@ -603,6 +603,9 @@ header
   .header__nav-list-item a:hover {
     background-color: #000;
   }
+  .header__nav-list-item a:hover span {
+    opacity: 1;
+  }
 }
 @media screen and (767px < width <= 950px) {
   .header__nav-list-item a {
@@ -615,7 +618,7 @@ header
 .header__nav-list-item a::after {
   content: "";
   position: absolute;
-  bottom: 30px;
+  bottom: 28px;
   left: 0;
   width: 0;
   height: 1px;
@@ -1338,7 +1341,7 @@ News
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #fff;
-  padding: 8px 20px 25px 20px;
+  padding: 10px 20px 20px 20px;
   overflow: hidden;
 }
 .news-items li {
@@ -1354,14 +1357,10 @@ News
 }
 
 .news-item {
-  padding-top: 22px;
-  padding-bottom: 11px;
+  padding-block: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   text-decoration: none;
   -webkit-column-gap: 16.976744186%;
      -moz-column-gap: 16.976744186%;
@@ -1385,7 +1384,7 @@ News
 }
 
 .news-date {
-  line-height: 1;
+  line-height: 1.3;
   font-size: 1.6rem;
 }
 @media only screen and (max-width: 767px) {
@@ -1473,7 +1472,7 @@ News
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
-  padding: 0 35px 0px 5px;
+  padding: 0 35px 5px 5px;
   position: relative;
   z-index: 1;
   -webkit-transition: all 0.3s ease;
@@ -1491,8 +1490,8 @@ News
   background-repeat: no-repeat;
   width: 80px;
   height: 18px;
-  left: 6px;
-  top: 20px;
+  left: 7px;
+  top: 17px;
   bottom: 0;
   margin: auto;
   z-index: -1;
@@ -1702,7 +1701,7 @@ Company
 Contact
 -------------------*/
 .contact {
-  padding-top: 82px;
+  padding-top: 80px;
   padding-bottom: 80px;
   position: relative;
   background-color: rgba(77, 150, 0, 0.149);
@@ -1736,7 +1735,7 @@ Contact
 }
 
 .contact-form {
-  margin-top: 69px;
+  margin-top: 70px;
   font-size: 2rem;
   max-width: 100%;
 }
@@ -1815,7 +1814,6 @@ Contact
   .form-area-gender dt {
     width: auto;
     min-width: 80px;
-    margin-right: 10px;
     line-height: 1.65;
   }
   .form-area-gender dd {
@@ -1836,11 +1834,11 @@ Contact
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 80px;
+  gap: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 10px;
+  margin-left: 2px;
 }
 @media only screen and (max-width: 767px) {
   .contact-radio {
@@ -1863,10 +1861,6 @@ Contact
   cursor: pointer;
 }
 
-.contact-radio {
-  text-align: left;
-}
-
 .contact-radio input[type=radio] {
   display: none;
 }
@@ -1874,19 +1868,23 @@ Contact
 .contact-radio input[type=radio] + span {
   display: inline-block;
   position: relative;
-  padding: 0 0 0 28px;
-  margin: 0 4px 0;
+  padding-left: 42px;
   border-radius: 50%;
-  line-height: 1.65;
+  line-height: 1;
   cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+  .contact-radio input[type=radio] + span {
+    padding-left: 40px;
+  }
 }
 .contact-radio input[type=radio] + span::before {
   position: absolute;
   content: "";
   top: 50%;
   left: 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   background: #fff;
   width: 20px;
   height: 20px;
@@ -1898,9 +1896,9 @@ Contact
   content: "";
   position: absolute;
   top: 50%;
-  left: 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 7px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   background: #000;
   width: 6px;
   height: 6px;
@@ -2086,17 +2084,26 @@ Contact
   padding-left: 12px;
 }
 
+.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .checkbox-group {
   max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px 7px;
-  margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px 35px;
+  margin-top: 15px;
 }
 @media only screen and (max-width: 767px) {
   .checkbox-group {
     grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-    gap: 5px 2px;
+    gap: 5px 14px;
     margin-top: 0;
     font-size: 1.6rem;
     line-height: 1.5625;
@@ -2117,10 +2124,9 @@ Contact
 
 .custom-checkbox {
   position: relative;
-  padding-left: 40px;
   display: inline-block;
   font-size: 1.8rem;
-  line-height: 1.3888888889;
+  line-height: 1;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -2132,52 +2138,47 @@ Contact
   .custom-checkbox {
     font-size: 1.6rem;
     line-height: 1.5625;
-    padding-left: 30px;
   }
 }
 
 .custom-checkbox span {
   position: relative;
   display: inline-block;
+  padding-left: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .custom-checkbox span {
+    padding-left: 30px;
+  }
 }
 .custom-checkbox span::before {
   position: absolute;
   content: "";
   top: 50%;
-  left: -32px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   background: #fff;
   width: 20px;
   height: 20px;
   opacity: 1;
-}
-@media only screen and (max-width: 767px) {
-  .custom-checkbox span::before {
-    left: -22px;
-  }
 }
 
 input[type=checkbox]:checked + span::after {
   position: absolute;
   content: "";
   top: 50%;
-  left: -32px;
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
+  left: 7px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
   width: 6px;
   height: 12px;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
 }
-@media only screen and (max-width: 767px) {
-  input[type=checkbox]:checked + span::after {
-    left: -22px;
-  }
-}
 
 .privacy-policy {
-  margin-top: 52px;
+  margin-top: 55px;
 }
 @media only screen and (max-width: 767px) {
   .privacy-policy {

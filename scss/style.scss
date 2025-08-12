@@ -439,6 +439,9 @@ header
     &:hover {
       background-color: #000;
     }
+     &:hover span {
+      opacity: 1; 
+    }
 
    
   }
@@ -453,7 +456,7 @@ header
 .header__nav-list-item a::after {
   content: "";
   position: absolute;
-  bottom: 30px;
+  bottom: 28px;
   // bottom: 0;
   left: 0;
   width: 0;
@@ -1085,7 +1088,7 @@ News
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  padding: 8px 20px 25px 20px;
+  padding: 10px 20px 20px 20px;
   overflow: hidden;
 
   li {
@@ -1102,10 +1105,9 @@ News
 }
 
 .news-item {
-  padding-top: 22px;
-  padding-bottom: 11px;
+  padding-block: 16px;
   display: flex;
-  align-items: flex-start;
+ 
   text-decoration: none;
   column-gap: calc(73/430*100%);
   cursor: pointer;
@@ -1125,8 +1127,9 @@ News
 }
 
 .news-date {
-  line-height: 1;
+  line-height: 1.3;
   font-size: 1.6rem;
+ 
 
   @include sp {
     width: 70px;
@@ -1139,6 +1142,7 @@ News
   color: #000;
   margin: 0;
   flex: 1;
+  // margin-top: 5px;
 
   @media screen and (max-width:900px) {
     display: -webkit-box;
@@ -1186,7 +1190,7 @@ News
   text-decoration: none;
   width: fit-content;
   margin-left: auto;
-  padding: 0 35px 0px 5px;
+  padding: 0 35px 5px 5px;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
@@ -1204,8 +1208,8 @@ News
     background-repeat: no-repeat;
     width: 80px;
     height: 18px;
-    left: 6px;
-    top: 20px;
+    left: 7px;
+    top: 17px;
     bottom: 0;
     margin: auto;
     z-index: -1;
@@ -1409,7 +1413,7 @@ Contact
 -------------------*/
 
 .contact {
-  padding-top: 82px;
+  padding-top: 80px;
   padding-bottom: 80px;
   position: relative;
   background-color: rgba(77, 150, 0, 0.149);
@@ -1445,7 +1449,7 @@ Contact
 }
 
 .contact-form {
-  margin-top: 69px;
+  margin-top: 70px;
   font-size: 2rem;
   max-width: 100%;
 
@@ -1508,7 +1512,7 @@ Contact
     dt {
       width: auto;
       min-width: 80px;
-      margin-right: 10px;
+      
       line-height: calc(33 / 20);
     }
 
@@ -1530,9 +1534,9 @@ Contact
 
 .contact-radio {
   display: flex;
-  gap: 80px;
+  gap: 70px;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 2px;
 
   @include sp {
     flex-wrap: nowrap;
@@ -1551,9 +1555,9 @@ Contact
   cursor: pointer;
 }
 
-.contact-radio {
-  text-align: left;
-}
+// .contact-radio {
+//   text-align: left;
+// }
 
 .contact-radio input[type="radio"] {
   display: none;
@@ -1562,18 +1566,21 @@ Contact
 .contact-radio input[type="radio"]+span {
   display: inline-block;
   position: relative;
-  padding: 0 0 0 28px;
-  margin: 0 4px 0;
+  padding-left:42px; 
   border-radius: 50%;
-  line-height: calc(33 / 20);
+  line-height:1;
   cursor: pointer;
+  
+  @include sp {
+    padding-left:40px; 
+  }
 
   &::before {
     position: absolute;
     content: '';
     top: 50%;
     left: 0;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     background: #fff;
     width: 20px;
     height: 20px;
@@ -1587,8 +1594,8 @@ Contact
   content: "";
   position: absolute;
   top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
+  left: 7px;
+  transform: translateY(-50%);
   background: #000;
   width: 6px;
   height: 6px;
@@ -1732,16 +1739,21 @@ Contact
   padding-left: 12px;  
 }
 
+.checkbox {
+  display: flex;
+  align-items: center;
+ 
+}
 .checkbox-group {
   max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px 7px;
-  margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px 35px;
+  margin-top: 15px;
 
   @include sp {
     grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-    gap: 5px 2px;
+    gap: 5px 14px;
     margin-top: 0;
     font-size: 1.6rem;
     line-height: calc(25 / 16);
@@ -1762,11 +1774,10 @@ Contact
 }
 
 .custom-checkbox {
-  position: relative;
-  padding-left: 40px;
+  position: relative;  
   display: inline-block;
   font-size: 1.8rem;
-  line-height: calc(25 / 18);
+  line-height: 1;
   user-select: none;
   cursor: pointer;
   pointer-events: auto;
@@ -1774,28 +1785,31 @@ Contact
   @include sp {
     font-size: 1.6rem;
     line-height: calc(25 / 16);
-    padding-left: 30px;
+    
   }
 }
 
 .custom-checkbox span {
   position: relative;
   display: inline-block;
+  padding-left: 40px;
+
+  @include sp {
+    padding-left: 30px;
+  }
+
 
   &::before {
     position: absolute;
     content: '';
     top: 50%;
-    left: -32px;
-    transform: translate(-50%, -50%);
+    left:0;
+    transform: translateY(-50%);
     background: #fff;
     width: 20px;
     height: 20px;
     opacity: 1;
-
-    @include sp {
-      left: -22px;
-    }
+   
   }
 }
 
@@ -1803,22 +1817,20 @@ input[type="checkbox"]:checked+span::after {
   position: absolute;
   content: '';
   top: 50%;
-  left: -32px;
-  transform: translate(-50%, -50%) rotate(45deg);
+  left: 7px;
+  transform: translateY(-50%) rotate(45deg);
   width: 6px;
   height: 12px;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
 
-  @include sp {
-    left: -22px;
-  }
+  
 }
 
 
 
 .privacy-policy {
-  margin-top: 52px;
+  margin-top: 55px;
 
   @include sp {
     margin-top: 30px;
