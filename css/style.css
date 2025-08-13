@@ -1341,7 +1341,7 @@ News
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #fff;
-  padding: 10px 20px 20px 20px;
+  padding: 10px 20px 14px 20px;
   overflow: hidden;
 }
 .news-items li {
@@ -1465,18 +1465,23 @@ News
   color: #55A500;
   font-size: 2rem;
   font-weight: 600;
-  line-height: 1.65;
-  margin-top: 17px;
+  line-height: 1;
+  margin-top: 22px;
   text-decoration: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
-  padding: 0 35px 5px 5px;
+  padding: 2px 35px 16px 0;
   position: relative;
-  z-index: 1;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+@media only screen and (max-width: 767px) {
+  .more {
+    margin-top: 20px;
+    padding: 2px 33px 14px 0;
+  }
 }
 .more:hover {
   -webkit-animation: shake-right 1s ease;
@@ -1485,21 +1490,15 @@ News
 .more::after {
   position: absolute;
   content: "";
-  background-image: url(../images/pass21.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background: url(../images/pass21.svg) no-repeat center/contain;
   width: 80px;
   height: 18px;
-  left: 7px;
-  top: 17px;
-  bottom: 0;
-  margin: auto;
-  z-index: -1;
+  right: 3%;
+  bottom: 15%;
 }
 @media only screen and (max-width: 767px) {
-  .more {
-    margin-top: 12px;
-    padding: 5px 33px 5px 5px;
+  .more::after {
+    bottom: 10%;
   }
 }
 

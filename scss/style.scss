@@ -1088,7 +1088,7 @@ News
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  padding: 10px 20px 20px 20px;
+  padding: 10px 20px 14px 20px;
   overflow: hidden;
 
   li {
@@ -1185,15 +1185,23 @@ News
   color: #55A500;
   font-size: 2rem;
   font-weight: 600;
-  line-height: calc(33 / 20);
-  margin-top: 17px;
+  line-height:1;
+  margin-top: 22px;
   text-decoration: none;
   width: fit-content;
   margin-left: auto;
-  padding: 0 35px 5px 5px;
-  position: relative;
-  z-index: 1;
+  padding: 2px 35px 16px 0;
+   
+  position: relative;  
   transition: all 0.3s ease;
+
+@include sp {
+
+    margin-top: 20px;
+    padding: 2px 33px 14px 0;
+    
+    
+  }
 
   &:hover {
 
@@ -1203,24 +1211,19 @@ News
   &::after {
     position: absolute;
     content: "";
-    background-image: url(../images/pass21.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background: url(../images/pass21.svg) no-repeat center / contain;    
     width: 80px;
     height: 18px;
-    left: 7px;
-    top: 17px;
-    bottom: 0;
-    margin: auto;
-    z-index: -1;
-  }
-
-  @include sp {
-
-    margin-top: 12px;
-    padding: 5px 33px 5px 5px;
+    right: 3%;  
+    bottom: 15%;    
     
+    @include sp {
+        bottom: 10%;
+      
+    }
   }
+
+  
 }
 
 /*------------------
