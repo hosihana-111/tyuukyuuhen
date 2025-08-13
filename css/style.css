@@ -1295,7 +1295,7 @@ News
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
-    row-gap: 49px;
+    row-gap: 48px;
     max-width: 100%;
     margin-inline: 0;
   }
@@ -1490,7 +1490,8 @@ News
 .more::after {
   position: absolute;
   content: "";
-  background: url(../images/pass21.svg) no-repeat center/contain;
+  background: url(../images/pass21.svg) no-repeat center;
+  background-size: 105% auto;
   width: 80px;
   height: 18px;
   right: 3%;
@@ -2191,6 +2192,11 @@ input[type=checkbox]:checked + span::after {
       align-self: center;
   font-size: 2rem;
   line-height: 1.65;
+}
+@media only screen and (max-width: 767px) {
+  .contact-heading {
+    line-height: 1.5;
+  }
 }
 
 .privacy-policy-box {

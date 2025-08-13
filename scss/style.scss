@@ -1046,7 +1046,7 @@ News
     display: flex;
     justify-content: center;
     align-items: stretch;
-    row-gap: 49px;
+    row-gap: 48px;
     max-width: 100%;
     margin-inline: 0;
     
@@ -1196,10 +1196,8 @@ News
   transition: all 0.3s ease;
 
 @include sp {
-
     margin-top: 20px;
-    padding: 2px 33px 14px 0;
-    
+    padding: 2px 33px 14px 0;    
     
   }
 
@@ -1211,7 +1209,8 @@ News
   &::after {
     position: absolute;
     content: "";
-    background: url(../images/pass21.svg) no-repeat center / contain;    
+    background: url(../images/pass21.svg) no-repeat center ; 
+    background-size: 105% auto; // 横だけ20%拡大   
     width: 80px;
     height: 18px;
     right: 3%;  
@@ -1845,7 +1844,9 @@ input[type="checkbox"]:checked+span::after {
   font-size: 2rem;
   line-height: calc(33 / 20);
   
-  
+  @include sp {
+    line-height: 1.5;
+  }
 }
 
 .privacy-policy-box {
