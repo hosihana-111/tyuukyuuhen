@@ -1210,13 +1210,14 @@ News
     position: absolute;
     content: "";
     background: url(../images/pass21.svg) no-repeat center ; 
-    background-size: 105% auto; // 横だけ20%拡大   
+      
     width: 80px;
     height: 18px;
-    right: 3%;  
+    right: 1%;  
     bottom: 15%;    
     
     @include sp {
+      right: 0; 
         bottom: 10%;
       
     }

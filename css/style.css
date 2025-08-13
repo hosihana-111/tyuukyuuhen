@@ -1491,14 +1491,14 @@ News
   position: absolute;
   content: "";
   background: url(../images/pass21.svg) no-repeat center;
-  background-size: 105% auto;
   width: 80px;
   height: 18px;
-  right: 3%;
+  right: 1%;
   bottom: 15%;
 }
 @media only screen and (max-width: 767px) {
   .more::after {
+    right: 0;
     bottom: 10%;
   }
 }
