@@ -1493,8 +1493,8 @@ News
   background: url(../images/pass21.svg) no-repeat center;
   width: 80px;
   height: 18px;
-  right: 1%;
-  bottom: 15%;
+  right: -1px;
+  bottom: 6px;
 }
 @media only screen and (max-width: 767px) {
   .more::after {

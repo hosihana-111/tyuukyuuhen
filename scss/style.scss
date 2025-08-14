@@ -1190,10 +1190,11 @@ News
   text-decoration: none;
   width: fit-content;
   margin-left: auto;
-  padding: 2px 35px 16px 0;
-   
+  padding: 2px 35px 16px 0;   
   position: relative;  
   transition: all 0.3s ease;
+ 
+
 
 @include sp {
     margin-top: 20px;
@@ -1209,12 +1210,11 @@ News
   &::after {
     position: absolute;
     content: "";
-    background: url(../images/pass21.svg) no-repeat center ; 
-      
+    background: url(../images/pass21.svg) no-repeat center ;       
     width: 80px;
     height: 18px;
-    right: 1%;  
-    bottom: 15%;    
+    right:-1px;  
+    bottom: 6px;    
     
     @include sp {
       right: 0; 
