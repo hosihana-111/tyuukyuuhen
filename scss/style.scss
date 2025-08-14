@@ -784,10 +784,13 @@ service
 .service-desc {
   line-height: calc(25 / 16);
   color: #fff;
+  text-wrap: pretty;   /* 近年のブラウザで行末が整いやすくなる */
+  line-break: strict;  /* CJKの禁則処理を厳密に */
 
   @media screen and (max-width:900px) {
     font-size: 1.4rem;
   }
+ 
 
   @include sp {
     font-size: 1.6rem;
@@ -795,6 +798,11 @@ service
 
   @media screen and (max-width:374px) {
     font-size: 1.2rem;
+  }
+}
+.service__box:nth-child(even) .service-desc br {
+@media (min-width: 678px) and (max-width: 790px){
+    display: none;
   }
 }
 
@@ -1750,12 +1758,12 @@ Contact
 .checkbox-group {
   max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(166px, 1fr));
   gap: 20px 35px;
   margin-top: 15px;
 
   @include sp {
-    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(142px, 1fr));
     gap: 5px 14px;
     margin-top: 0;
     font-size: 1.6rem;
@@ -1787,7 +1795,7 @@ Contact
 
   @include sp {
     font-size: 1.6rem;
-    line-height: calc(25 / 16);
+    
     
   }
 }
